@@ -60,3 +60,7 @@ crashlytics-build.properties
 
 # JetBrains project configuration details
 /.idea/
+
+file_stream.csv
+
+UserSettings/EditorUserSettings.asset
