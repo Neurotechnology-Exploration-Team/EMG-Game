@@ -8,7 +8,7 @@ using brainflow;
 
 public class CarBCIReader2 : MonoBehaviour
 {
-    private const string serialPort = null;
+    private const string serialPort = "COM7";
     private const int NumSamplesPerInput = 500;
     private const int BoardID = 0;
     
@@ -20,26 +20,26 @@ public class CarBCIReader2 : MonoBehaviour
         // enable debug info
         BoardShim.enable_dev_board_logger();
 
-        if (serialPort != null)
+        if (serialPort == null) return;
+        
+        var inputParams = new BrainFlowInputParams
         {
-            var inputParams = new BrainFlowInputParams
-            {
-                serial_port = serialPort
-            };
+            serial_port = serialPort
+        };
 
-            _boardShim = new BoardShim(BoardID, inputParams);
-            try
-            {
-                _boardShim.prepare_session();
-            }
-            catch (BrainFlowException e)
-            {
-                Debug.Log("Do you have the wrong port, or is the device plugged in, or could the device be taken up by other programs?");
-                Debug.LogError(e);
-            }
+        _boardShim = new BoardShim(BoardID, inputParams);
+        try
+        {
+            _boardShim.prepare_session();
+            
             _boardShim.start_stream(450000, "file://file_stream.csv:w");
 
             Debug.Log("OpenBCI initialization complete");   
+        }
+        catch (BrainFlowException e)
+        {
+            Debug.Log("Do you have the wrong port, or is the device plugged in, or could the device be taken up by other programs?");
+            Debug.LogError(e);
         }
     }
 
