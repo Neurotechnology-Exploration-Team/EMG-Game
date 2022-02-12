@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using brainflow;
 
-public class OpenBCIReader2 : MonoBehaviour
+public class CarBCIReader2 : MonoBehaviour
 {
     private const string SerialPort = "COM7";
     private const int NumSamplesPerInput = 500;
