@@ -9,13 +9,13 @@ public class CarInputHandler : MonoBehaviour
     
     // Components
     TopDownCarController topDownCarController;
-    CarBCIReader carBCIReader;
+    // CarBCIReader carBCIReader;
 
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
         topDownCarController = GetComponent<TopDownCarController>();
-        carBCIReader = GetComponent<CarBCIReader>();
+        // carBCIReader = GetComponent<CarBCIReader>();
     }
     // Update is called once per frame
     void Update()
@@ -24,8 +24,8 @@ public class CarInputHandler : MonoBehaviour
 
         if (useBCIInput)
         {
-            inputVector.x = carBCIReader.GetAxis("Horizontal");
-            inputVector.y = carBCIReader.GetAxis("Vertical");
+            // inputVector.x = carBCIReader.GetAxis("Horizontal");
+            // inputVector.y = carBCIReader.GetAxis("Vertical");
         }
         else
         {

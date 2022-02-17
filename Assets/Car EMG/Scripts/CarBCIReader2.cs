@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 using brainflow;
 
 public class CarBCIReader2 : MonoBehaviour
 {
+
     public bool verbose;
     public bool attemptConnectionOnStartup;
     public bool allowWifi;
@@ -12,7 +14,8 @@ public class CarBCIReader2 : MonoBehaviour
     {
         Disconnected,
         Connecting,
-        Connected
+        Connected,
+        Reconnecting
     }
     
     private const int NumSamplesPerInput = 500;
@@ -23,22 +26,60 @@ public class CarBCIReader2 : MonoBehaviour
     private BoardShim boardShim;
     private ConnectionStatus connectionStatus = ConnectionStatus.Disconnected;
 
+    private double lastVal = 0;
+    private DateTime lastValTime = DateTime.UtcNow;
+
     // Start is called before the first frame update
     void Start()
     {
         if (!attemptConnectionOnStartup) return;
         
         AttemptConnect();
-        if (connectionStatus == ConnectionStatus.Disconnected) Debug.Log("No board detected.");
+        if (connectionStatus == ConnectionStatus.Disconnected) 
+            Debug.Log("No OpenBCI board connection could be made.");
+        else Debug.Log("OpenBCI board connecting...");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (connectionStatus == ConnectionStatus.Connected)
+        if (connectionStatus == ConnectionStatus.Disconnected) return;
+        
+        var data = GetRawData();
+        if (data == null || data.Length <= 0) return;
+        switch (connectionStatus)
         {
-            double[,] data = GetRawData();
+            case ConnectionStatus.Connecting when Math.Abs(data[0, 0] - lastVal) >= .01:
+                Debug.Log("OpenBCI board connected.");
+                connectionStatus = ConnectionStatus.Connected;
+                break;
+            case ConnectionStatus.Connected when Math.Abs(data[0, 0] - lastVal) < .01 && 
+                                                 (System.DateTime.Now - lastValTime).TotalSeconds > 5:
+            {
+                Debug.LogWarning("Board connection faulty... please do not close the program...");
+                connectionStatus = ConnectionStatus.Reconnecting;
+                break;
+            }
+            case ConnectionStatus.Reconnecting when Math.Abs(data[0, 0] - lastVal) < .01 &&
+                                                    (System.DateTime.Now - lastValTime).TotalSeconds > 10:
+            {
+                Debug.LogError("Board connection failed. Please wait for brainflow to close safely.");
+                connectionStatus = ConnectionStatus.Disconnected;
+                try { boardShim.stop_stream(); } 
+                catch (BrainFlowException e) {Debug.LogError(e);}
+                try { boardShim.release_session(); } 
+                catch (BrainFlowException e) {Debug.LogError(e);}
+                Debug.Log("It is now safe to stop the game.");
+                break;
+            }
         }
+
+        if (Math.Abs(data[0, 0] - lastVal) > .01)
+        {
+            lastVal = data[0, 0];
+            lastValTime = DateTime.Now;
+        }
+        // Debug.Log(data[0, 0]);
     }
 
     private bool AttemptConnect()
@@ -65,7 +106,7 @@ public class CarBCIReader2 : MonoBehaviour
             AttemptConnectSerial(serialPort);
         }
 
-        if (connectionStatus == ConnectionStatus.Connected) return true;
+        if (connectionStatus != ConnectionStatus.Disconnected) return true;
         if (allowWifi) return AttemptConnectWifi(4000);
         if (verbose) Debug.Log("Wifi not allowed.");
         return false;
@@ -77,7 +118,7 @@ public class CarBCIReader2 : MonoBehaviour
         
         var inputParams = new BrainFlowInputParams
         {
-            serial_port = serialPort
+            serial_port = attemptSerialPort
         };
 
         boardShim = new BoardShim(CytonBoardID, inputParams);
@@ -100,6 +141,20 @@ public class CarBCIReader2 : MonoBehaviour
                     return false;
                 case "GENERAL_ERROR:17":
                     if (verbose) Debug.LogWarning("Warning, board not available on " + attemptSerialPort + ": GENERAL_ERROR:17");
+                    connectionStatus = ConnectionStatus.Disconnected;
+                    return false;
+                case "BOARD_WRITE_ERROR:4":
+                    if (verbose) Debug.LogWarning("Warning, board not available on " + attemptSerialPort + ": BOARD_WRITE_ERROR:4");
+                    connectionStatus = ConnectionStatus.Disconnected;
+                    return false;
+                case "ANOTHER_BOARD_IS_CREATED_ERROR:16":
+                    Debug.LogWarning("Another process is using the board on " + attemptSerialPort + ": ANOTHER_BOARD_IS_CREATED_ERROR:16\n" +
+                                     "You may need to restart Unity.");
+                    connectionStatus = ConnectionStatus.Disconnected;
+                    return false;
+                case "BOARD_NOT_READY_ERROR:7":
+                    Debug.LogWarning("Warning, board not ready on " + attemptSerialPort + ": BOARD_NOT_READY_ERROR:7\n" +
+                                     "Please try again, and make sure the actual cyton board is turned on.");
                     connectionStatus = ConnectionStatus.Disconnected;
                     return false;
                 default:
@@ -146,7 +201,7 @@ public class CarBCIReader2 : MonoBehaviour
     }
     private double[,] GetRawData()
     {
-        if (connectionStatus != ConnectionStatus.Connected)
+        if (connectionStatus == ConnectionStatus.Disconnected)
         {
             Debug.LogWarning("Warning: attempt to collect data when board is not connected");
             return null;

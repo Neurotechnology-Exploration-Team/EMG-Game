@@ -656,7 +656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d3b1e3dcafed641afc28a8cce0ad26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verbose: 1
+  verbose: 0
   attemptConnectionOnStartup: 1
   allowWifi: 0
 --- !u!61 &281134576
