@@ -569,8 +569,8 @@ GameObject:
   - component: {fileID: 281134573}
   - component: {fileID: 281134572}
   - component: {fileID: 281134571}
-  - component: {fileID: 281134575}
   - component: {fileID: 281134576}
+  - component: {fileID: 281134575}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -651,15 +651,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281134570}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a75973e29ec9e049a261fc63da7342f, type: 3}
+  m_Script: {fileID: 11500000, guid: 84d3b1e3dcafed641afc28a8cce0ad26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftSteeringInput: 0
-  rightSteeringInput: 1
-  forwardsAcclInput: 2
-  backwardsAcclInput: 3
 --- !u!61 &281134576
 BoxCollider2D:
   m_ObjectHideFlags: 0
