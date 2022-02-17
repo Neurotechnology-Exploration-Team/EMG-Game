@@ -6,6 +6,7 @@ public class CarBCIReader2 : MonoBehaviour
 {
     public bool verbose;
     public bool attemptConnectionOnStartup;
+    public bool allowWifi;
     
     private enum ConnectionStatus
     {
@@ -64,7 +65,10 @@ public class CarBCIReader2 : MonoBehaviour
             AttemptConnectSerial(serialPort);
         }
 
-        return connectionStatus == ConnectionStatus.Connected || AttemptConnectWifi(4000);
+        if (connectionStatus == ConnectionStatus.Connected) return true;
+        if (allowWifi) return AttemptConnectWifi(4000);
+        if (verbose) Debug.Log("Wifi not allowed.");
+        return false;
     }
 
     private bool AttemptConnectSerial(string attemptSerialPort)
