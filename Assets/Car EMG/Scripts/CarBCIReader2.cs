@@ -5,6 +5,7 @@ using brainflow;
 public class CarBCIReader2 : MonoBehaviour
 {
     public bool verbose;
+    public bool attemptConnectionOnStartup;
     
     private enum ConnectionStatus
     {
@@ -14,7 +15,8 @@ public class CarBCIReader2 : MonoBehaviour
     }
     
     private const int NumSamplesPerInput = 500;
-    private const int BoardID = 0;
+    private const int CytonBoardID = 0;
+    private const int WifiCytonBoardID = 5;
     
     private string serialPort;
     private BoardShim boardShim;
@@ -23,8 +25,9 @@ public class CarBCIReader2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AttemptConnect();
+        if (!attemptConnectionOnStartup) return;
         
+        AttemptConnect();
         if (connectionStatus == ConnectionStatus.Disconnected) Debug.Log("No board detected.");
     }
 
@@ -41,6 +44,8 @@ public class CarBCIReader2 : MonoBehaviour
     {
         // enable debug info
         BoardShim.enable_dev_board_logger();
+        
+        if (verbose) Debug.Log("Attempting bluetooth connection...");
 
         if (serialPort == null)
         {
@@ -53,13 +58,13 @@ public class CarBCIReader2 : MonoBehaviour
                     return true;
                 }
             }
-
-            return false;
         }
         else
         {
-            return AttemptConnectSerial(serialPort);
+            AttemptConnectSerial(serialPort);
         }
+
+        return connectionStatus == ConnectionStatus.Connected || AttemptConnectWifi(4000);
     }
 
     private bool AttemptConnectSerial(string attemptSerialPort)
@@ -71,7 +76,7 @@ public class CarBCIReader2 : MonoBehaviour
             serial_port = serialPort
         };
 
-        boardShim = new BoardShim(BoardID, inputParams);
+        boardShim = new BoardShim(CytonBoardID, inputParams);
         try
         {
             boardShim.prepare_session();
@@ -91,6 +96,42 @@ public class CarBCIReader2 : MonoBehaviour
                     return false;
                 case "GENERAL_ERROR:17":
                     if (verbose) Debug.LogWarning("Warning, board not available on " + attemptSerialPort + ": GENERAL_ERROR:17");
+                    connectionStatus = ConnectionStatus.Disconnected;
+                    return false;
+                default:
+                    Debug.Log("Unknown message: " + e.Message);
+                    throw;
+            }
+        }
+    }
+    
+    private bool AttemptConnectWifi(int emptyPort)
+    {
+        if (verbose) Debug.Log("Attempting wifi connect...");
+        connectionStatus = ConnectionStatus.Connecting;
+        
+        var inputParams = new BrainFlowInputParams
+        {
+            ip_address = "192.168.4.1",
+            ip_port = emptyPort
+        };
+
+        boardShim = new BoardShim(WifiCytonBoardID, inputParams);
+        try
+        {
+            boardShim.prepare_session();
+            
+            boardShim.start_stream(450000, "file://file_stream.csv:w");
+
+            Debug.Log("OpenBCI initialization complete on wifi");
+            return true;
+        }
+        catch (BrainFlowException e)
+        {
+            switch (e.Message)
+            {
+                case "BOARD_WRITE_ERROR:4":
+                    if (verbose) Debug.LogWarning("Warning, board not available on wifi: BOARD_WRITE_ERROR:4");
                     connectionStatus = ConnectionStatus.Disconnected;
                     return false;
                 default:
