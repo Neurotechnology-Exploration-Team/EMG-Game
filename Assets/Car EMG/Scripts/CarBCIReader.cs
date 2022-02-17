@@ -126,7 +126,7 @@ public class CarBCIReader : MonoBehaviour
                 {
                     if (beforeTest[0, i] - afterTest[0, i] > 0.01 && afterTest[0, i] - beforeTest[0, i] > 0.01)
                         differences++;
-                } catch (IndexOutOfRangeException e)
+                } catch (IndexOutOfRangeException)
                 {
                     Debug.Log(i);
                 }
@@ -140,7 +140,6 @@ public class CarBCIReader : MonoBehaviour
             }
             Debug.Log("Progress (percent): " + ((double) differences / NumSamplesPerInput));
             return 1;
-            return (double) differences / NumSamplesPerInput;
         }
     }
 

@@ -3,20 +3,12 @@ using UnityEngine;
 
 using brainflow;
 
-public class CarBCIReader2 : MonoBehaviour
+public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
 {
-
+    
     public bool verbose;
     public bool attemptConnectionOnStartup;
     public bool allowWifi;
-    
-    private enum ConnectionStatus
-    {
-        Disconnected,
-        Connecting,
-        Connected,
-        Reconnecting
-    }
     
     private const int NumSamplesPerInput = 500;
     private const int CytonBoardID = 0;
@@ -24,47 +16,47 @@ public class CarBCIReader2 : MonoBehaviour
     
     private string serialPort;
     private BoardShim boardShim;
-    private ConnectionStatus connectionStatus = ConnectionStatus.Disconnected;
+    private OpenBCIReaderI.ConnectionStatus connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
 
-    private double lastVal = 0;
+    private double lastVal;
     private DateTime lastValTime = DateTime.UtcNow;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         if (!attemptConnectionOnStartup) return;
         
         AttemptConnect();
-        if (connectionStatus == ConnectionStatus.Disconnected) 
-            Debug.Log("No OpenBCI board connection could be made.");
-        else Debug.Log("OpenBCI board connecting...");
+        Debug.Log(connectionStatus == OpenBCIReaderI.ConnectionStatus.Disconnected
+            ? "No OpenBCI board connection could be made."
+            : "OpenBCI board connecting...");
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (connectionStatus == ConnectionStatus.Disconnected) return;
+        if (connectionStatus == OpenBCIReaderI.ConnectionStatus.Disconnected) return;
         
         var data = GetRawData();
         if (data == null || data.Length <= 0) return;
         switch (connectionStatus)
         {
-            case ConnectionStatus.Connecting when Math.Abs(data[0, 0] - lastVal) >= .01:
+            case OpenBCIReaderI.ConnectionStatus.Connecting when Math.Abs(data[0, 0] - lastVal) >= .01:
                 Debug.Log("OpenBCI board connected.");
-                connectionStatus = ConnectionStatus.Connected;
+                connectionStatus = OpenBCIReaderI.ConnectionStatus.Connected;
                 break;
-            case ConnectionStatus.Connected when Math.Abs(data[0, 0] - lastVal) < .01 && 
-                                                 (System.DateTime.Now - lastValTime).TotalSeconds > 5:
+            case OpenBCIReaderI.ConnectionStatus.Connected when Math.Abs(data[0, 0] - lastVal) < .01 && 
+                                                 (DateTime.Now - lastValTime).TotalSeconds > 5:
             {
                 Debug.LogWarning("Board connection faulty... please do not close the program...");
-                connectionStatus = ConnectionStatus.Reconnecting;
+                connectionStatus = OpenBCIReaderI.ConnectionStatus.Reconnecting;
                 break;
             }
-            case ConnectionStatus.Reconnecting when Math.Abs(data[0, 0] - lastVal) < .01 &&
-                                                    (System.DateTime.Now - lastValTime).TotalSeconds > 10:
+            case OpenBCIReaderI.ConnectionStatus.Reconnecting when Math.Abs(data[0, 0] - lastVal) < .01 &&
+                                                    (DateTime.Now - lastValTime).TotalSeconds > 10:
             {
                 Debug.LogError("Board connection failed. Please wait for brainflow to close safely.");
-                connectionStatus = ConnectionStatus.Disconnected;
+                connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                 try { boardShim.stop_stream(); } 
                 catch (BrainFlowException e) {Debug.LogError(e);}
                 try { boardShim.release_session(); } 
@@ -106,7 +98,7 @@ public class CarBCIReader2 : MonoBehaviour
             AttemptConnectSerial(serialPort);
         }
 
-        if (connectionStatus != ConnectionStatus.Disconnected) return true;
+        if (connectionStatus != OpenBCIReaderI.ConnectionStatus.Disconnected) return true;
         if (allowWifi) return AttemptConnectWifi(4000);
         if (verbose) Debug.Log("Wifi not allowed.");
         return false;
@@ -114,7 +106,7 @@ public class CarBCIReader2 : MonoBehaviour
 
     private bool AttemptConnectSerial(string attemptSerialPort)
     {
-        connectionStatus = ConnectionStatus.Connecting;
+        connectionStatus = OpenBCIReaderI.ConnectionStatus.Connecting;
         
         var inputParams = new BrainFlowInputParams
         {
@@ -137,25 +129,25 @@ public class CarBCIReader2 : MonoBehaviour
             {
                 case "UNABLE_TO_OPEN_PORT_ERROR:2":
                     if (verbose) Debug.LogWarning("Warning, board not available on " + attemptSerialPort + ": UNABLE_TO_OPEN_PORT_ERROR:2");
-                    connectionStatus = ConnectionStatus.Disconnected;
+                    connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                     return false;
                 case "GENERAL_ERROR:17":
                     if (verbose) Debug.LogWarning("Warning, board not available on " + attemptSerialPort + ": GENERAL_ERROR:17");
-                    connectionStatus = ConnectionStatus.Disconnected;
+                    connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                     return false;
                 case "BOARD_WRITE_ERROR:4":
                     if (verbose) Debug.LogWarning("Warning, board not available on " + attemptSerialPort + ": BOARD_WRITE_ERROR:4");
-                    connectionStatus = ConnectionStatus.Disconnected;
+                    connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                     return false;
                 case "ANOTHER_BOARD_IS_CREATED_ERROR:16":
                     Debug.LogWarning("Another process is using the board on " + attemptSerialPort + ": ANOTHER_BOARD_IS_CREATED_ERROR:16\n" +
                                      "You may need to restart Unity.");
-                    connectionStatus = ConnectionStatus.Disconnected;
+                    connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                     return false;
                 case "BOARD_NOT_READY_ERROR:7":
                     Debug.LogWarning("Warning, board not ready on " + attemptSerialPort + ": BOARD_NOT_READY_ERROR:7\n" +
                                      "Please try again, and make sure the actual cyton board is turned on.");
-                    connectionStatus = ConnectionStatus.Disconnected;
+                    connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                     return false;
                 default:
                     Debug.Log("Unknown message: " + e.Message);
@@ -167,7 +159,7 @@ public class CarBCIReader2 : MonoBehaviour
     private bool AttemptConnectWifi(int emptyPort)
     {
         if (verbose) Debug.Log("Attempting wifi connect...");
-        connectionStatus = ConnectionStatus.Connecting;
+        connectionStatus = OpenBCIReaderI.ConnectionStatus.Connecting;
         
         var inputParams = new BrainFlowInputParams
         {
@@ -191,7 +183,7 @@ public class CarBCIReader2 : MonoBehaviour
             {
                 case "BOARD_WRITE_ERROR:4":
                     if (verbose) Debug.LogWarning("Warning, board not available on wifi: BOARD_WRITE_ERROR:4");
-                    connectionStatus = ConnectionStatus.Disconnected;
+                    connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                     return false;
                 default:
                     Debug.Log("Unknown message: " + e.Message);
@@ -201,7 +193,7 @@ public class CarBCIReader2 : MonoBehaviour
     }
     private double[,] GetRawData()
     {
-        if (connectionStatus == ConnectionStatus.Disconnected)
+        if (connectionStatus == OpenBCIReaderI.ConnectionStatus.Disconnected)
         {
             Debug.LogWarning("Warning: attempt to collect data when board is not connected");
             return null;
@@ -215,7 +207,7 @@ public class CarBCIReader2 : MonoBehaviour
             if (e.Message.Equals("BOARD_NOT_CREATED_ERROR:15"))
             {
                 Debug.Log("Warning: attempt to collect data when board is believed to be connected but actually is not.");
-                connectionStatus = ConnectionStatus.Disconnected;
+                connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
                 return null;
             }
             else
@@ -229,8 +221,113 @@ public class CarBCIReader2 : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (connectionStatus == ConnectionStatus.Disconnected) return;
+        if (connectionStatus == OpenBCIReaderI.ConnectionStatus.Disconnected) return;
         boardShim.stop_stream();
         boardShim.release_session();
+    }
+
+    public OpenBCIReaderI.ConnectionStatus GetConnectionStatus()
+    {
+        throw new NotImplementedException();
+    }
+
+    public int GetNumChannels()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetAllowWifi()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool GetAllowWifi()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetWifiBoardName(string name)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string GetWifiBoardName()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetDefaultSerialPort(string port)
+    {
+        throw new NotImplementedException();
+    }
+
+    public string SetDefaultSerialPort()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetVerbose()
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool GetVerbose()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetThreshold(int channel, double threshold)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void AutoRestingThreshold(int channel)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void AutoRestingThreshold()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetThresholdType(int channel, OpenBCIReaderI.ThresholdType thresholdType)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetThresholdType(OpenBCIReaderI.ThresholdType thresholdType)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetThresholdSensitivity(int channel, double sensitivity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void SetThresholdSensitivity(double sensitivity)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool GetInput(int channel)
+    {
+        throw new NotImplementedException();
+    }
+
+    public double GetNumericInput(int channel)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Disconnect()
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Reconnect()
+    {
+        throw new NotImplementedException();
     }
 }
