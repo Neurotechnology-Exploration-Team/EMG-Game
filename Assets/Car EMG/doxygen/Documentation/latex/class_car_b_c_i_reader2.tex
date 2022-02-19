@@ -12,19 +12,19 @@ Inheritance diagram for Car\+BCIReader2\+:\begin{figure}[H]
 Open\+BCIReader\+I.\+Connection\+Status \mbox{\hyperlink{class_car_b_c_i_reader2_af68303e03c51f85d8e3942f977fce7dc}{Get\+Connection\+Status}} ()
 \begin{DoxyCompactList}\small\item\em Returns the current status of the connection with the Open BCI board \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the number of channels in the connected device, or null if no device is connected \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a9a468170bf37cf34b53290910a10e540}{Set\+Allow\+Wifi}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Set whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a607218c547c15fdbf4762752292ed9e7}{Get\+Allow\+Wifi}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a5c59bed88d2505a7492257fae840fd2d}{Set\+Wifi\+Board\+Name}} (string name)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_car_b_c_i_reader2_a6effed5ddc51d4f168cfd9aca41e381a}{Get\+Wifi\+Board\+Name}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}{Set\+Default\+Serial\+Port}} (string port)
-\item 
-string \mbox{\hyperlink{class_car_b_c_i_reader2_a4e36ceb35732dfe0c667a48b039af532}{Set\+Default\+Serial\+Port}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to \char`\"{}\+COMX\char`\"{}, where X is an integer from 1 to 9. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_car_b_c_i_reader2_a1d9d201ebd80f4a3890315f579c8ccd5}{Get\+Default\+Serial\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}{Set\+Verbose}} ()
 \item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}{Get\+Verbose}} ()
@@ -107,7 +107,29 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Get whether or not the program should be allowed to use wifi to connect to the board. 
+
+Note\+: Enabling this on may add a significant amount of time to reconnection delay 
+
+\begin{DoxyReturn}{Returns}
+Whether or not the program should be allowed to use wifi to connect to the board.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_afa30db2666ec08a473c0323ca81b37c8}{GetAllowWifi}}()) \{}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_afa30db2666ec08a473c0323ca81b37c8}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_af68303e03c51f85d8e3942f977fce7dc}\label{class_car_b_c_i_reader2_af68303e03c51f85d8e3942f977fce7dc}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetConnectionStatus@{GetConnectionStatus}}
@@ -123,21 +145,83 @@ Returns the current status of the connection with the Open BCI board
 \tabulinesep=1mm
 \begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
 \hline
-\cellcolor{\tableheadbgcolor}\textbf{ Type }&\cellcolor{\tableheadbgcolor}\textbf{ Condition  }\\\cline{1-2}
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Condition  }\\\cline{1-2}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\cellcolor{\tableheadbgcolor}\textbf{ Type }&\cellcolor{\tableheadbgcolor}\textbf{ Condition  }\\\cline{1-2}
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Condition  }\\\cline{1-2}
 \endhead
-Connection\+Status.\+Disconnected &There is no current connection.  \\\cline{1-2}
-Connection\+Status.\+Connecting &The program is attempting to connect to the board. The process should not be aborted if in this state.  \\\cline{1-2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ConnectionStatus.Disconnected}
+
+\end{DoxyCode}
+ &There is no current connection.  \\\cline{1-2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ConnectionStatus.Connecting}
+
+\end{DoxyCode}
+ &The program is attempting to connect to the board. The process should not be aborted if in this state.  \\\cline{1-2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ConnectionStatus.Connected}
+
+\end{DoxyCode}
+ &The program is connected to the board and receiving valid data.  \\\cline{1-2}
 \end{longtabu}
 
 \end{DoxyReturn}
 
 
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}()) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Disconnected:}
+\DoxyCodeLine{        bci.Reconnect();}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connecting:}
+\DoxyCodeLine{        Debug.Log(\textcolor{stringliteral}{"{}Please wait!"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected:}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.GetInput(2);}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
 Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{Open\+BCIReaderI}}.
+
+\mbox{\Hypertarget{class_car_b_c_i_reader2_a1d9d201ebd80f4a3890315f579c8ccd5}\label{class_car_b_c_i_reader2_a1d9d201ebd80f4a3890315f579c8ccd5}} 
+\index{CarBCIReader2@{CarBCIReader2}!GetDefaultSerialPort@{GetDefaultSerialPort}}
+\index{GetDefaultSerialPort@{GetDefaultSerialPort}!CarBCIReader2@{CarBCIReader2}}
+\doxysubsubsection{\texorpdfstring{GetDefaultSerialPort()}{GetDefaultSerialPort()}}
+{\footnotesize\ttfamily string Car\+BCIReader2.\+Get\+Default\+Serial\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. 
+
+\begin{DoxyReturn}{Returns}
+The name of the serial port where the program expects to find the Cyton dongle.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{string} serialPort = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ad26f15d87223209d4c1531352b949007}{GetDefaultSerialPort}}();}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_ad26f15d87223209d4c1531352b949007}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a77cf326f93e9ca737693bea6a3086cd8}\label{class_car_b_c_i_reader2_a77cf326f93e9ca737693bea6a3086cd8}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetInput@{GetInput}}
@@ -157,7 +241,28 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Returns the number of channels in the connected device, or null if no device is connected 
+
+\begin{DoxyReturn}{Returns}
+The number of channels in the connected device, or null if no device is connected
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}() == \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} channel = 0; channel < bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}(); channel++) \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.GetInput(channel);}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_aa54aa282a3996907b2a662e267ff2259}\label{class_car_b_c_i_reader2_aa54aa282a3996907b2a662e267ff2259}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetNumericInput@{GetNumericInput}}
@@ -187,7 +292,23 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Get the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} 
+
+\begin{DoxyReturn}{Returns}
+The name of the Wifi shield
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{string} boardName = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85984a5716a33}{GetWifiBoardName}}();}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85984a5716a33}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a5d7a563cff88d7c4d8f92bddf1f2a997}\label{class_car_b_c_i_reader2_a5d7a563cff88d7c4d8f92bddf1f2a997}} 
 \index{CarBCIReader2@{CarBCIReader2}!Reconnect@{Reconnect}}
@@ -207,27 +328,54 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Set whether or not the program should be allowed to use wifi to connect to the board. 
 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a4e36ceb35732dfe0c667a48b039af532}\label{class_car_b_c_i_reader2_a4e36ceb35732dfe0c667a48b039af532}} 
-\index{CarBCIReader2@{CarBCIReader2}!SetDefaultSerialPort@{SetDefaultSerialPort}}
-\index{SetDefaultSerialPort@{SetDefaultSerialPort}!CarBCIReader2@{CarBCIReader2}}
-\doxysubsubsection{\texorpdfstring{SetDefaultSerialPort()}{SetDefaultSerialPort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily string Car\+BCIReader2.\+Set\+Default\+Serial\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Note\+: turning this on may add a significant amount of time to reconnection delay 
 
 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (usingWifiShield) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\}}
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}\label{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetDefaultSerialPort@{SetDefaultSerialPort}}
 \index{SetDefaultSerialPort@{SetDefaultSerialPort}!CarBCIReader2@{CarBCIReader2}}
-\doxysubsubsection{\texorpdfstring{SetDefaultSerialPort()}{SetDefaultSerialPort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{SetDefaultSerialPort()}{SetDefaultSerialPort()}}
 {\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Default\+Serial\+Port (\begin{DoxyParamCaption}\item[{string}]{port }\end{DoxyParamCaption})}
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to \char`\"{}\+COMX\char`\"{}, where X is an integer from 1 to 9. 
+
+In Windows, see device manager for serial port list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The name of the serial port where the Dongle is plugged into.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f744cdc6f6755}{SetDefaultSerialPort}}(\textcolor{stringliteral}{"{}COM6"{}});}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f744cdc6f6755}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a020c439a643e279757f2eda6303df2f4}\label{class_car_b_c_i_reader2_a020c439a643e279757f2eda6303df2f4}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetThreshold@{SetThreshold}}
@@ -277,7 +425,27 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the Wifi shield\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{SetWifiBoardName}}(\textcolor{stringliteral}{"{}OpenBCI-\/XXXX"{}});}
+\DoxyCodeLine{bci.Reconnect();}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{Open\+BCIReaderI}}.
 
 
 

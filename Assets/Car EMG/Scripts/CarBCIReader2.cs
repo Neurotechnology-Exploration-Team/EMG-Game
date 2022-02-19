@@ -261,7 +261,7 @@ public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
         throw new NotImplementedException();
     }
 
-    public string SetDefaultSerialPort()
+    public string GetDefaultSerialPort()
     {
         throw new NotImplementedException();
     }
