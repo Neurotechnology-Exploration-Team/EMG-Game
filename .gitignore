@@ -60,6 +60,7 @@ crashlytics-build.properties
 
 # JetBrains project configuration details
 /.idea/
+/Assets/Car EMG/Scripts/
 
 file_stream.csv
 
