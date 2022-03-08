@@ -2,8 +2,19 @@ public interface OpenBCIReaderI
 {
     public enum ThresholdType
     {
+        /// <summary>Use the mean value of a number of recent input samples. This is usually the best option.
+        /// Sensitivity is usually best around 200-500; increase sensitivity value for more stable results,
+        /// decrease sensitivity value for better latency.</summary>
         Average,
+        /// <summary>Use the absolute maximum value of a number of recent input samples. This is usually a decent option,
+        /// though may have higher input latency than ThresholdType.Average. Try this if ThresholdType.Average
+        /// isn't working well. Sensitivity value is usually best in a bit lower range than ThresholdType.Average,
+        /// most of the time between 50 and 200. Increase sensitivity value for more stable results but
+        /// significantly higher latency, decrease sensitivity value for better latency but more fluctuation.</summary>
         Max,
+        /// <summary>Use the value of the last input sample. This is almost never the best option, and should be used
+        /// purely for numerical testing to measure time between change in input and ensure that the connection is working.
+        /// The sensitivity value has no effect on this ThresholdType.</summary>
         Last
     }
     public enum ConnectionStatus
@@ -234,11 +245,11 @@ public interface OpenBCIReaderI
     /// </example>
     public void SetThreshold(int channel, double threshold);
     /// <summary>
+    /// Sets the threshold for the specified channel so that the current state is interpreted as resting.
+    ///
     /// This method is often called with no arguments when the game starts up for calibration;
     /// see instructions below.
     /// 
-    /// Sets the threshold for the specified channel so that the current state is interpreted as resting.
-    ///
     /// If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle,
     /// wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable,
     /// call with no arguments to reset all channels so that the current input is interpreted as resting.
@@ -258,11 +269,11 @@ public interface OpenBCIReaderI
     /// </example>
     public void AutoRestingThreshold(int channel);
     /// <summary>
+    /// Sets the threshold for all channels so that the current state is interpreted as resting.
+    ///
     /// This method is often called with no arguments when the game starts up for calibration;
     /// see instructions below.
     /// 
-    /// Sets the threshold for all channels so that the current state is interpreted as resting.
-    ///
     /// If input becomes unreliable, instruct the user to rest/relax all muscles,
     /// wait a couple seconds, then call this function. If only one muscle is acting up, call this method
     /// with that muscle as the argument to reset the threshold for only that channel.
@@ -276,9 +287,209 @@ public interface OpenBCIReaderI
     /// </example>
     public void AutoRestingThreshold();
 
+    /// <summary>
+    /// Sets the way input is measured for a specific channel. Usually ThresholdType.Average or ThresholdType.Max
+    ///
+    /// If changed, you should also recalibrate with AutoRestingThreshold();
+    ///
+    /// <see cref="ThresholdType"/>
+    /// <see cref="SetThresholdSensitivity(int,double)"/>
+    ///
+    /// <list type="table">
+    /// <listheader>
+    /// <term>Value</term>
+    /// <description>Description</description>
+    /// </listheader>
+    /// <item>
+    /// <term><code>ThresholdType.Average</code></term>
+    /// <description>Use the mean value of a number of recent input samples. This is usually the best option.
+    /// Sensitivity is usually best around 200-500; increase sensitivity value for more stable results,
+    /// decrease sensitivity value for better latency.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Max</code></term>
+    /// <description>Use the absolute maximum value of a number of recent input samples. This is usually a decent option,
+    /// though may have higher input latency than ThresholdType.Average. Try this if ThresholdType.Average
+    /// isn't working well. Sensitivity value is usually best in a bit lower range than ThresholdType.Average,
+    /// most of the time between 50 and 200. Increase sensitivity value for more stable results but
+    /// significantly higher latency, decrease sensitivity value for better latency but more fluctuation.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Last</code></term>
+    /// <description>Use the value of the last input sample. This is almost never the best option, and should be used
+    /// purely for numerical testing to measure time between change in input and ensure that the connection is working.
+    /// The sensitivity value has no effect on this ThresholdType.</description>
+    /// </item>
+    /// </list>
+    /// 
+    /// </summary>
+    /// <param name="channel">The channel whose threshold type to set</param>
+    /// <param name="thresholdType">The ThresholdType to use with the specified channel</param>
+    ///
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    /// int testChannel = 4;
+    /// int newSensitivity = 300;
+    /// 
+    /// int channelCount = bci.GetNumChannels();
+    ///
+    /// if (testChannel < channelCount) {
+    ///     bci.SetThresholdType(testChannel, ThresholdType.Max);
+    ///     bci.SetThresholdSensitivity(testChannel, newSensitivity);
+    /// }
+    /// </code>
+    /// </example>
     public void SetThresholdType(int channel, ThresholdType thresholdType);
+    /// <summary>
+    /// Sets the way input is measured for all channels. Usually ThresholdType.Average or ThresholdType.Max
+    ///
+    /// If changed, you should also recalibrate with AutoRestingThreshold();
+    ///
+    /// <see cref="ThresholdType"/>
+    /// <see cref="SetThresholdSensitivity(int,double)"/>
+    ///
+    /// <list type="table">
+    /// <listheader>
+    /// <term>Value</term>
+    /// <description>Description</description>
+    /// </listheader>
+    /// <item>
+    /// <term><code>ThresholdType.Average</code></term>
+    /// <description>Use the mean value of a number of recent input samples. This is usually the best option.
+    /// Sensitivity is usually best around 200-500; increase sensitivity value for more stable results,
+    /// decrease sensitivity value for better latency.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Max</code></term>
+    /// <description>Use the absolute maximum value of a number of recent input samples. This is usually a decent option,
+    /// though may have higher input latency than ThresholdType.Average. Try this if ThresholdType.Average
+    /// isn't working well. Sensitivity value is usually best in a bit lower range than ThresholdType.Average,
+    /// most of the time between 50 and 200. Increase sensitivity value for more stable results but
+    /// significantly higher latency, decrease sensitivity value for better latency but more fluctuation.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Last</code></term>
+    /// <description>Use the value of the last input sample. This is almost never the best option, and should be used
+    /// purely for numerical testing to measure time between change in input and ensure that the connection is working.
+    /// The sensitivity value has no effect on this ThresholdType.</description>
+    /// </item>
+    /// </list>
+    /// 
+    /// </summary>
+    /// <param name="thresholdType">The ThresholdType to use with all channels</param>
+    ///
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    /// int newSensitivity = 300;
+    ///
+    /// bci.SetThresholdType(ThresholdType.Max);
+    /// bci.SetThresholdSensitivity(newSensitivity);
+    /// </code>
+    /// </example>
     public void SetThresholdType(ThresholdType thresholdType);
+    /// <summary>
+    /// Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive.
+    /// See table for more information on what values are appropriate.
+    /// Due to the way samples are collected, floating point values have no significance, so only integers
+    /// are accepted.
+    ///
+    /// <see cref="ThresholdType"/>
+    /// <see cref="SetThresholdType(int,OpenBCIReaderI.ThresholdType)"/>
+    ///
+    /// <list type="table">
+    /// <listheader>
+    /// <term>Value</term>
+    /// <description>Description</description>
+    /// </listheader>
+    /// <item>
+    /// <term><code>ThresholdType.Average</code></term>
+    /// <description>Use the mean value of a number of recent input samples. This is usually the best option.
+    /// Sensitivity is usually best around 200-500; increase sensitivity value for more stable results,
+    /// decrease sensitivity value for better latency.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Max</code></term>
+    /// <description>Use the absolute maximum value of a number of recent input samples. This is usually a decent option,
+    /// though may have higher input latency than ThresholdType.Average. Try this if ThresholdType.Average
+    /// isn't working well. Sensitivity value is usually best in a bit lower range than ThresholdType.Average,
+    /// most of the time between 50 and 200. Increase sensitivity value for more stable results but
+    /// significantly higher latency, decrease sensitivity value for better latency but more fluctuation.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Last</code></term>
+    /// <description>Use the value of the last input sample. This is almost never the best option, and should be used
+    /// purely for numerical testing to measure time between change in input and ensure that the connection is working.
+    /// The sensitivity value has no effect on this ThresholdType.</description>
+    /// </item>
+    /// </list>
+    /// 
+    /// </summary>
+    /// <param name="channel">The channel whose sensitivity should be set</param>
+    /// <param name="sensitivity">The new sensitivity value</param>
+    /// 
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    /// int testChannel = 4;
+    /// int newSensitivity = 300;
+    /// 
+    /// int channelCount = bci.GetNumChannels();
+    ///
+    /// if (testChannel < channelCount) {
+    ///     bci.SetThresholdSensitivity(testChannel, newSensitivity);
+    /// }
+    /// </code>
+    /// </example>
     public void SetThresholdSensitivity(int channel, double sensitivity);
+    /// <summary>
+    /// Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive.
+    /// See table for more information on what values are appropriate.
+    /// Due to the way samples are collected, floating point values have no significance, so only integers
+    /// are accepted.
+    ///
+    /// <see cref="ThresholdType"/>
+    /// <see cref="SetThresholdType(OpenBCIReaderI.ThresholdType)"/>
+    ///
+    /// <list type="table">
+    /// <listheader>
+    /// <term>Value</term>
+    /// <description>Description</description>
+    /// </listheader>
+    /// <item>
+    /// <term><code>ThresholdType.Average</code></term>
+    /// <description>Use the mean value of a number of recent input samples. This is usually the best option.
+    /// Sensitivity is usually best around 200-500; increase sensitivity value for more stable results,
+    /// decrease sensitivity value for better latency.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Max</code></term>
+    /// <description>Use the absolute maximum value of a number of recent input samples. This is usually a decent option,
+    /// though may have higher input latency than ThresholdType.Average. Try this if ThresholdType.Average
+    /// isn't working well. Sensitivity value is usually best in a bit lower range than ThresholdType.Average,
+    /// most of the time between 50 and 200. Increase sensitivity value for more stable results but
+    /// significantly higher latency, decrease sensitivity value for better latency but more fluctuation.</description>
+    /// </item>
+    /// <item>
+    /// <term><code>ThresholdType.Last</code></term>
+    /// <description>Use the value of the last input sample. This is almost never the best option, and should be used
+    /// purely for numerical testing to measure time between change in input and ensure that the connection is working.
+    /// The sensitivity value has no effect on this ThresholdType.</description>
+    /// </item>
+    /// </list>
+    /// 
+    /// </summary>
+    /// <param name="sensitivity">The new sensitivity value</param>
+    /// 
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    /// int newSensitivity = 300;
+    ///
+    /// bci.SetThresholdSensitivity(newSensitivity);
+    /// </code>
+    /// </example>
     public void SetThresholdSensitivity(double sensitivity);
 
     public bool GetInput(int channel);

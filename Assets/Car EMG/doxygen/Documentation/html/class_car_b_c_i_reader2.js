@@ -11,6 +11,8 @@ var class_car_b_c_i_reader2 =
     [ "SetAllowWifi", "class_car_b_c_i_reader2.html#a9a468170bf37cf34b53290910a10e540", null ],
     [ "SetDefaultSerialPort", "class_car_b_c_i_reader2.html#ada7dde08a91fabf347f6195149df904a", null ],
     [ "SetThreshold", "class_car_b_c_i_reader2.html#a020c439a643e279757f2eda6303df2f4", null ],
+    [ "SetThresholdSensitivity", "class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa", null ],
+    [ "SetThresholdSensitivity", "class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2", null ],
     [ "SetVerbose", "class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b", null ],
     [ "SetWifiBoardName", "class_car_b_c_i_reader2.html#a5c59bed88d2505a7492257fae840fd2d", null ]
 ];

@@ -136,20 +136,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a020c439a643e279757f2eda6303df2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you're doing. See <a class="el" href="class_car_b_c_i_reader2.html#a4dd23526d98ac95860da38390eac38d7" title="Returns the number of channels in the connected device, or null if no device is connected">GetNumChannels()</a> for the number of supported channels on the current device See GetNumericInput() for current nanovolt measurements.  <a href="class_car_b_c_i_reader2.html#a020c439a643e279757f2eda6303df2f4">More...</a><br /></td></tr>
 <tr class="separator:a020c439a643e279757f2eda6303df2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cf9729e01ed1730df2068bfccde35f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a3cf9729e01ed1730df2068bfccde35f2">AutoRestingThreshold</a> (int channel)</td></tr>
-<tr class="memdesc:a3cf9729e01ed1730df2068bfccde35f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="class_car_b_c_i_reader2.html#a3cf9729e01ed1730df2068bfccde35f2">More...</a><br /></td></tr>
+<tr class="memdesc:a3cf9729e01ed1730df2068bfccde35f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold for the specified channel so that the current state is interpreted as resting.  <a href="class_car_b_c_i_reader2.html#a3cf9729e01ed1730df2068bfccde35f2">More...</a><br /></td></tr>
 <tr class="separator:a3cf9729e01ed1730df2068bfccde35f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0da18f49f7a2e0e522e3849177bc886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#ae0da18f49f7a2e0e522e3849177bc886">AutoRestingThreshold</a> ()</td></tr>
-<tr class="memdesc:ae0da18f49f7a2e0e522e3849177bc886"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="class_car_b_c_i_reader2.html#ae0da18f49f7a2e0e522e3849177bc886">More...</a><br /></td></tr>
+<tr class="memdesc:ae0da18f49f7a2e0e522e3849177bc886"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold for all channels so that the current state is interpreted as resting.  <a href="class_car_b_c_i_reader2.html#ae0da18f49f7a2e0e522e3849177bc886">More...</a><br /></td></tr>
 <tr class="separator:ae0da18f49f7a2e0e522e3849177bc886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ed14039b4144e6a7ffe019382d3e878"><td class="memItemLeft" align="right" valign="top"><a id="a3ed14039b4144e6a7ffe019382d3e878" name="a3ed14039b4144e6a7ffe019382d3e878"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (int channel, OpenBCIReaderI.ThresholdType thresholdType)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (int channel, <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">OpenBCIReaderI.ThresholdType</a> thresholdType)</td></tr>
 <tr class="separator:a3ed14039b4144e6a7ffe019382d3e878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ae4e13bf801d275b8bd8bc769224390"><td class="memItemLeft" align="right" valign="top"><a id="a1ae4e13bf801d275b8bd8bc769224390" name="a1ae4e13bf801d275b8bd8bc769224390"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (OpenBCIReaderI.ThresholdType thresholdType)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (<a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">OpenBCIReaderI.ThresholdType</a> thresholdType)</td></tr>
 <tr class="separator:a1ae4e13bf801d275b8bd8bc769224390"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c9fe07c30806bcc9a2a343077e3e1c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2">SetThresholdSensitivity</a> (int channel, double sensitivity)</td></tr>
+<tr class="memdesc:a0c9fe07c30806bcc9a2a343077e3e1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2">More...</a><br /></td></tr>
 <tr class="separator:a0c9fe07c30806bcc9a2a343077e3e1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c600129921f05266eead612c07e9aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa">SetThresholdSensitivity</a> (double sensitivity)</td></tr>
+<tr class="memdesc:a3c600129921f05266eead612c07e9aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa">More...</a><br /></td></tr>
 <tr class="separator:a3c600129921f05266eead612c07e9aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77cf326f93e9ca737693bea6a3086cd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a77cf326f93e9ca737693bea6a3086cd8">GetInput</a> (int channel)</td></tr>
 <tr class="separator:a77cf326f93e9ca737693bea6a3086cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,22 +196,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 <tr class="memdesc:aacbcb17819ccdeb1ac6fbabaa4526460 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you're doing. See <a class="el" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e" title="Returns the number of channels in the connected device, or null if no device is connected">GetNumChannels()</a> for the number of supported channels on the current device See GetNumericInput() for current nanovolt measurements.  <a href="interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460">More...</a><br /></td></tr>
 <tr class="separator:aacbcb17819ccdeb1ac6fbabaa4526460 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">AutoRestingThreshold</a> (int channel)</td></tr>
-<tr class="memdesc:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">More...</a><br /></td></tr>
+<tr class="memdesc:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold for the specified channel so that the current state is interpreted as resting.  <a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">More...</a><br /></td></tr>
 <tr class="separator:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">AutoRestingThreshold</a> ()</td></tr>
-<tr class="memdesc:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">More...</a><br /></td></tr>
+<tr class="memdesc:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the threshold for all channels so that the current state is interpreted as resting.  <a href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">More...</a><br /></td></tr>
 <tr class="separator:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa41fd4867a1e6100542ee9ea01240980 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="aa41fd4867a1e6100542ee9ea01240980" name="aa41fd4867a1e6100542ee9ea01240980"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (int channel, ThresholdType thresholdType)</td></tr>
+<tr class="memitem:aa41fd4867a1e6100542ee9ea01240980 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#aa41fd4867a1e6100542ee9ea01240980">SetThresholdType</a> (int channel, <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> thresholdType)</td></tr>
+<tr class="memdesc:aa41fd4867a1e6100542ee9ea01240980 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the way input is measured for a specific channel. Usually <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> or <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a>  <a href="interface_open_b_c_i_reader_i.html#aa41fd4867a1e6100542ee9ea01240980">More...</a><br /></td></tr>
 <tr class="separator:aa41fd4867a1e6100542ee9ea01240980 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a803506710f73442aa0108a45a0f07af0" name="a803506710f73442aa0108a45a0f07af0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (ThresholdType thresholdType)</td></tr>
+<tr class="memitem:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0">SetThresholdType</a> (<a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> thresholdType)</td></tr>
+<tr class="memdesc:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the way input is measured for all channels. Usually <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> or <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a>  <a href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0">More...</a><br /></td></tr>
 <tr class="separator:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a42afe4d355f8e6e3c598535e9cf98385" name="a42afe4d355f8e6e3c598535e9cf98385"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdSensitivity</b> (int channel, double sensitivity)</td></tr>
+<tr class="memitem:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">SetThresholdSensitivity</a> (int channel, double sensitivity)</td></tr>
+<tr class="memdesc:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">More...</a><br /></td></tr>
 <tr class="separator:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a474ac15cd507b6276ae50604192d68de" name="a474ac15cd507b6276ae50604192d68de"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdSensitivity</b> (double sensitivity)</td></tr>
+<tr class="memitem:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de">SetThresholdSensitivity</a> (double sensitivity)</td></tr>
+<tr class="memdesc:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de">More...</a><br /></td></tr>
 <tr class="separator:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6343c3f599963535f6730f0dc7bed9c6 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a6343c3f599963535f6730f0dc7bed9c6" name="a6343c3f599963535f6730f0dc7bed9c6"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetInput</b> (int channel)</td></tr>
@@ -239,9 +241,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>allowWifi</b></td></t
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_interface_open_b_c_i_reader_i"><td colspan="2" onclick="javascript:toggleInherit('pub_types_interface_open_b_c_i_reader_i')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></td></tr>
-<tr class="memitem:a886b9cdb5faf31bb4cc7429b2c4d81b9 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a886b9cdb5faf31bb4cc7429b2c4d81b9" name="a886b9cdb5faf31bb4cc7429b2c4d81b9"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ThresholdType</b> { <b>Average</b>
-, <b>Max</b>
-, <b>Last</b>
+<tr class="memitem:a886b9cdb5faf31bb4cc7429b2c4d81b9 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> { <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021">Average</a>
+, <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233">Max</a>
+, <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b">Last</a>
  }</td></tr>
 <tr class="separator:a886b9cdb5faf31bb4cc7429b2c4d81b9 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac34f2c8478cb9568d298eec382a36b31 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="ac34f2c8478cb9568d298eec382a36b31" name="ac34f2c8478cb9568d298eec382a36b31"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ConnectionStatus</b> { <b>Disconnected</b>
@@ -267,14 +269,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method is often called with no arguments when the game starts up for calibration; see instructions below. </p>
-<p >Sets the threshold for all channels so that the current state is interpreted as resting.</p>
+<p>Sets the threshold for all channels so that the current state is interpreted as resting. </p>
+<p >This method is often called with no arguments when the game starts up for calibration; see instructions below.</p>
 <p >If input becomes unreliable, instruct the user to rest/relax all muscles, wait a couple seconds, then call this function. If only one muscle is acting up, call this method with that muscle as the argument to reset the threshold for only that channel. </p>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
 <div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">AutoRestingThreshold</a>();</div>
 <div class="ttc" id="ainterface_open_b_c_i_reader_i_html"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></div><div class="ttdef"><b>Definition:</b> OpenBCIReaderI.cs:2</div></div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a2d03b4d9f564bc41e7bb81b21dc1f891"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">OpenBCIReaderI.AutoRestingThreshold</a></div><div class="ttdeci">void AutoRestingThreshold(int channel)</div><div class="ttdoc">This method is often called with no arguments when the game starts up for calibration; see instructio...</div></div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a2d03b4d9f564bc41e7bb81b21dc1f891"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">OpenBCIReaderI.AutoRestingThreshold</a></div><div class="ttdeci">void AutoRestingThreshold(int channel)</div><div class="ttdoc">Sets the threshold for the specified channel so that the current state is interpreted as resting.</div></div>
 </div><!-- fragment --> 
 <p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">OpenBCIReaderI</a>.</p>
 
@@ -296,8 +298,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method is often called with no arguments when the game starts up for calibration; see instructions below. </p>
-<p >Sets the threshold for the specified channel so that the current state is interpreted as resting.</p>
+<p>Sets the threshold for the specified channel so that the current state is interpreted as resting. </p>
+<p >This method is often called with no arguments when the game starts up for calibration; see instructions below.</p>
 <p >If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle, wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable, call with no arguments to reset all channels so that the current input is interpreted as resting. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -716,7 +718,31 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. </p>
+<p ><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> <a class="el" href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0" title="Sets the way input is measured for all channels. Usually ThresholdType.Average or ThresholdType....">SetThresholdType(OpenBCIReaderI.ThresholdType)</a></p>
+<table class="doxtable">
+<tr>
+<th>Value </th><th>Description  </th></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a></code> </td><td>Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  </td></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a></code> </td><td>Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>. Try this if <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> isn't working well. Sensitivity value is usually best in a bit lower range than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  </td></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b" title="Use the value of the last input sample. This is almost never the best option, and should be used pure...">ThresholdType.Last</a></code> </td><td>Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this ThresholdType.  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensitivity</td><td>The new sensitivity value</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"><span class="keywordtype">int</span> newSensitivity = 300;</div>
+<div class="line"> </div>
+<div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">SetThresholdSensitivity</a>(newSensitivity);</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a42afe4d355f8e6e3c598535e9cf98385"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">OpenBCIReaderI.SetThresholdSensitivity</a></div><div class="ttdeci">void SetThresholdSensitivity(int channel, double sensitivity)</div><div class="ttdoc">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive....</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -746,7 +772,36 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. </p>
+<p ><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> <a class="el" href="interface_open_b_c_i_reader_i.html#aa41fd4867a1e6100542ee9ea01240980" title="Sets the way input is measured for a specific channel. Usually ThresholdType.Average or ThresholdType...">SetThresholdType(int,OpenBCIReaderI.ThresholdType)</a></p>
+<table class="doxtable">
+<tr>
+<th>Value </th><th>Description  </th></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a></code> </td><td>Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  </td></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a></code> </td><td>Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>. Try this if <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> isn't working well. Sensitivity value is usually best in a bit lower range than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  </td></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b" title="Use the value of the last input sample. This is almost never the best option, and should be used pure...">ThresholdType.Last</a></code> </td><td>Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this ThresholdType.  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel whose sensitivity should be set</td></tr>
+    <tr><td class="paramname">sensitivity</td><td>The new sensitivity value</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"><span class="keywordtype">int</span> testChannel = 4;</div>
+<div class="line"><span class="keywordtype">int</span> newSensitivity = 300;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> channelCount = bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">GetNumChannels</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (testChannel &lt; channelCount) {</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">SetThresholdSensitivity</a>(testChannel, newSensitivity);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['tcp_5flisten_0',['tcp_listen',['../namespacetcp__listen.html',1,'']]],
-  ['test_1',['test',['../class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8',1,'MyLibrary::Example']]],
-  ['todo_20list_2',['Todo List',['../todo.html',1,'']]],
-  ['top_3',['Top',['../class_top.html',1,'']]],
-  ['topdowncarcontroller_4',['TopDownCarController',['../class_top_down_car_controller.html',1,'']]]
+  ['setallowwifi_0',['SetAllowWifi',['../class_car_b_c_i_reader2.html#a9a468170bf37cf34b53290910a10e540',1,'CarBCIReader2.SetAllowWifi()'],['../interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2',1,'OpenBCIReaderI.SetAllowWifi()']]],
+  ['setdefaultserialport_1',['SetDefaultSerialPort',['../class_car_b_c_i_reader2.html#ada7dde08a91fabf347f6195149df904a',1,'CarBCIReader2.SetDefaultSerialPort()'],['../interface_open_b_c_i_reader_i.html#af5fda4fcd78735332c9f744cdc6f6755',1,'OpenBCIReaderI.SetDefaultSerialPort()']]],
+  ['setthreshold_2',['SetThreshold',['../class_car_b_c_i_reader2.html#a020c439a643e279757f2eda6303df2f4',1,'CarBCIReader2.SetThreshold()'],['../interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460',1,'OpenBCIReaderI.SetThreshold()']]],
+  ['setthresholdsensitivity_3',['SetThresholdSensitivity',['../class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2',1,'CarBCIReader2.SetThresholdSensitivity(int channel, double sensitivity)'],['../class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa',1,'CarBCIReader2.SetThresholdSensitivity(double sensitivity)'],['../interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385',1,'OpenBCIReaderI.SetThresholdSensitivity(int channel, double sensitivity)'],['../interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de',1,'OpenBCIReaderI.SetThresholdSensitivity(double sensitivity)']]],
+  ['setthresholdtype_4',['SetThresholdType',['../interface_open_b_c_i_reader_i.html#aa41fd4867a1e6100542ee9ea01240980',1,'OpenBCIReaderI.SetThresholdType(int channel, ThresholdType thresholdType)'],['../interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0',1,'OpenBCIReaderI.SetThresholdType(ThresholdType thresholdType)']]],
+  ['setverbose_5',['SetVerbose',['../class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b',1,'CarBCIReader2.SetVerbose()'],['../interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab',1,'OpenBCIReaderI.SetVerbose()']]],
+  ['setwifiboardname_6',['SetWifiBoardName',['../class_car_b_c_i_reader2.html#a5c59bed88d2505a7492257fae840fd2d',1,'CarBCIReader2.SetWifiBoardName()'],['../interface_open_b_c_i_reader_i.html#a79ff7d57eaa1226fe8ef8d365d52bcba',1,'OpenBCIReaderI.SetWifiBoardName()']]],
+  ['spawncoins_7',['SpawnCoins',['../class_spawn_coins.html',1,'']]],
+  ['subclassexample_8',['SubclassExample',['../class_my_library_1_1_subclass_example.html',1,'MyLibrary']]]
 ];

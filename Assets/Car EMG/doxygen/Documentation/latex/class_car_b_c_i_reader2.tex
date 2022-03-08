@@ -32,19 +32,19 @@ bool \mbox{\hyperlink{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a020c439a643e279757f2eda6303df2f4}{Set\+Threshold}} (int channel, double threshold)
 \begin{DoxyCompactList}\small\item\em Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See Get\+Numeric\+Input() for current nanovolt measurements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a3cf9729e01ed1730df2068bfccde35f2}{Auto\+Resting\+Threshold}} (int channel)
-\begin{DoxyCompactList}\small\item\em This method is often called with no arguments when the game starts up for calibration; see instructions below. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the threshold for the specified channel so that the current state is interpreted as resting. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_ae0da18f49f7a2e0e522e3849177bc886}{Auto\+Resting\+Threshold}} ()
-\begin{DoxyCompactList}\small\item\em This method is often called with no arguments when the game starts up for calibration; see instructions below. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Sets the threshold for all channels so that the current state is interpreted as resting. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a3ed14039b4144e6a7ffe019382d3e878}\label{class_car_b_c_i_reader2_a3ed14039b4144e6a7ffe019382d3e878}} 
-void {\bfseries Set\+Threshold\+Type} (int channel, Open\+BCIReader\+I.\+Threshold\+Type threshold\+Type)
+void {\bfseries Set\+Threshold\+Type} (int channel, \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Open\+BCIReader\+I.\+Threshold\+Type}} threshold\+Type)
 \item 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a1ae4e13bf801d275b8bd8bc769224390}\label{class_car_b_c_i_reader2_a1ae4e13bf801d275b8bd8bc769224390}} 
-void {\bfseries Set\+Threshold\+Type} (Open\+BCIReader\+I.\+Threshold\+Type threshold\+Type)
+void {\bfseries Set\+Threshold\+Type} (\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Open\+BCIReader\+I.\+Threshold\+Type}} threshold\+Type)
 \item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}{Set\+Threshold\+Sensitivity}} (int channel, double sensitivity)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}{Set\+Threshold\+Sensitivity}} (double sensitivity)
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a77cf326f93e9ca737693bea6a3086cd8}{Get\+Input}} (int channel)
 \item 
 double \mbox{\hyperlink{class_car_b_c_i_reader2_aa54aa282a3996907b2a662e267ff2259}{Get\+Numeric\+Input}} (int channel)
@@ -77,9 +77,9 @@ bool {\bfseries allow\+Wifi}
 
 
 
-This method is often called with no arguments when the game starts up for calibration; see instructions below. 
+Sets the threshold for all channels so that the current state is interpreted as resting. 
 
-Sets the threshold for all channels so that the current state is interpreted as resting.
+This method is often called with no arguments when the game starts up for calibration; see instructions below.
 
 If input becomes unreliable, instruct the user to rest/relax all muscles, wait a couple seconds, then call this function. If only one muscle is acting up, call this method with that muscle as the argument to reset the threshold for only that channel. 
 
@@ -102,9 +102,9 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e
 
 
 
-This method is often called with no arguments when the game starts up for calibration; see instructions below. 
+Sets the threshold for the specified channel so that the current state is interpreted as resting. 
 
-Sets the threshold for the specified channel so that the current state is interpreted as resting.
+This method is often called with no arguments when the game starts up for calibration; see instructions below.
 
 If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle, wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable, call with no arguments to reset all channels so that the current input is interpreted as resting. 
 
@@ -481,7 +481,44 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fb
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. 
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}{Set\+Threshold\+Type(\+Open\+BCIReader\+I.\+Threshold\+Type)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensitivity} & The new sensitivity value\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(newSensitivity);}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a474ac15cd507b6276ae50604192d68de}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}\label{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetThresholdSensitivity@{SetThresholdSensitivity}}
@@ -491,7 +528,51 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. 
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}{Set\+Threshold\+Type(int,\+Open\+BCIReader\+I.\+Threshold\+Type)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel whose sensitivity should be set\\
+\hline
+{\em sensitivity} & The new sensitivity value\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} testChannel = 4;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (testChannel < channelCount) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(testChannel, newSensitivity);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}\label{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetVerbose@{SetVerbose}}
