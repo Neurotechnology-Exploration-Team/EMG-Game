@@ -77,7 +77,7 @@ public interface OpenBCIReaderI
     /// OpenBCIReaderI bci = ...;
     ///
     /// if (bci.GetConnectionStatus() == OpenBCIReaderI.ConnectionStatus.Connected) {
-    ///     for (int channel = 0; channel < bci.GetNumChannels(); channel++) {
+    ///     for (int channel = 0; channel &lt; bci.GetNumChannels(); channel++) {
     ///         bool i = bci.GetInput(channel);
     ///         ...
     ///     }
@@ -238,7 +238,7 @@ public interface OpenBCIReaderI
     ///
     /// int channelCount = OpenBCIReaderI.GetNumChannels();
     ///
-    /// for (int i = 0; i < channelCount; i++) {
+    /// for (int i = 0; i &lt; channelCount; i++) {
     ///     bci.SetThreshold(i, 0);
     /// }
     /// </code>
@@ -262,7 +262,7 @@ public interface OpenBCIReaderI
     ///
     /// int channelCount = bci.GetNumChannels();
     ///
-    /// if (badChannel < channelCount) {
+    /// if (badChannel &lt; channelCount) {
     ///     bci.AutoRestingThreshold(badChannel);
     /// }
     /// </code>
@@ -334,7 +334,7 @@ public interface OpenBCIReaderI
     /// 
     /// int channelCount = bci.GetNumChannels();
     ///
-    /// if (testChannel < channelCount) {
+    /// if (testChannel &lt; channelCount) {
     ///     bci.SetThresholdType(testChannel, ThresholdType.Max);
     ///     bci.SetThresholdSensitivity(testChannel, newSensitivity);
     /// }
@@ -437,7 +437,7 @@ public interface OpenBCIReaderI
     /// 
     /// int channelCount = bci.GetNumChannels();
     ///
-    /// if (testChannel < channelCount) {
+    /// if (testChannel &lt; channelCount) {
     ///     bci.SetThresholdSensitivity(testChannel, newSensitivity);
     /// }
     /// </code>
@@ -492,6 +492,7 @@ public interface OpenBCIReaderI
     /// </example>
     public void SetThresholdSensitivity(double sensitivity);
 
+    
     public bool GetInput(int channel);
     public double GetNumericInput(int channel);
 
