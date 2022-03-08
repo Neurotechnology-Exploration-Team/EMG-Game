@@ -1,0 +1,751 @@
+\hypertarget{interface_open_b_c_i_reader_i}{}\doxysection{Open\+BCIReaderI Interface Reference}
+\label{interface_open_b_c_i_reader_i}\index{OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \{ \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Average}}
+, \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Max}}
+, \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Last}}
+ \}
+\item 
+\mbox{\Hypertarget{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}\label{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}} 
+enum {\bfseries Connection\+Status} \{ {\bfseries Disconnected}
+, {\bfseries Connecting}
+, {\bfseries Connected}
+, {\bfseries Reconnecting}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Connection\+Status \mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{Get\+Connection\+Status}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current status of the connection with the Open BCI board \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{Get\+Num\+Channels}} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of channels in the connected device, or null if no device is connected \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{Set\+Allow\+Wifi}} ()
+\begin{DoxyCompactList}\small\item\em Set whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_open_b_c_i_reader_i_afa30db2666ec08a473c0323ca81b37c8}{Get\+Allow\+Wifi}} ()
+\begin{DoxyCompactList}\small\item\em Get whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{Set\+Wifi\+Board\+Name}} (string name)
+\begin{DoxyCompactList}\small\item\em Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85984a5716a33}{Get\+Wifi\+Board\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f744cdc6f6755}{Set\+Default\+Serial\+Port}} (string port)
+\begin{DoxyCompactList}\small\item\em Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to \char`\"{}\+COMX\char`\"{}, where X is an integer from 1 to 9. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{interface_open_b_c_i_reader_i_ad26f15d87223209d4c1531352b949007}{Get\+Default\+Serial\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you\textquotesingle{}re doing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{Set\+Verbose}} ()
+\begin{DoxyCompactList}\small\item\em Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_open_b_c_i_reader_i_af3c5f4fc3b71e37e13ee8d8003554c70}{Get\+Verbose}} ()
+\begin{DoxyCompactList}\small\item\em Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}{Set\+Threshold}} (int channel, double threshold)
+\begin{DoxyCompactList}\small\item\em Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{Get\+Num\+Channels()}} for the number of supported channels on the current device See \mbox{\hyperlink{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}{Get\+Numeric\+Input()}} for current nanovolt measurements. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}{Auto\+Resting\+Threshold}} (int channel)
+\begin{DoxyCompactList}\small\item\em Sets the threshold for the specified channel so that the current state is interpreted as resting. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e2a01b6413ec}{Auto\+Resting\+Threshold}} ()
+\begin{DoxyCompactList}\small\item\em Sets the threshold for all channels so that the current state is interpreted as resting. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}{Set\+Threshold\+Type}} (int channel, \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} threshold\+Type)
+\begin{DoxyCompactList}\small\item\em Sets the way input is measured for a specific channel. Usually \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} or \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}{Set\+Threshold\+Type}} (\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} threshold\+Type)
+\begin{DoxyCompactList}\small\item\em Sets the way input is measured for all channels. Usually \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} or \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{Set\+Threshold\+Sensitivity}} (int channel, double sensitivity)
+\begin{DoxyCompactList}\small\item\em Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a474ac15cd507b6276ae50604192d68de}{Set\+Threshold\+Sensitivity}} (double sensitivity)
+\begin{DoxyCompactList}\small\item\em Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{Get\+Input}} (int channel)
+\begin{DoxyCompactList}\small\item\em Returns the boolean input of whether or not the user is flexing this muscle. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}{Get\+Numeric\+Input}} (int channel)
+\begin{DoxyCompactList}\small\item\em Returns the current numeric input, in nanovolts, for the specified channel. Only use this if you know what you\textquotesingle{}re doing. This is the value after the calculation determined by the channel\textquotesingle{}s Threshold\+Type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_ae322afb8464151ee8c18fdd3d24c0f2f}{Disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Disconnect the currently connected BCI board, if one is connected. Do not attempt to reconnect. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}} ()
+\begin{DoxyCompactList}\small\item\em Attempt to reconnect to a BCI board. Will first disconnect the currently connected BCI board if one is connected. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}\label{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!ThresholdType@{ThresholdType}}
+\index{ThresholdType@{ThresholdType}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{ThresholdType}{ThresholdType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Open\+BCIReader\+I.\+Threshold\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Average@{Average}!OpenBCIReaderI@{OpenBCIReaderI}}\index{OpenBCIReaderI@{OpenBCIReaderI}!Average@{Average}}}\mbox{\Hypertarget{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}\label{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}} 
+Average&Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Max@{Max}!OpenBCIReaderI@{OpenBCIReaderI}}\index{OpenBCIReaderI@{OpenBCIReaderI}!Max@{Max}}}\mbox{\Hypertarget{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}\label{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}} 
+Max&Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Last@{Last}!OpenBCIReaderI@{OpenBCIReaderI}}\index{OpenBCIReaderI@{OpenBCIReaderI}!Last@{Last}}}\mbox{\Hypertarget{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}\label{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}} 
+Last&Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e2a01b6413ec}\label{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e2a01b6413ec}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!AutoRestingThreshold@{AutoRestingThreshold}}
+\index{AutoRestingThreshold@{AutoRestingThreshold}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{AutoRestingThreshold()}{AutoRestingThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Auto\+Resting\+Threshold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets the threshold for all channels so that the current state is interpreted as resting. 
+
+This method is often called with no arguments when the game starts up for calibration; see instructions below.
+
+If input becomes unreliable, instruct the user to rest/relax all muscles, wait a couple seconds, then call this function. If only one muscle is acting up, call this method with that muscle as the argument to reset the threshold for only that channel. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}{AutoRestingThreshold}}();}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}\label{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!AutoRestingThreshold@{AutoRestingThreshold}}
+\index{AutoRestingThreshold@{AutoRestingThreshold}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{AutoRestingThreshold()}{AutoRestingThreshold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Auto\+Resting\+Threshold (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Sets the threshold for the specified channel so that the current state is interpreted as resting. 
+
+This method is often called with no arguments when the game starts up for calibration; see instructions below.
+
+If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle, wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable, call with no arguments to reset all channels so that the current input is interpreted as resting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel whose threshold should be reset.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} badChannel = 4;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (badChannel < channelCount) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}{AutoRestingThreshold}}(badChannel);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_ae322afb8464151ee8c18fdd3d24c0f2f}\label{interface_open_b_c_i_reader_i_ae322afb8464151ee8c18fdd3d24c0f2f}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{Disconnect()}{Disconnect()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect the currently connected BCI board, if one is connected. Do not attempt to reconnect. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ae322afb8464151ee8c18fdd3d24c0f2f}{Disconnect}}();}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_afa30db2666ec08a473c0323ca81b37c8}\label{interface_open_b_c_i_reader_i_afa30db2666ec08a473c0323ca81b37c8}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetAllowWifi@{GetAllowWifi}}
+\index{GetAllowWifi@{GetAllowWifi}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetAllowWifi()}{GetAllowWifi()}}
+{\footnotesize\ttfamily bool Open\+BCIReader\+I.\+Get\+Allow\+Wifi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get whether or not the program should be allowed to use wifi to connect to the board. 
+
+Note\+: Enabling this on may add a significant amount of time to reconnection delay 
+
+\begin{DoxyReturn}{Returns}
+Whether or not the program should be allowed to use wifi to connect to the board.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_afa30db2666ec08a473c0323ca81b37c8}{GetAllowWifi}}()) \{}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}\label{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetConnectionStatus@{GetConnectionStatus}}
+\index{GetConnectionStatus@{GetConnectionStatus}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetConnectionStatus()}{GetConnectionStatus()}}
+{\footnotesize\ttfamily Connection\+Status Open\+BCIReader\+I.\+Get\+Connection\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current status of the connection with the Open BCI board 
+
+\begin{DoxyReturn}{Returns}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Condition  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Condition  }\\\cline{1-2}
+\endhead
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ConnectionStatus.Disconnected}
+
+\end{DoxyCode}
+ &There is no current connection.  \\\cline{1-2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ConnectionStatus.Connecting}
+
+\end{DoxyCode}
+ &The program is attempting to connect to the board. The process should not be aborted if in this state.  \\\cline{1-2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ConnectionStatus.Connected}
+
+\end{DoxyCode}
+ &The program is connected to the board and receiving valid data.  \\\cline{1-2}
+\end{longtabu}
+
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{switch} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}()) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Disconnected:}
+\DoxyCodeLine{        bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connecting:}
+\DoxyCodeLine{        Debug.Log(\textcolor{stringliteral}{"{}Please wait!"{}});}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected:}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(2);}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{        \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_ad26f15d87223209d4c1531352b949007}\label{interface_open_b_c_i_reader_i_ad26f15d87223209d4c1531352b949007}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetDefaultSerialPort@{GetDefaultSerialPort}}
+\index{GetDefaultSerialPort@{GetDefaultSerialPort}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetDefaultSerialPort()}{GetDefaultSerialPort()}}
+{\footnotesize\ttfamily string Open\+BCIReader\+I.\+Get\+Default\+Serial\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you\textquotesingle{}re doing. 
+
+\begin{DoxyReturn}{Returns}
+The name of the serial port where the program expects to find the Cyton dongle.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{string} serialPort = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ad26f15d87223209d4c1531352b949007}{GetDefaultSerialPort}}();}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}\label{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetInput@{GetInput}}
+\index{GetInput@{GetInput}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetInput()}{GetInput()}}
+{\footnotesize\ttfamily bool Open\+BCIReader\+I.\+Get\+Input (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Returns the boolean input of whether or not the user is flexing this muscle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The muscle to measure input from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The boolean input of whether or not the user is flexing this muscle
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < channelCount; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(i)) \{}
+\DoxyCodeLine{        \textcolor{comment}{// do something in-\/game that was waiting for this input}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}\label{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetNumChannels@{GetNumChannels}}
+\index{GetNumChannels@{GetNumChannels}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetNumChannels()}{GetNumChannels()}}
+{\footnotesize\ttfamily int Open\+BCIReader\+I.\+Get\+Num\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the number of channels in the connected device, or null if no device is connected 
+
+\begin{DoxyReturn}{Returns}
+The number of channels in the connected device, or null if no device is connected
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}() == \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} channel = 0; channel < bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}(); channel++) \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(channel);}
+\DoxyCodeLine{        ...}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}\label{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetNumericInput@{GetNumericInput}}
+\index{GetNumericInput@{GetNumericInput}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetNumericInput()}{GetNumericInput()}}
+{\footnotesize\ttfamily double Open\+BCIReader\+I.\+Get\+Numeric\+Input (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Returns the current numeric input, in nanovolts, for the specified channel. Only use this if you know what you\textquotesingle{}re doing. This is the value after the calculation determined by the channel\textquotesingle{}s Threshold\+Type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel to measure input from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current numeric input, in nanovolts, for the specified channel
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < channelCount; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} nanovolts = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}{GetNumericInput}}(i);}
+\DoxyCodeLine{    ...;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_af3c5f4fc3b71e37e13ee8d8003554c70}\label{interface_open_b_c_i_reader_i_af3c5f4fc3b71e37e13ee8d8003554c70}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetVerbose@{GetVerbose}}
+\index{GetVerbose@{GetVerbose}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetVerbose()}{GetVerbose()}}
+{\footnotesize\ttfamily bool Open\+BCIReader\+I.\+Get\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected 
+
+\begin{DoxyReturn}{Returns}
+Whether or not the program prints every message with debug info or just important ones.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_af3c5f4fc3b71e37e13ee8d8003554c70}{GetVerbose}}()) \{}
+\DoxyCodeLine{    Debug.Log(\textcolor{stringliteral}{"{}Extra debug message"{}});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    Debug.Log(\textcolor{stringliteral}{"{}Important message"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85984a5716a33}\label{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85984a5716a33}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!GetWifiBoardName@{GetWifiBoardName}}
+\index{GetWifiBoardName@{GetWifiBoardName}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{GetWifiBoardName()}{GetWifiBoardName()}}
+{\footnotesize\ttfamily string Open\+BCIReader\+I.\+Get\+Wifi\+Board\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} 
+
+\begin{DoxyReturn}{Returns}
+The name of the Wifi shield
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{string} boardName = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85984a5716a33}{GetWifiBoardName}}();}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}\label{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!Reconnect@{Reconnect}}
+\index{Reconnect@{Reconnect}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{Reconnect()}{Reconnect()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Reconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attempt to reconnect to a BCI board. Will first disconnect the currently connected BCI board if one is connected. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}\label{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetAllowWifi@{SetAllowWifi}}
+\index{SetAllowWifi@{SetAllowWifi}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetAllowWifi()}{SetAllowWifi()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Allow\+Wifi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set whether or not the program should be allowed to use wifi to connect to the board. 
+
+Note\+: turning this on may add a significant amount of time to reconnection delay 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (usingWifiShield) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f744cdc6f6755}\label{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f744cdc6f6755}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetDefaultSerialPort@{SetDefaultSerialPort}}
+\index{SetDefaultSerialPort@{SetDefaultSerialPort}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetDefaultSerialPort()}{SetDefaultSerialPort()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Default\+Serial\+Port (\begin{DoxyParamCaption}\item[{string}]{port }\end{DoxyParamCaption})}
+
+
+
+Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to \char`\"{}\+COMX\char`\"{}, where X is an integer from 1 to 9. 
+
+In Windows, see device manager for serial port list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & The name of the serial port where the Dongle is plugged into.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f744cdc6f6755}{SetDefaultSerialPort}}(\textcolor{stringliteral}{"{}COM6"{}});}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}\label{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetThreshold@{SetThreshold}}
+\index{SetThreshold@{SetThreshold}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetThreshold()}{SetThreshold()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Threshold (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{double}]{threshold }\end{DoxyParamCaption})}
+
+
+
+Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{Get\+Num\+Channels()}} for the number of supported channels on the current device See \mbox{\hyperlink{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}{Get\+Numeric\+Input()}} for current nanovolt measurements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The 0-\/indexed channel number\\
+\hline
+{\em threshold} & The threshold to set, in nanovolts\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < channelCount; i++) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}{SetThreshold}}(i, 0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a474ac15cd507b6276ae50604192d68de}\label{interface_open_b_c_i_reader_i_a474ac15cd507b6276ae50604192d68de}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetThresholdSensitivity@{SetThresholdSensitivity}}
+\index{SetThresholdSensitivity@{SetThresholdSensitivity}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetThresholdSensitivity()}{SetThresholdSensitivity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Threshold\+Sensitivity (\begin{DoxyParamCaption}\item[{double}]{sensitivity }\end{DoxyParamCaption})}
+
+
+
+Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. 
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}{Set\+Threshold\+Type(\+Open\+BCIReader\+I.\+Threshold\+Type)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensitivity} & The new sensitivity value\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(newSensitivity);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}\label{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetThresholdSensitivity@{SetThresholdSensitivity}}
+\index{SetThresholdSensitivity@{SetThresholdSensitivity}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetThresholdSensitivity()}{SetThresholdSensitivity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Threshold\+Sensitivity (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{double}]{sensitivity }\end{DoxyParamCaption})}
+
+
+
+Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. 
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}{Set\+Threshold\+Type(int,\+Open\+BCIReader\+I.\+Threshold\+Type)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel whose sensitivity should be set\\
+\hline
+{\em sensitivity} & The new sensitivity value\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} testChannel = 4;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (testChannel < channelCount) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(testChannel, newSensitivity);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}\label{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetThresholdType@{SetThresholdType}}
+\index{SetThresholdType@{SetThresholdType}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetThresholdType()}{SetThresholdType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Threshold\+Type (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}}}]{threshold\+Type }\end{DoxyParamCaption})}
+
+
+
+Sets the way input is measured for a specific channel. Usually \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} or \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}} 
+
+If changed, you should also recalibrate with \mbox{\hyperlink{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e2a01b6413ec}{Auto\+Resting\+Threshold()}};
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{Set\+Threshold\+Sensitivity(int,double)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel whose threshold type to set\\
+\hline
+{\em threshold\+Type} & The Threshold\+Type to use with the specified channel\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} testChannel = 4;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (testChannel < channelCount) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}{SetThresholdType}}(testChannel, \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{ThresholdType}}.Max);}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(testChannel, newSensitivity);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}\label{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetThresholdType@{SetThresholdType}}
+\index{SetThresholdType@{SetThresholdType}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetThresholdType()}{SetThresholdType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Threshold\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}}}]{threshold\+Type }\end{DoxyParamCaption})}
+
+
+
+Sets the way input is measured for all channels. Usually \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} or \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}} 
+
+If changed, you should also recalibrate with \mbox{\hyperlink{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e2a01b6413ec}{Auto\+Resting\+Threshold()}};
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{Set\+Threshold\+Sensitivity(int,double)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold\+Type} & The Threshold\+Type to use with all channels\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aa41fd4867a1e6100542ee9ea01240980}{SetThresholdType}}(\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{ThresholdType}}.Max);}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(newSensitivity);}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}\label{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetVerbose@{SetVerbose}}
+\index{SetVerbose@{SetVerbose}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetVerbose()}{SetVerbose()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (inDebugMode) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{SetVerbose}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{SetVerbose}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ \mbox{\Hypertarget{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}\label{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}} 
+\index{OpenBCIReaderI@{OpenBCIReaderI}!SetWifiBoardName@{SetWifiBoardName}}
+\index{SetWifiBoardName@{SetWifiBoardName}!OpenBCIReaderI@{OpenBCIReaderI}}
+\doxysubsubsection{\texorpdfstring{SetWifiBoardName()}{SetWifiBoardName()}}
+{\footnotesize\ttfamily void Open\+BCIReader\+I.\+Set\+Wifi\+Board\+Name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the Wifi shield\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{SetWifiBoardName}}(\textcolor{stringliteral}{"{}OpenBCI-\/XXXX"{}});}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
+
+\end{DoxyCode}
+ 
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/micha/\+One\+Drive/\+Desktop/\+Projects/\+RIT/nxt/\+NXT-\/\+Game-\/\+Project-\/\+Repo/\+Mike/\+Rider\+Project/\+EMG-\/\+Game/\+Assets/\+Car EMG/\+Scripts/Open\+BCIReader\+I.\+cs\end{DoxyCompactItemize}

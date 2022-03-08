@@ -1,0 +1,259 @@
+\href{https://github.com/jothepro/doxygen-awesome-css/releases/latest}{\texttt{ }} \href{https://github.com/jothepro/doxygen-awesome-css/blob/main/LICENSE}{\texttt{ }}
+
+
+
+\href{https://jothepro.github.io/doxygen-awesome-css/}{\texttt{ }}
+
+ ~\newline
+
+
+{\bfseries{Doxygen Awesome}} is a custom {\bfseries{CSS theme for doxygen}} html-\/documentation with lots of customization parameters.\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md6}{}\doxysection{Motivation}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md6}
+I really like how the doxygen html-\/documentation is structured! But IMHO it looks a bit outdated.
+
+This theme is an attemt to update the visuals of doxygen without changing it\textquotesingle{}s overall layout too much.\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Features}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item 🌈 Clean, modern design
+\item 🚀 Heavily customizable by adjusting CSS-\/variables
+\item 🧩 No changes to the HTML structure of Doxygen required
+\item 📱 Improved mobile usability
+\item 🌘 Dark mode support!
+\item 🥇 Works best with {\bfseries{doxygen 1.\+9.\+1}} or {\bfseries{1.\+9.\+2}}
+\end{DoxyItemize}\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md8}{}\doxysection{Installation}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md8}
+Copy the {\ttfamily css} files from this repository into your project or add this repository as submodule and check out the latest release\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git submodule add https://github.com/jothepro/doxygen-\/awesome-\/css.git}
+\DoxyCodeLine{cd doxygen-\/awesome-\/css}
+\DoxyCodeLine{git checkout v1.6.1}
+
+\end{DoxyCode}
+
+
+Then make the option {\ttfamily HTML\+\_\+\+EXTRA\+\_\+\+STYLESHEET} in your Doxyfile point to the {\ttfamily css} files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Doxyfile}
+\DoxyCodeLine{\# ...}
+\DoxyCodeLine{HTML\_EXTRA\_STYLESHEET  = doxygen-\/awesome-\/css/doxygen-\/awesome.css}
+
+\end{DoxyCode}
+\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{Variants}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md9}
+There is two variants of the theme.
+
+
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Base theme}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Doxyfile}
+\DoxyCodeLine{GENERATE\_TREEVIEW      = YES \# optional. Also works without treeview}
+\DoxyCodeLine{HTML\_EXTRA\_STYLESHEET  = doxygen-\/awesome-\/css/doxygen-\/awesome.css}
+
+\end{DoxyCode}
+
+\item {\bfseries{Sidebar-\/only theme}} (experimental)\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Doxyfile}
+\DoxyCodeLine{GENERATE\_TREEVIEW      = YES \# required!}
+\DoxyCodeLine{HTML\_EXTRA\_STYLESHEET  = doxygen-\/awesome-\/css/doxygen-\/awesome.css doxygen-\/awesome-\/css/doxygen-\/awesome-\/sidebar-\/only.css}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{Dark Mode Toggle (\+Experimental)}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md10}
+The theme comes with an experimental feature that adds a button to enable and disable the dark theme variant manually.
+
+It requires customizations in both the header \& footer html template.
+
+
+\begin{DoxyEnumerate}
+\item Create default header \& footer templates\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{doxygen -\/w html header.html footer.html delete\_me.css}
+
+\end{DoxyCode}
+
+\item Reference the required resources in your {\ttfamily Doxyfile}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Include the required Javascript}
+\DoxyCodeLine{HTML\_EXTRA\_FILES       = doxygen-\/awesome-\/css/doxygen-\/awesome-\/darkmode-\/toggle.js}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# Add the additional CSS. This is ONLY required for the sidebar-\/only theme variant!}
+\DoxyCodeLine{HTML\_EXTRA\_STYLESHEET  = doxygen-\/awesome-\/css/doxygen-\/awesome.css \(\backslash\) }
+\DoxyCodeLine{                         doxygen-\/awesome-\/css/doxygen-\/awesome-\/sidebar-\/only.css \(\backslash\)}
+\DoxyCodeLine{                         doxygen-\/awesome-\/css/doxygen-\/awesome-\/sidebar-\/only-\/darkmode-\/toggle.css}
+\DoxyCodeLine{}
+\DoxyCodeLine{\# set custom header \& footer files generated in previous step}
+\DoxyCodeLine{HTML\_HEADER            = header.html}
+\DoxyCodeLine{HTML\_FOOTER            = footer.html}
+
+\end{DoxyCode}
+
+\item In {\ttfamily header.\+html}, include {\ttfamily doxygen-\/awesome-\/darkmode-\/toggle.\+js} at the end of the {\ttfamily \texorpdfstring{$<$}{<}head\texorpdfstring{$>$}{>}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<html> }
+\DoxyCodeLine{    <head>}
+\DoxyCodeLine{        <!-\/-\/ ... other metadata \& script includes ... -\/-\/>}
+\DoxyCodeLine{        <script type="{}text/javascript"{} src="{}\$relpath\string^doxygen-\/awesome-\/darkmode-\/toggle.js"{}></script>}
+\DoxyCodeLine{    </head>}
+\DoxyCodeLine{    <body>}
+
+\end{DoxyCode}
+
+\item In {\ttfamily footer.\+html}, initialize the {\ttfamily doxygen-\/awesome-\/dark-\/mode-\/toggle} element at the end of the {\ttfamily \texorpdfstring{$<$}{<}body\texorpdfstring{$>$}{>}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        <!-\/-\/ ... -\/-\/>}
+\DoxyCodeLine{        <script type="{}text/javascript"{}>}
+\DoxyCodeLine{            // script for doxygen 1.9.1}
+\DoxyCodeLine{            \$(function() \{}
+\DoxyCodeLine{                \$(document).ready(function()\{}
+\DoxyCodeLine{                   toggleButton = document.createElement('doxygen-\/awesome-\/dark-\/mode-\/toggle')}
+\DoxyCodeLine{                   toggleButton.title = "{}Toggle Light/Dark Mode"{}}
+\DoxyCodeLine{                   document.getElementById("{}MSearchBox"{}).parentNode.appendChild(toggleButton)}
+\DoxyCodeLine{               \})}
+\DoxyCodeLine{            \})}
+\DoxyCodeLine{        </script>}
+\DoxyCodeLine{    </body>}
+\DoxyCodeLine{</html>}
+
+\end{DoxyCode}
+ {\bfseries{Attention}}\+: In Doxygen 1.\+9.\+2 the searchbox and it\textquotesingle{}s siblings are deleted on every resize, which is why the toggle button has to be re-\/added every time\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$(function() \{}
+\DoxyCodeLine{  toggleButton = document.createElement('doxygen-\/awesome-\/dark-\/mode-\/toggle')}
+\DoxyCodeLine{  toggleButton.title = "{}Toggle Light/Dark Mode"{}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \$(document).ready(function()\{}
+\DoxyCodeLine{    document.getElementById("{}MSearchBox"{}).parentNode.appendChild(toggleButton)}
+\DoxyCodeLine{  \})}
+\DoxyCodeLine{  \$(window).resize(function()\{}
+\DoxyCodeLine{    document.getElementById("{}MSearchBox"{}).parentNode.appendChild(toggleButton)}
+\DoxyCodeLine{  \})}
+\DoxyCodeLine{\})}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md11}{}\doxysection{Examples}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyItemize}
+\item Sidebar-\/\+Only theme\+: \href{https://jothepro.github.io/doxygen-awesome-css/}{\texttt{ Documentation of this repository}}
+\item Base theme\+: \href{https://a4z.github.io/libsl3/}{\texttt{ libsl3}}
+\end{DoxyItemize}\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md12}{}\doxysection{Configuration}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md12}
+\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md13}{}\doxysubsection{CSS Variables}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md13}
+This theme is highly customizable because a lot of things are parameterized with CSS variables. The following list of parameters is not complete! You can easily modify any variable with the developer tools of your browser to find out what it does.
+
+To customize the existing theme, add your own {\ttfamily custom.\+css} and overwrite the variables there\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{HTML\_EXTRA\_STYLESHEET  = doxygen-\/awesome-\/theme/doxygen-\/awesome.css custom.css}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/* custom.css */}
+\DoxyCodeLine{html \{}
+\DoxyCodeLine{    /* define light-\/mode variable overrides here */}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{@media (prefers-\/color-\/scheme: dark) \{}
+\DoxyCodeLine{    html:not(.light-\/mode) \{}
+\DoxyCodeLine{        /* define dark-\/mode variable overrides here if you DON'T use doxygen-\/awesome-\/darkmode-\/toggle.js */}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{html.dark-\/mode \{}
+\DoxyCodeLine{    /* define dark-\/mode variable overrides here if you DO use doxygen-\/awesome-\/darkmode-\/toggle.js */}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Parameter   }&\cellcolor{\tableheadbgcolor}\textbf{ Default (Light)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default (Dark)    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Parameter   }&\cellcolor{\tableheadbgcolor}\textbf{ Default (Light)   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Default (Dark)    }\\\cline{1-3}
+\endhead
+\multicolumn{3}{|l|}{{\bfseries{Color Scheme}}\+:~\newline
+primary theme color. This will affect the entire websites color scheme\+: links, arrows, labels, ...    }\\\cline{1-3}
+{\ttfamily -\/-\/primary-\/color}   &\#1779c4   &\#1982d2    \\\cline{1-3}
+{\ttfamily -\/-\/primary-\/dark-\/color}   &\#00559f   &\#5ca8e2    \\\cline{1-3}
+{\ttfamily -\/-\/primary-\/light-\/color}   &\#7aabd6   &\#4779ac    \\\cline{1-3}
+{\ttfamily -\/-\/primary-\/lighter-\/color}   &\#cae1f1   &\#191e21    \\\cline{1-3}
+{\ttfamily -\/-\/primary-\/lightest-\/color}   &\#e9f1f8   &\#191a1c    \\\cline{1-3}
+\multicolumn{3}{|l|}{{\bfseries{Spacing\+:}}~\newline
+default spacings. Most ui components reference these values for spacing, to provide uniform spacing on the page.    }\\\cline{1-3}
+{\ttfamily -\/-\/spacing-\/small}   &{\ttfamily 5px}   &\\\cline{1-3}
+{\ttfamily -\/-\/spacing-\/medium}   &{\ttfamily 10px}   &\\\cline{1-3}
+{\ttfamily -\/-\/spacing-\/large}   &{\ttfamily 16px}   &\\\cline{1-3}
+\multicolumn{3}{|l|}{{\bfseries{Border Radius}}\+:~\newline
+border radius for all rounded ui components. Will affect many components, like dropdowns, memitems, codeblocks, ...    }\\\cline{1-3}
+{\ttfamily -\/-\/border-\/radius-\/small}   &{\ttfamily 4px}   &\\\cline{1-3}
+{\ttfamily -\/-\/border-\/radius-\/medium}   &{\ttfamily 6px}   &\\\cline{1-3}
+{\ttfamily -\/-\/border-\/radius-\/large}   &{\ttfamily 8px}   &\\\cline{1-3}
+\multicolumn{3}{|l|}{{\bfseries{Content Width}}\+:~\newline
+The content is centered and constrained in its width. To make the content fill the whole page, set the following variable to {\ttfamily auto}.    }\\\cline{1-3}
+{\ttfamily -\/-\/content-\/maxwidth}   &{\ttfamily 1000px}   &\\\cline{1-3}
+\multicolumn{3}{|l|}{{\bfseries{Code Fragment Colors}}\+:~\newline
+Color-\/\+Scheme of multiline codeblocks    }\\\cline{1-3}
+{\ttfamily -\/-\/fragment-\/background}   &\#282c34   &\\\cline{1-3}
+{\ttfamily -\/-\/fragment-\/foreground}   &\#fff   &\\\cline{1-3}
+\multicolumn{3}{|l|}{{\bfseries{Arrow Opacity}}\+:~\newline
+By default the arrows in the sidebar are only visible on hover. You can override this behaviour so they are visible all the time.    }\\\cline{1-3}
+{\ttfamily -\/-\/side-\/nav-\/arrow-\/opacity}   &{\ttfamily 0}   &\\\cline{1-3}
+{\ttfamily -\/-\/side-\/nav-\/arrow-\/hover-\/opacity}   &{\ttfamily 0.\+9}   &\\\cline{1-3}
+\multicolumn{3}{|l|}{{\bfseries{Darkmode Toggle Icon}}\+:~\newline
+If you have enabled the darkmode toggle button, you can define the icon that is shown for the current mode.    }\\\cline{1-3}
+{\ttfamily -\/-\/darkmode-\/toggle-\/button-\/icon}   &☀️   &🌛    \\\cline{1-3}
+\multicolumn{3}{|l|}{...and many more   }\\\cline{1-3}
+\end{longtabu}
+
+
+If you miss a configuration option or find a bug, please consider \href{https://github.com/jothepro/doxygen-awesome-css/issues}{\texttt{ opening an issue}}!\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{Doxygen generator}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md14}
+The theme overrides most colors with the {\ttfamily -\/-\/primary-\/color-\/$\ast$} variables.
+
+But there is a few small images and graphics that the theme cannot adjust or replace. To make these blend in better with the rest, it is recommended to adjust the \href{https://www.doxygen.nl/manual/customize.html\#minor_tweaks_colors}{\texttt{ doxygen color settings}} to something that matches the chosen color-\/scheme.
+
+For the default color-\/scheme, these values work out quite well\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Doxyfile}
+\DoxyCodeLine{HTML\_COLORSTYLE\_HUE    = 209}
+\DoxyCodeLine{HTML\_COLORSTYLE\_SAT    = 255}
+\DoxyCodeLine{HTML\_COLORSTYLE\_GAMMA  = 113}
+
+\end{DoxyCode}
+\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md15}{}\doxysection{Browser support}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md15}
+Tested with
+
+
+\begin{DoxyItemize}
+\item Chrome 91, Chrome 91 for Android, Chrome 87 for i\+OS
+\item Safari 14, Safari for i\+OS 14
+\item Firefox 89, Firefox Daylight 89 for Android, Firefox Daylight 33 for i\+OS
+\end{DoxyItemize}\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md16}{}\doxysection{Tips \& Tricks}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md16}
+\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md17}{}\doxysubsection{Class Diagrams with Graphviz}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md17}
+To get the best looking class diagrams for your documentation, generate them with Graphviz as vector graphics with transparent background\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\# Doxyfile}
+\DoxyCodeLine{HAVE\_DOT = YES}
+\DoxyCodeLine{DOT\_IMAGE\_FORMAT = svg}
+\DoxyCodeLine{DOT\_TRANSPARENT = YES}
+
+\end{DoxyCode}
+\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md18}{}\doxysubsection{Share your own theme customizations}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md18}
+If you customized the theme with custom colors, spacings, font-\/sizes, etc. and you want to share your creation with others, you can to this \href{https://github.com/jothepro/doxygen-awesome-css/discussions/13}{\texttt{ here}}.
+
+I am always curious to learn about how you made the theme look even better!\hypertarget{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md19}{}\doxysection{Credits}\label{md_doxygen_awesome__r_e_a_d_m_e_autotoc_md19}
+This theme is heavily inspired by the beautiful \href{https://vuepress.vuejs.org/}{\texttt{ vuepress}} static site generator default theme! 
