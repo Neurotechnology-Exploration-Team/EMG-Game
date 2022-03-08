@@ -30,7 +30,7 @@ void \mbox{\hyperlink{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}{Get\+Verbose}} ()
 \begin{DoxyCompactList}\small\item\em Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a020c439a643e279757f2eda6303df2f4}{Set\+Threshold}} (int channel, double threshold)
-\begin{DoxyCompactList}\small\item\em Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See Get\+Numeric\+Input() for current nanovolt measurements. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See \mbox{\hyperlink{class_car_b_c_i_reader2_aa54aa282a3996907b2a662e267ff2259}{Get\+Numeric\+Input()}} for current nanovolt measurements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a3cf9729e01ed1730df2068bfccde35f2}{Auto\+Resting\+Threshold}} (int channel)
 \begin{DoxyCompactList}\small\item\em Sets the threshold for the specified channel so that the current state is interpreted as resting. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_ae0da18f49f7a2e0e522e3849177bc886}{Auto\+Resting\+Threshold}} ()
@@ -46,13 +46,13 @@ void \mbox{\hyperlink{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}{Set\+Threshold\+Sensitivity}} (double sensitivity)
 \begin{DoxyCompactList}\small\item\em Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a77cf326f93e9ca737693bea6a3086cd8}{Get\+Input}} (int channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the boolean input of whether or not the user is flexing this muscle. \end{DoxyCompactList}\item 
 double \mbox{\hyperlink{class_car_b_c_i_reader2_aa54aa282a3996907b2a662e267ff2259}{Get\+Numeric\+Input}} (int channel)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns the current numeric input, in nanovolts, for the specified channel. Only use this if you know what you\textquotesingle{}re doing. This is the value after the calculation determined by the channel\textquotesingle{}s Threshold\+Type. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_ab40dd95e0d568134ed2ad498af478d8e}{Disconnect}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Disconnect the currently connected BCI board, if one is connected. Do not attempt to reconnect. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a5d7a563cff88d7c4d8f92bddf1f2a997}{Reconnect}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Attempt to reconnect to a BCI board. Will first disconnect the currently connected BCI board if one is connected. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -139,7 +139,18 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb8
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Disconnect the currently connected BCI board, if one is connected. Do not attempt to reconnect. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ae322afb8464151ee8c18fdd3d24c0f2f}{Disconnect}}();}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_ae322afb8464151ee8c18fdd3d24c0f2f}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a607218c547c15fdbf4762752292ed9e7}\label{class_car_b_c_i_reader2_a607218c547c15fdbf4762752292ed9e7}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetAllowWifi@{GetAllowWifi}}
@@ -223,13 +234,13 @@ Returns the current status of the connection with the Open BCI board
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordflow}{switch} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}()) \{}
 \DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Disconnected:}
-\DoxyCodeLine{        bci.Reconnect();}
+\DoxyCodeLine{        bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
 \DoxyCodeLine{        \textcolor{keywordflow}{break};}
 \DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connecting:}
 \DoxyCodeLine{        Debug.Log(\textcolor{stringliteral}{"{}Please wait!"{}});}
 \DoxyCodeLine{        \textcolor{keywordflow}{break};}
 \DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected:}
-\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.GetInput(2);}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(2);}
 \DoxyCodeLine{        ...}
 \DoxyCodeLine{        \textcolor{keywordflow}{break};}
 \DoxyCodeLine{\}}
@@ -273,7 +284,34 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_ad26f15d87223209d4c153
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Returns the boolean input of whether or not the user is flexing this muscle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The muscle to measure input from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The boolean input of whether or not the user is flexing this muscle
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < channelCount; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(i)) \{}
+\DoxyCodeLine{        \textcolor{comment}{// do something in-\/game that was waiting for this input}}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}\label{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetNumChannels@{GetNumChannels}}
@@ -296,7 +334,7 @@ The number of channels in the connected device, or null if no device is connecte
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}() == \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected) \{}
 \DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} channel = 0; channel < bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}(); channel++) \{}
-\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.GetInput(channel);}
+\DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(channel);}
 \DoxyCodeLine{        ...}
 \DoxyCodeLine{    \}}
 \DoxyCodeLine{\}}
@@ -314,7 +352,33 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Returns the current numeric input, in nanovolts, for the specified channel. Only use this if you know what you\textquotesingle{}re doing. This is the value after the calculation determined by the channel\textquotesingle{}s Threshold\+Type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel to measure input from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current numeric input, in nanovolts, for the specified channel
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < channelCount; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordtype}{double} nanovolts = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}{GetNumericInput}}(i);}
+\DoxyCodeLine{    ...;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a212794a92b5c2581c6976931137320da}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}\label{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetVerbose@{GetVerbose}}
@@ -380,7 +444,18 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aecb5b684fd0106c874a85
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Attempt to reconnect to a BCI board. Will first disconnect the currently connected BCI board if one is connected. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a9a468170bf37cf34b53290910a10e540}\label{class_car_b_c_i_reader2_a9a468170bf37cf34b53290910a10e540}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetAllowWifi@{SetAllowWifi}}
@@ -447,7 +522,7 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f7
 
 
 
-Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See Get\+Numeric\+Input() for current nanovolt measurements. 
+Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See \mbox{\hyperlink{class_car_b_c_i_reader2_aa54aa282a3996907b2a662e267ff2259}{Get\+Numeric\+Input()}} for current nanovolt measurements. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -622,7 +697,7 @@ Set the name of the wifi shield used with the board. Similar to a serial number,
 \DoxyCodeLine{}
 \DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
 \DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{SetWifiBoardName}}(\textcolor{stringliteral}{"{}OpenBCI-\/XXXX"{}});}
-\DoxyCodeLine{bci.Reconnect();}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
 
 \end{DoxyCode}
  

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_0',['test',['../class_my_library_1_1_example.html#a1c0046b0674eb4cad09c5d3e943912b8',1,'MyLibrary::Example']]]
+  ['reconnect_0',['Reconnect',['../class_car_b_c_i_reader2.html#a5d7a563cff88d7c4d8f92bddf1f2a997',1,'CarBCIReader2.Reconnect()'],['../interface_open_b_c_i_reader_i.html#a50631276b93db10a9b3d26b02ccc741b',1,'OpenBCIReaderI.Reconnect()']]]
 ];
