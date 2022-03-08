@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['openbcireaderi_0',['OpenBCIReaderI',['../interface_open_b_c_i_reader_i.html',1,'']]]
+  ['leftside_0',['LeftSide',['../class_left_side.html',1,'']]]
 ];

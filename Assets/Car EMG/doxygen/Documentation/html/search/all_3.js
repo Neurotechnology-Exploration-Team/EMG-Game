@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['example_0',['Example',['../class_my_library_1_1_example.html',1,'MyLibrary']]],
-  ['example_20page_1',['Example Page',['../page1.html',1,'']]]
+  ['deprecated_20list_0',['Deprecated List',['../deprecated.html',1,'']]],
+  ['doxygen_20awesome_1',['Doxygen Awesome',['../md_doxygen_awesome__r_e_a_d_m_e.html',1,'']]]
 ];

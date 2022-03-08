@@ -124,17 +124,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ada7dde08a91fabf347f6195149df904a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to "COMX", where X is an integer from 1 to 9.  <a href="class_car_b_c_i_reader2.html#ada7dde08a91fabf347f6195149df904a">More...</a><br /></td></tr>
 <tr class="separator:ada7dde08a91fabf347f6195149df904a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a1d9d201ebd80f4a3890315f579c8ccd5">GetDefaultSerialPort</a> ()</td></tr>
-<tr class="memdesc:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested.  <a href="class_car_b_c_i_reader2.html#a1d9d201ebd80f4a3890315f579c8ccd5">More...</a><br /></td></tr>
+<tr class="memdesc:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you're doing.  <a href="class_car_b_c_i_reader2.html#a1d9d201ebd80f4a3890315f579c8ccd5">More...</a><br /></td></tr>
 <tr class="separator:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5f6856bfd9e42728fb1b23d882dc77b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b">SetVerbose</a> ()</td></tr>
+<tr class="memdesc:aa5f6856bfd9e42728fb1b23d882dc77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b">More...</a><br /></td></tr>
 <tr class="separator:aa5f6856bfd9e42728fb1b23d882dc77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c584e6fddabf436202140f4021ecf6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a80c584e6fddabf436202140f4021ecf6">GetVerbose</a> ()</td></tr>
+<tr class="memdesc:a80c584e6fddabf436202140f4021ecf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="class_car_b_c_i_reader2.html#a80c584e6fddabf436202140f4021ecf6">More...</a><br /></td></tr>
 <tr class="separator:a80c584e6fddabf436202140f4021ecf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a020c439a643e279757f2eda6303df2f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a020c439a643e279757f2eda6303df2f4">SetThreshold</a> (int channel, double threshold)</td></tr>
+<tr class="memdesc:a020c439a643e279757f2eda6303df2f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you're doing. See <a class="el" href="class_car_b_c_i_reader2.html#a4dd23526d98ac95860da38390eac38d7" title="Returns the number of channels in the connected device, or null if no device is connected">GetNumChannels()</a> for the number of supported channels on the current device See GetNumericInput() for current nanovolt measurements.  <a href="class_car_b_c_i_reader2.html#a020c439a643e279757f2eda6303df2f4">More...</a><br /></td></tr>
 <tr class="separator:a020c439a643e279757f2eda6303df2f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3cf9729e01ed1730df2068bfccde35f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a3cf9729e01ed1730df2068bfccde35f2">AutoRestingThreshold</a> (int channel)</td></tr>
+<tr class="memdesc:a3cf9729e01ed1730df2068bfccde35f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="class_car_b_c_i_reader2.html#a3cf9729e01ed1730df2068bfccde35f2">More...</a><br /></td></tr>
 <tr class="separator:a3cf9729e01ed1730df2068bfccde35f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0da18f49f7a2e0e522e3849177bc886"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#ae0da18f49f7a2e0e522e3849177bc886">AutoRestingThreshold</a> ()</td></tr>
+<tr class="memdesc:ae0da18f49f7a2e0e522e3849177bc886"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="class_car_b_c_i_reader2.html#ae0da18f49f7a2e0e522e3849177bc886">More...</a><br /></td></tr>
 <tr class="separator:ae0da18f49f7a2e0e522e3849177bc886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ed14039b4144e6a7ffe019382d3e878"><td class="memItemLeft" align="right" valign="top"><a id="a3ed14039b4144e6a7ffe019382d3e878" name="a3ed14039b4144e6a7ffe019382d3e878"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (int channel, OpenBCIReaderI.ThresholdType thresholdType)</td></tr>
@@ -177,22 +182,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 <tr class="memdesc:af5fda4fcd78735332c9f744cdc6f6755 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to "COMX", where X is an integer from 1 to 9.  <a href="interface_open_b_c_i_reader_i.html#af5fda4fcd78735332c9f744cdc6f6755">More...</a><br /></td></tr>
 <tr class="separator:af5fda4fcd78735332c9f744cdc6f6755 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#ad26f15d87223209d4c1531352b949007">GetDefaultSerialPort</a> ()</td></tr>
-<tr class="memdesc:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested.  <a href="interface_open_b_c_i_reader_i.html#ad26f15d87223209d4c1531352b949007">More...</a><br /></td></tr>
+<tr class="memdesc:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you're doing.  <a href="interface_open_b_c_i_reader_i.html#ad26f15d87223209d4c1531352b949007">More...</a><br /></td></tr>
 <tr class="separator:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="adbb02ba7af9f42dcfd5982ec4d5b64ab" name="adbb02ba7af9f42dcfd5982ec4d5b64ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetVerbose</b> ()</td></tr>
+<tr class="memitem:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">SetVerbose</a> ()</td></tr>
+<tr class="memdesc:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">More...</a><br /></td></tr>
 <tr class="separator:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="af3c5f4fc3b71e37e13ee8d8003554c70" name="af3c5f4fc3b71e37e13ee8d8003554c70"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetVerbose</b> ()</td></tr>
+<tr class="memitem:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">GetVerbose</a> ()</td></tr>
+<tr class="memdesc:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">More...</a><br /></td></tr>
 <tr class="separator:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacbcb17819ccdeb1ac6fbabaa4526460 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="aacbcb17819ccdeb1ac6fbabaa4526460" name="aacbcb17819ccdeb1ac6fbabaa4526460"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThreshold</b> (int channel, double threshold)</td></tr>
+<tr class="memitem:aacbcb17819ccdeb1ac6fbabaa4526460 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460">SetThreshold</a> (int channel, double threshold)</td></tr>
+<tr class="memdesc:aacbcb17819ccdeb1ac6fbabaa4526460 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you're doing. See <a class="el" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e" title="Returns the number of channels in the connected device, or null if no device is connected">GetNumChannels()</a> for the number of supported channels on the current device See GetNumericInput() for current nanovolt measurements.  <a href="interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460">More...</a><br /></td></tr>
 <tr class="separator:aacbcb17819ccdeb1ac6fbabaa4526460 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a2d03b4d9f564bc41e7bb81b21dc1f891" name="a2d03b4d9f564bc41e7bb81b21dc1f891"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AutoRestingThreshold</b> (int channel)</td></tr>
+<tr class="memitem:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">AutoRestingThreshold</a> (int channel)</td></tr>
+<tr class="memdesc:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">More...</a><br /></td></tr>
 <tr class="separator:a2d03b4d9f564bc41e7bb81b21dc1f891 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="a4842c2fccb27fd33bc38e2a01b6413ec" name="a4842c2fccb27fd33bc38e2a01b6413ec"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AutoRestingThreshold</b> ()</td></tr>
+<tr class="memitem:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">AutoRestingThreshold</a> ()</td></tr>
+<tr class="memdesc:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is often called with no arguments when the game starts up for calibration; see instructions below.  <a href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">More...</a><br /></td></tr>
 <tr class="separator:a4842c2fccb27fd33bc38e2a01b6413ec inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa41fd4867a1e6100542ee9ea01240980 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="aa41fd4867a1e6100542ee9ea01240980" name="aa41fd4867a1e6100542ee9ea01240980"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (int channel, ThresholdType thresholdType)</td></tr>
@@ -262,7 +267,16 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>This method is often called with no arguments when the game starts up for calibration; see instructions below. </p>
+<p >Sets the threshold for all channels so that the current state is interpreted as resting.</p>
+<p >If input becomes unreliable, instruct the user to rest/relax all muscles, wait a couple seconds, then call this function. If only one muscle is acting up, call this method with that muscle as the argument to reset the threshold for only that channel. </p>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"> </div>
+<div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">AutoRestingThreshold</a>();</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></div><div class="ttdef"><b>Definition:</b> OpenBCIReaderI.cs:2</div></div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a2d03b4d9f564bc41e7bb81b21dc1f891"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">OpenBCIReaderI.AutoRestingThreshold</a></div><div class="ttdeci">void AutoRestingThreshold(int channel)</div><div class="ttdoc">This method is often called with no arguments when the game starts up for calibration; see instructio...</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -282,7 +296,26 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>This method is often called with no arguments when the game starts up for calibration; see instructions below. </p>
+<p >Sets the threshold for the specified channel so that the current state is interpreted as resting.</p>
+<p >If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle, wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable, call with no arguments to reset all channels so that the current input is interpreted as resting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel whose threshold should be reset.</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"><span class="keywordtype">int</span> badChannel = 4;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> channelCount = bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">GetNumChannels</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (badChannel &lt; channelCount) {</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">AutoRestingThreshold</a>(badChannel);</div>
+<div class="line">}</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a63350e46e17b46cb8e67a0c0dcafd68e"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">OpenBCIReaderI.GetNumChannels</a></div><div class="ttdeci">int GetNumChannels()</div><div class="ttdoc">Returns the number of channels in the connected device, or null if no device is connected</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -330,7 +363,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">    ...</div>
 <div class="line">}</div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></div><div class="ttdef"><b>Definition:</b> OpenBCIReaderI.cs:2</div></div>
 <div class="ttc" id="ainterface_open_b_c_i_reader_i_html_afa30db2666ec08a473c0323ca81b37c8"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#afa30db2666ec08a473c0323ca81b37c8">OpenBCIReaderI.GetAllowWifi</a></div><div class="ttdeci">bool GetAllowWifi()</div><div class="ttdoc">Get whether or not the program should be allowed to use wifi to connect to the board.</div></div>
 </div><!-- fragment --> 
 <p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#afa30db2666ec08a473c0323ca81b37c8">OpenBCIReaderI</a>.</p>
@@ -402,7 +434,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. </p>
+<p>Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you're doing. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of the serial port where the program expects to find the Cyton dongle.</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
@@ -458,7 +490,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">        ...</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a63350e46e17b46cb8e67a0c0dcafd68e"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">OpenBCIReaderI.GetNumChannels</a></div><div class="ttdeci">int GetNumChannels()</div><div class="ttdoc">Returns the number of channels in the connected device, or null if no device is connected</div></div>
 </div><!-- fragment --> 
 <p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">OpenBCIReaderI</a>.</p>
 
@@ -499,7 +530,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not the program prints every message with debug info or just important ones.</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">GetVerbose</a>()) {</div>
+<div class="line">    Debug.Log(<span class="stringliteral">&quot;Extra debug message&quot;</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    Debug.Log(<span class="stringliteral">&quot;Important message&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_af3c5f4fc3b71e37e13ee8d8003554c70"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">OpenBCIReaderI.GetVerbose</a></div><div class="ttdeci">bool GetVerbose()</div><div class="ttdoc">Get whether or not the program prints every message or just important ones. If true,...</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -637,7 +679,24 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you're doing. See <a class="el" href="class_car_b_c_i_reader2.html#a4dd23526d98ac95860da38390eac38d7" title="Returns the number of channels in the connected device, or null if no device is connected">GetNumChannels()</a> for the number of supported channels on the current device See GetNumericInput() for current nanovolt measurements. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The 0-indexed channel number</td></tr>
+    <tr><td class="paramname">threshold</td><td>The threshold to set, in nanovolts</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> channelCount = <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">GetNumChannels</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; channelCount; i++) {</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460">SetThreshold</a>(i, 0);</div>
+<div class="line">}</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_aacbcb17819ccdeb1ac6fbabaa4526460"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460">OpenBCIReaderI.SetThreshold</a></div><div class="ttdeci">void SetThreshold(int channel, double threshold)</div><div class="ttdoc">Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you'r...</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -706,7 +765,17 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.</p>
+<p>Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected </p>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (inDebugMode) {</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">SetVerbose</a>(<span class="keyword">true</span>);</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">SetVerbose</a>(<span class="keyword">false</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_adbb02ba7af9f42dcfd5982ec4d5b64ab"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">OpenBCIReaderI.SetVerbose</a></div><div class="ttdeci">void SetVerbose()</div><div class="ttdoc">Set whether or not the program prints every message with debug info or just important ones....</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -745,7 +814,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/micha/Documents/GitHub/EMG-Game/Assets/Car EMG/Scripts/CarBCIReader2.cs</li>
+<li>C:/Users/micha/OneDrive/Desktop/Projects/RIT/nxt/NXT-Game-Project-Repo/Mike/RiderProject/EMG-Game/Assets/Car EMG/Scripts/CarBCIReader2.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

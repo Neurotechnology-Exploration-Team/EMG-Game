@@ -24,17 +24,17 @@ string \mbox{\hyperlink{class_car_b_c_i_reader2_a6effed5ddc51d4f168cfd9aca41e381
 void \mbox{\hyperlink{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}{Set\+Default\+Serial\+Port}} (string port)
 \begin{DoxyCompactList}\small\item\em Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to \char`\"{}\+COMX\char`\"{}, where X is an integer from 1 to 9. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_car_b_c_i_reader2_a1d9d201ebd80f4a3890315f579c8ccd5}{Get\+Default\+Serial\+Port}} ()
-\begin{DoxyCompactList}\small\item\em Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you\textquotesingle{}re doing. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}{Set\+Verbose}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}{Get\+Verbose}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a020c439a643e279757f2eda6303df2f4}{Set\+Threshold}} (int channel, double threshold)
-\item 
+\begin{DoxyCompactList}\small\item\em Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See Get\+Numeric\+Input() for current nanovolt measurements. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_a3cf9729e01ed1730df2068bfccde35f2}{Auto\+Resting\+Threshold}} (int channel)
-\item 
+\begin{DoxyCompactList}\small\item\em This method is often called with no arguments when the game starts up for calibration; see instructions below. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_car_b_c_i_reader2_ae0da18f49f7a2e0e522e3849177bc886}{Auto\+Resting\+Threshold}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em This method is often called with no arguments when the game starts up for calibration; see instructions below. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a3ed14039b4144e6a7ffe019382d3e878}\label{class_car_b_c_i_reader2_a3ed14039b4144e6a7ffe019382d3e878}} 
 void {\bfseries Set\+Threshold\+Type} (int channel, Open\+BCIReader\+I.\+Threshold\+Type threshold\+Type)
 \item 
@@ -77,7 +77,22 @@ bool {\bfseries allow\+Wifi}
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+This method is often called with no arguments when the game starts up for calibration; see instructions below. 
+
+Sets the threshold for all channels so that the current state is interpreted as resting.
+
+If input becomes unreliable, instruct the user to rest/relax all muscles, wait a couple seconds, then call this function. If only one muscle is acting up, call this method with that muscle as the argument to reset the threshold for only that channel. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}{AutoRestingThreshold}}();}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a4842c2fccb27fd33bc38e2a01b6413ec}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a3cf9729e01ed1730df2068bfccde35f2}\label{class_car_b_c_i_reader2_a3cf9729e01ed1730df2068bfccde35f2}} 
 \index{CarBCIReader2@{CarBCIReader2}!AutoRestingThreshold@{AutoRestingThreshold}}
@@ -87,7 +102,34 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+This method is often called with no arguments when the game starts up for calibration; see instructions below. 
+
+Sets the threshold for the specified channel so that the current state is interpreted as resting.
+
+If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle, wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable, call with no arguments to reset all channels so that the current input is interpreted as resting. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The channel whose threshold should be reset.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} badChannel = 4;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (badChannel < channelCount) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}{AutoRestingThreshold}}(badChannel);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a2d03b4d9f564bc41e7bb81b21dc1f891}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_ab40dd95e0d568134ed2ad498af478d8e}\label{class_car_b_c_i_reader2_ab40dd95e0d568134ed2ad498af478d8e}} 
 \index{CarBCIReader2@{CarBCIReader2}!Disconnect@{Disconnect}}
@@ -205,7 +247,7 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb4891
 
 
 
-Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. 
+Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you\textquotesingle{}re doing. 
 
 \begin{DoxyReturn}{Returns}
 The name of the serial port where the program expects to find the Cyton dongle.
@@ -282,7 +324,27 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected 
+
+\begin{DoxyReturn}{Returns}
+Whether or not the program prints every message with debug info or just important ones.
+\end{DoxyReturn}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_af3c5f4fc3b71e37e13ee8d8003554c70}{GetVerbose}}()) \{}
+\DoxyCodeLine{    Debug.Log(\textcolor{stringliteral}{"{}Extra debug message"{}});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    Debug.Log(\textcolor{stringliteral}{"{}Important message"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_af3c5f4fc3b71e37e13ee8d8003554c70}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a6effed5ddc51d4f168cfd9aca41e381a}\label{class_car_b_c_i_reader2_a6effed5ddc51d4f168cfd9aca41e381a}} 
 \index{CarBCIReader2@{CarBCIReader2}!GetWifiBoardName@{GetWifiBoardName}}
@@ -385,7 +447,31 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_af5fda4fcd78735332c9f7
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you\textquotesingle{}re doing. See \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels()}} for the number of supported channels on the current device See Get\+Numeric\+Input() for current nanovolt measurements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & The 0-\/indexed channel number\\
+\hline
+{\em threshold} & The threshold to set, in nanovolts\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < channelCount; i++) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}{SetThreshold}}(i, 0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}\label{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetThresholdSensitivity@{SetThresholdSensitivity}}
@@ -415,7 +501,22 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
 
 
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i}{Open\+BCIReaderI}}.
+Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (inDebugMode) \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{SetVerbose}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{SetVerbose}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a5c59bed88d2505a7492257fae840fd2d}\label{class_car_b_c_i_reader2_a5c59bed88d2505a7492257fae840fd2d}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetWifiBoardName@{SetWifiBoardName}}
@@ -451,4 +552,4 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/micha/\+Documents/\+Git\+Hub/\+EMG-\/\+Game/\+Assets/\+Car EMG/\+Scripts/Car\+BCIReader2.\+cs\end{DoxyCompactItemize}
+C\+:/\+Users/micha/\+One\+Drive/\+Desktop/\+Projects/\+RIT/nxt/\+NXT-\/\+Game-\/\+Project-\/\+Repo/\+Mike/\+Rider\+Project/\+EMG-\/\+Game/\+Assets/\+Car EMG/\+Scripts/Car\+BCIReader2.\+cs\end{DoxyCompactItemize}

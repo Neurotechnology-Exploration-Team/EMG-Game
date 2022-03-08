@@ -165,6 +165,7 @@ public interface OpenBCIReaderI
     /// Get the default Bluetooth dongle serial port for Cyton dongles.
     /// Returns null if no default has been explicitly set.
     /// If null, the program will scan all available ports when reconnection is requested.
+    /// Only use this if you know what you're doing.
     /// </summary>
     /// <returns>The name of the serial port where the program expects to find the Cyton dongle.</returns>
     /// <example>
@@ -176,11 +177,103 @@ public interface OpenBCIReaderI
     /// </example>
     public string GetDefaultSerialPort();
 
+    /// <summary>
+    /// Set whether or not the program prints every message with debug info or just important ones.
+    /// If true, program will print a lot of debug information
+    /// If false, program will print only critical info such as whether or not the board has connected
+    /// </summary>
+    ///
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// if (inDebugMode) {
+    ///     bci.SetVerbose(true);
+    /// } else {
+    ///     bci.SetVerbose(false);
+    /// }
+    /// </code>
+    /// </example>
     public void SetVerbose();
+    /// <summary>
+    /// Get whether or not the program prints every message or just important ones.
+    /// If true, program will print a lot of debug information
+    /// If false, program will print only critical info such as whether or not the board has connected
+    /// </summary>
+    /// <returns>Whether or not the program prints every message with debug info or just important ones.</returns>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// if (bci.GetVerbose()) {
+    ///     Debug.Log("Extra debug message");
+    /// } else {
+    ///     Debug.Log("Important message");
+    /// }
+    /// </code>
+    /// </example>
     public bool GetVerbose();
 
+    /// <summary>
+    /// Set the numerical threshold for a certain channel, in nanovolts. Only use this if you know what you're doing.
+    /// See GetNumChannels() for the number of supported channels on the current device
+    /// See GetNumericInput() for current nanovolt measurements.
+    /// </summary>
+    /// <param name="channel">The 0-indexed channel number</param>
+    /// <param name="threshold">The threshold to set, in nanovolts</param>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// int channelCount = OpenBCIReaderI.GetNumChannels();
+    ///
+    /// for (int i = 0; i < channelCount; i++) {
+    ///     bci.SetThreshold(i, 0);
+    /// }
+    /// </code>
+    /// </example>
     public void SetThreshold(int channel, double threshold);
+    /// <summary>
+    /// This method is often called with no arguments when the game starts up for calibration;
+    /// see instructions below.
+    /// 
+    /// Sets the threshold for the specified channel so that the current state is interpreted as resting.
+    ///
+    /// If input becomes unreliable for a certain muscle, instruct the user to rest/relax the muscle,
+    /// wait a couple seconds, then call this function with the bad channel. If all input becomes unreliable,
+    /// call with no arguments to reset all channels so that the current input is interpreted as resting.
+    /// </summary>
+    /// <param name="channel">The channel whose threshold should be reset.</param>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    /// int badChannel = 4;
+    ///
+    /// int channelCount = bci.GetNumChannels();
+    ///
+    /// if (badChannel < channelCount) {
+    ///     bci.AutoRestingThreshold(badChannel);
+    /// }
+    /// </code>
+    /// </example>
     public void AutoRestingThreshold(int channel);
+    /// <summary>
+    /// This method is often called with no arguments when the game starts up for calibration;
+    /// see instructions below.
+    /// 
+    /// Sets the threshold for all channels so that the current state is interpreted as resting.
+    ///
+    /// If input becomes unreliable, instruct the user to rest/relax all muscles,
+    /// wait a couple seconds, then call this function. If only one muscle is acting up, call this method
+    /// with that muscle as the argument to reset the threshold for only that channel.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// bci.AutoRestingThreshold();
+    /// </code>
+    /// </example>
     public void AutoRestingThreshold();
 
     public void SetThresholdType(int channel, ThresholdType thresholdType);
