@@ -492,10 +492,65 @@ public interface OpenBCIReaderI
     /// </example>
     public void SetThresholdSensitivity(double sensitivity);
 
-    
+    /// <summary>
+    /// Returns the boolean input of whether or not the user is flexing this muscle.
+    /// </summary>
+    /// <param name="channel">The muscle to measure input from</param>
+    /// <returns>The boolean input of whether or not the user is flexing this muscle</returns>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// int channelCount = bci.GetNumChannels();
+    ///
+    /// for (int i = 0; i &lt; channelCount; i++) {
+    ///     if (bci.GetInput(i)) {
+    ///         // do something in-game that was waiting for this input
+    ///     }
+    /// }
+    /// </code>
+    /// </example>
     public bool GetInput(int channel);
+    /// <summary>
+    /// Returns the current numeric input, in nanovolts, for the specified channel. Only use this if you know
+    /// what you're doing. This is the value after the calculation determined by the channel's ThresholdType.
+    /// </summary>
+    /// <param name="channel">The channel to measure input from</param>
+    /// <returns>The current numeric input, in nanovolts, for the specified channel</returns>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// int channelCount = bci.GetNumChannels();
+    ///
+    /// for (int i = 0; i &lt; channelCount; i++) {
+    ///     double nanovolts = bci.GetNumericInput(i);
+    ///     ...;
+    /// }
+    /// </code>
+    /// </example>
     public double GetNumericInput(int channel);
 
+    /// <summary>
+    /// Disconnect the currently connected BCI board, if one is connected. Do not attempt to reconnect.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// bci.Disconnect();
+    /// </code>
+    /// </example>
     public void Disconnect();
+    /// <summary>
+    /// Attempt to reconnect to a BCI board. Will first disconnect the currently connected BCI board if one is connected.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// bci.Reconnect();
+    /// </code>
+    /// </example>
     public void Reconnect();
 }
