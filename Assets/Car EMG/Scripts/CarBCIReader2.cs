@@ -5,23 +5,87 @@ using brainflow;
 
 public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
 {
-    
+    /// <summary>
+    /// Get whether or not the program prints every message or just important ones.
+    /// If true, program will print a lot of debug information
+    /// If false, program will print only critical info such as whether or not the board has connected
+    /// </summary>
+    /// <see cref="SetVerbose"/>
+    /// <see cref="GetVerbose"/>
     public bool verbose;
+    /// <summary>
+    /// Whether the class should try to connect to the board when it is instantiated
+    /// In production, should be false
+    /// Otherwise, set via Unity editor
+    /// </summary>
     public bool attemptConnectionOnStartup;
+    /// <summary>
+    /// Set whether or not the program should be allowed to use wifi to connect to the board.
+    ///
+    /// Note: turning this on may add a significant amount of time to reconnection delay
+    /// </summary>
+    /// <see cref="SetAllowWifi(bool)"/>
+    /// <see cref="GetAllowWifi"/>
     public bool allowWifi;
+
+    /// <summary>
+    /// The name of the wifi shield
+    /// Should be similar to "OpenBCI-XXXX"
+    /// </summary>
+    private string wifiBoardName;
     
-    private const int NumSamplesPerInput = 500;
+    /// <summary>
+    /// Also known as sensitivity
+    /// </summary>
+    /// <see cref="SetThresholdSensitivity(int,double)"/>
+    private int NumSamplesPerInput = 500;
+    
+    /// <summary>
+    /// Constant board id for bluetooth Cyton connections
+    /// <see href="https://brainflow.readthedocs.io/en/stable/SupportedBoards.html#openbci"/>
+    /// </summary>
     private const int CytonBoardID = 0;
+    /// <summary>
+    /// Constant board id for wifi Cyton connections
+    /// <see href="https://brainflow.readthedocs.io/en/stable/SupportedBoards.html#openbci"/>
+    /// </summary>
     private const int WifiCytonBoardID = 5;
     
+    /// <summary>
+    /// Similar to "COMX", where X is an integer from 1 to 9.
+    ///
+    /// In Windows, see device manager for serial port list.
+    /// </summary>
+    /// <see cref="SetDefaultSerialPort"/>
+    /// <see cref="GetDefaultSerialPort"/>
     private string serialPort;
+    
+    /// <summary>
+    /// Variable that represents the current board connection
+    /// </summary>
     private BoardShim boardShim;
+    
+    /// <summary>
+    /// Current connection status
+    /// </summary>
+    /// <see cref="OpenBCIReaderI.ConnectionStatus"/>
     private OpenBCIReaderI.ConnectionStatus connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
 
+    /// <summary>
+    /// The last recorded value, used to test if board connection is stable
+    /// </summary>
+    /// <see cref="lastValTime"/>
     private double lastVal;
+    /// <summary>
+    /// The timestamp of the last recorded value, used to test if board connection is stable
+    /// </summary>
+    /// <see cref="lastVal"/>
     private DateTime lastValTime = DateTime.UtcNow;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Called before the first frame update.
+    /// Attempts to start the connection if attemptConnectionOnStartup
+    /// </summary>
     private void Start()
     {
         if (!attemptConnectionOnStartup) return;
@@ -228,7 +292,7 @@ public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
 
     public OpenBCIReaderI.ConnectionStatus GetConnectionStatus()
     {
-        throw new NotImplementedException();
+        return connectionStatus;
     }
 
     public int GetNumChannels()
@@ -236,44 +300,44 @@ public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
         throw new NotImplementedException();
     }
 
-    public void SetAllowWifi()
+    public void SetAllowWifi(bool shouldAllowWifi)
     {
-        throw new NotImplementedException();
+        allowWifi = shouldAllowWifi;
     }
 
     public bool GetAllowWifi()
     {
-        throw new NotImplementedException();
+        return allowWifi;
     }
 
-    public void SetWifiBoardName(string name)
+    public void SetWifiBoardName(string newWifiBoardName)
     {
-        throw new NotImplementedException();
+        wifiBoardName = newWifiBoardName;
     }
 
     public string GetWifiBoardName()
     {
-        throw new NotImplementedException();
+        return wifiBoardName;
     }
 
     public void SetDefaultSerialPort(string port)
     {
-        throw new NotImplementedException();
+        serialPort = port;
     }
 
     public string GetDefaultSerialPort()
     {
-        throw new NotImplementedException();
+        return serialPort;
     }
 
-    public void SetVerbose()
+    public void SetVerbose(bool newVerbose)
     {
-        throw new NotImplementedException();
+        verbose = newVerbose;
     }
 
     public bool GetVerbose()
     {
-        throw new NotImplementedException();
+        return verbose;
     }
 
     public void SetThreshold(int channel, double threshold)
@@ -301,14 +365,14 @@ public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
         throw new NotImplementedException();
     }
 
-    public void SetThresholdSensitivity(int channel, double sensitivity)
+    public void SetThresholdSensitivity(int channel, int sensitivity)
     {
         throw new NotImplementedException();
     }
 
-    public void SetThresholdSensitivity(double sensitivity)
+    public void SetThresholdSensitivity(int sensitivity)
     {
-        throw new NotImplementedException();
+        NumSamplesPerInput = sensitivity;
     }
 
     public bool GetInput(int channel)
