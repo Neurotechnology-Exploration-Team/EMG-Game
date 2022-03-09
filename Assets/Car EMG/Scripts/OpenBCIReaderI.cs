@@ -92,7 +92,7 @@ public interface OpenBCIReaderI
     ///
     /// Note: turning this on may add a significant amount of time to reconnection delay
     /// </summary>
-    ///
+    /// <param name="allowWifi">Whether or not the program should be allowed to use wifi to connect to the board.</param>
     /// <example>
     /// <code>
     ///
@@ -106,7 +106,7 @@ public interface OpenBCIReaderI
     ///
     /// </code>
     /// </example>
-    public void SetAllowWifi();
+    public void SetAllowWifi(bool allowWifi);
     /// <summary>
     /// Get whether or not the program should be allowed to use wifi to connect to the board.
     ///
@@ -193,7 +193,7 @@ public interface OpenBCIReaderI
     /// If true, program will print a lot of debug information
     /// If false, program will print only critical info such as whether or not the board has connected
     /// </summary>
-    ///
+    /// <param name="verbose">Whether or not the program prints every message with debug info or just important ones.</param>
     /// <example>
     /// <code>
     /// OpenBCIReaderI bci = ...;
@@ -205,7 +205,7 @@ public interface OpenBCIReaderI
     /// }
     /// </code>
     /// </example>
-    public void SetVerbose();
+    public void SetVerbose(bool verbose);
     /// <summary>
     /// Get whether or not the program prints every message or just important ones.
     /// If true, program will print a lot of debug information
@@ -442,7 +442,7 @@ public interface OpenBCIReaderI
     /// }
     /// </code>
     /// </example>
-    public void SetThresholdSensitivity(int channel, double sensitivity);
+    public void SetThresholdSensitivity(int channel, int sensitivity);
     /// <summary>
     /// Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive.
     /// See table for more information on what values are appropriate.
@@ -490,7 +490,7 @@ public interface OpenBCIReaderI
     /// bci.SetThresholdSensitivity(newSensitivity);
     /// </code>
     /// </example>
-    public void SetThresholdSensitivity(double sensitivity);
+    public void SetThresholdSensitivity(int sensitivity);
 
     /// <summary>
     /// Returns the boolean input of whether or not the user is flexing this muscle.
