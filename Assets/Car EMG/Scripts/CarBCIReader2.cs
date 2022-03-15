@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 using brainflow;
-
 public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
 {
     /// <summary>
@@ -295,7 +294,7 @@ public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
         return connectionStatus;
     }
 
-    public int GetNumChannels()
+    public int? GetNumChannels()
     {
         throw new NotImplementedException();
     }

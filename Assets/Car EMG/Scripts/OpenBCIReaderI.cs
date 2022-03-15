@@ -101,7 +101,7 @@ public interface OpenBCIReaderI
     /// 
     /// </code>
     /// </example>
-    public int GetNumChannels();
+    public int? GetNumChannels();
 
     /// <summary>
     /// Set whether or not the program should be allowed to use wifi to connect to the board.
