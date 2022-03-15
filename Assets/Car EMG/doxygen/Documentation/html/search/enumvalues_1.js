@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['last_0',['Last',['../interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b',1,'OpenBCIReaderI']]]
+  ['connected_0',['Connected',['../interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31a2ec0d16e4ca169baedb9b2d50ec5c6d7',1,'OpenBCIReaderI']]],
+  ['connecting_1',['Connecting',['../interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31ae321c53b354930ba96f0243e652df458',1,'OpenBCIReaderI']]]
 ];
