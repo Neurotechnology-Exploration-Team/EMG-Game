@@ -12,11 +12,14 @@ var class_car_b_c_i_reader2 =
     [ "GetVerbose", "class_car_b_c_i_reader2.html#a80c584e6fddabf436202140f4021ecf6", null ],
     [ "GetWifiBoardName", "class_car_b_c_i_reader2.html#a6effed5ddc51d4f168cfd9aca41e381a", null ],
     [ "Reconnect", "class_car_b_c_i_reader2.html#a5d7a563cff88d7c4d8f92bddf1f2a997", null ],
-    [ "SetAllowWifi", "class_car_b_c_i_reader2.html#a9a468170bf37cf34b53290910a10e540", null ],
+    [ "SetAllowWifi", "class_car_b_c_i_reader2.html#ae98bd937116b233d5c73fbe83ac1f678", null ],
     [ "SetDefaultSerialPort", "class_car_b_c_i_reader2.html#ada7dde08a91fabf347f6195149df904a", null ],
     [ "SetThreshold", "class_car_b_c_i_reader2.html#a020c439a643e279757f2eda6303df2f4", null ],
-    [ "SetThresholdSensitivity", "class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa", null ],
-    [ "SetThresholdSensitivity", "class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2", null ],
-    [ "SetVerbose", "class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b", null ],
-    [ "SetWifiBoardName", "class_car_b_c_i_reader2.html#a5c59bed88d2505a7492257fae840fd2d", null ]
+    [ "SetThresholdSensitivity", "class_car_b_c_i_reader2.html#a885525257ff4543c923e032c53305e0c", null ],
+    [ "SetThresholdSensitivity", "class_car_b_c_i_reader2.html#a98bb6303a4fc7b6453bf3a137ddc96a6", null ],
+    [ "SetVerbose", "class_car_b_c_i_reader2.html#a63cfdeb7f4546e4eb4ad38718e0a7582", null ],
+    [ "SetWifiBoardName", "class_car_b_c_i_reader2.html#ad523db8398191f78ed9f43086c434b6d", null ],
+    [ "allowWifi", "class_car_b_c_i_reader2.html#a887a3c595aff6ab7b2ea68e304cdd664", null ],
+    [ "attemptConnectionOnStartup", "class_car_b_c_i_reader2.html#ab3c23dbdba4ee10ab585f183af8a4b7e", null ],
+    [ "verbose", "class_car_b_c_i_reader2.html#a8577d4da12c5a2924b8cb3de72541295", null ]
 ];

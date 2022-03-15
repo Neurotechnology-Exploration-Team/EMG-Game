@@ -96,27 +96,27 @@ Inheritance diagram for CarBCIReader2:</div>
  <div class="center">
   <img src="class_car_b_c_i_reader2.png" usemap="#CarBCIReader2_map" alt=""/>
   <map id="CarBCIReader2_map" name="CarBCIReader2_map">
-<area href="interface_open_b_c_i_reader_i.html" alt="OpenBCIReaderI" shape="rect" coords="117,0,224,24"/>
+<area href="interface_open_b_c_i_reader_i.html" title="An interface representing the functionality of a class that can interact with BCI hardware as input a..." alt="OpenBCIReaderI" shape="rect" coords="117,0,224,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af68303e03c51f85d8e3942f977fce7dc"><td class="memItemLeft" align="right" valign="top">OpenBCIReaderI.ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#af68303e03c51f85d8e3942f977fce7dc">GetConnectionStatus</a> ()</td></tr>
+<tr class="memitem:af68303e03c51f85d8e3942f977fce7dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">OpenBCIReaderI.ConnectionStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#af68303e03c51f85d8e3942f977fce7dc">GetConnectionStatus</a> ()</td></tr>
 <tr class="memdesc:af68303e03c51f85d8e3942f977fce7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current status of the connection with the Open BCI board  <a href="class_car_b_c_i_reader2.html#af68303e03c51f85d8e3942f977fce7dc">More...</a><br /></td></tr>
 <tr class="separator:af68303e03c51f85d8e3942f977fce7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dd23526d98ac95860da38390eac38d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a4dd23526d98ac95860da38390eac38d7">GetNumChannels</a> ()</td></tr>
 <tr class="memdesc:a4dd23526d98ac95860da38390eac38d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of channels in the connected device, or null if no device is connected  <a href="class_car_b_c_i_reader2.html#a4dd23526d98ac95860da38390eac38d7">More...</a><br /></td></tr>
 <tr class="separator:a4dd23526d98ac95860da38390eac38d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a468170bf37cf34b53290910a10e540"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a9a468170bf37cf34b53290910a10e540">SetAllowWifi</a> ()</td></tr>
-<tr class="memdesc:a9a468170bf37cf34b53290910a10e540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program should be allowed to use wifi to connect to the board.  <a href="class_car_b_c_i_reader2.html#a9a468170bf37cf34b53290910a10e540">More...</a><br /></td></tr>
-<tr class="separator:a9a468170bf37cf34b53290910a10e540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae98bd937116b233d5c73fbe83ac1f678"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#ae98bd937116b233d5c73fbe83ac1f678">SetAllowWifi</a> (bool shouldAllowWifi)</td></tr>
+<tr class="memdesc:ae98bd937116b233d5c73fbe83ac1f678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program should be allowed to use wifi to connect to the board.  <a href="class_car_b_c_i_reader2.html#ae98bd937116b233d5c73fbe83ac1f678">More...</a><br /></td></tr>
+<tr class="separator:ae98bd937116b233d5c73fbe83ac1f678"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a607218c547c15fdbf4762752292ed9e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a607218c547c15fdbf4762752292ed9e7">GetAllowWifi</a> ()</td></tr>
 <tr class="memdesc:a607218c547c15fdbf4762752292ed9e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program should be allowed to use wifi to connect to the board.  <a href="class_car_b_c_i_reader2.html#a607218c547c15fdbf4762752292ed9e7">More...</a><br /></td></tr>
 <tr class="separator:a607218c547c15fdbf4762752292ed9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c59bed88d2505a7492257fae840fd2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a5c59bed88d2505a7492257fae840fd2d">SetWifiBoardName</a> (string name)</td></tr>
-<tr class="memdesc:a5c59bed88d2505a7492257fae840fd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to "OpenBCI-XXXX"  <a href="class_car_b_c_i_reader2.html#a5c59bed88d2505a7492257fae840fd2d">More...</a><br /></td></tr>
-<tr class="separator:a5c59bed88d2505a7492257fae840fd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad523db8398191f78ed9f43086c434b6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#ad523db8398191f78ed9f43086c434b6d">SetWifiBoardName</a> (string newWifiBoardName)</td></tr>
+<tr class="memdesc:ad523db8398191f78ed9f43086c434b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to "OpenBCI-XXXX"  <a href="class_car_b_c_i_reader2.html#ad523db8398191f78ed9f43086c434b6d">More...</a><br /></td></tr>
+<tr class="separator:ad523db8398191f78ed9f43086c434b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6effed5ddc51d4f168cfd9aca41e381a"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a6effed5ddc51d4f168cfd9aca41e381a">GetWifiBoardName</a> ()</td></tr>
 <tr class="memdesc:a6effed5ddc51d4f168cfd9aca41e381a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to "OpenBCI-XXXX"  <a href="class_car_b_c_i_reader2.html#a6effed5ddc51d4f168cfd9aca41e381a">More...</a><br /></td></tr>
 <tr class="separator:a6effed5ddc51d4f168cfd9aca41e381a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a1d9d201ebd80f4a3890315f579c8ccd5">GetDefaultSerialPort</a> ()</td></tr>
 <tr class="memdesc:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you're doing.  <a href="class_car_b_c_i_reader2.html#a1d9d201ebd80f4a3890315f579c8ccd5">More...</a><br /></td></tr>
 <tr class="separator:a1d9d201ebd80f4a3890315f579c8ccd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5f6856bfd9e42728fb1b23d882dc77b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b">SetVerbose</a> ()</td></tr>
-<tr class="memdesc:aa5f6856bfd9e42728fb1b23d882dc77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="class_car_b_c_i_reader2.html#aa5f6856bfd9e42728fb1b23d882dc77b">More...</a><br /></td></tr>
-<tr class="separator:aa5f6856bfd9e42728fb1b23d882dc77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63cfdeb7f4546e4eb4ad38718e0a7582"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a63cfdeb7f4546e4eb4ad38718e0a7582">SetVerbose</a> (bool newVerbose)</td></tr>
+<tr class="memdesc:a63cfdeb7f4546e4eb4ad38718e0a7582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="class_car_b_c_i_reader2.html#a63cfdeb7f4546e4eb4ad38718e0a7582">More...</a><br /></td></tr>
+<tr class="separator:a63cfdeb7f4546e4eb4ad38718e0a7582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80c584e6fddabf436202140f4021ecf6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a80c584e6fddabf436202140f4021ecf6">GetVerbose</a> ()</td></tr>
 <tr class="memdesc:a80c584e6fddabf436202140f4021ecf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="class_car_b_c_i_reader2.html#a80c584e6fddabf436202140f4021ecf6">More...</a><br /></td></tr>
 <tr class="separator:a80c584e6fddabf436202140f4021ecf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,12 +147,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 <tr class="memitem:a1ae4e13bf801d275b8bd8bc769224390"><td class="memItemLeft" align="right" valign="top"><a id="a1ae4e13bf801d275b8bd8bc769224390" name="a1ae4e13bf801d275b8bd8bc769224390"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> (<a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">OpenBCIReaderI.ThresholdType</a> thresholdType)</td></tr>
 <tr class="separator:a1ae4e13bf801d275b8bd8bc769224390"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c9fe07c30806bcc9a2a343077e3e1c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2">SetThresholdSensitivity</a> (int channel, double sensitivity)</td></tr>
-<tr class="memdesc:a0c9fe07c30806bcc9a2a343077e3e1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="class_car_b_c_i_reader2.html#a0c9fe07c30806bcc9a2a343077e3e1c2">More...</a><br /></td></tr>
-<tr class="separator:a0c9fe07c30806bcc9a2a343077e3e1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c600129921f05266eead612c07e9aaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa">SetThresholdSensitivity</a> (double sensitivity)</td></tr>
-<tr class="memdesc:a3c600129921f05266eead612c07e9aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="class_car_b_c_i_reader2.html#a3c600129921f05266eead612c07e9aaa">More...</a><br /></td></tr>
-<tr class="separator:a3c600129921f05266eead612c07e9aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885525257ff4543c923e032c53305e0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a885525257ff4543c923e032c53305e0c">SetThresholdSensitivity</a> (int channel, int sensitivity)</td></tr>
+<tr class="memdesc:a885525257ff4543c923e032c53305e0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="class_car_b_c_i_reader2.html#a885525257ff4543c923e032c53305e0c">More...</a><br /></td></tr>
+<tr class="separator:a885525257ff4543c923e032c53305e0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98bb6303a4fc7b6453bf3a137ddc96a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a98bb6303a4fc7b6453bf3a137ddc96a6">SetThresholdSensitivity</a> (int sensitivity)</td></tr>
+<tr class="memdesc:a98bb6303a4fc7b6453bf3a137ddc96a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="class_car_b_c_i_reader2.html#a98bb6303a4fc7b6453bf3a137ddc96a6">More...</a><br /></td></tr>
+<tr class="separator:a98bb6303a4fc7b6453bf3a137ddc96a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77cf326f93e9ca737693bea6a3086cd8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a77cf326f93e9ca737693bea6a3086cd8">GetInput</a> (int channel)</td></tr>
 <tr class="memdesc:a77cf326f93e9ca737693bea6a3086cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the boolean input of whether or not the user is flexing this muscle.  <a href="class_car_b_c_i_reader2.html#a77cf326f93e9ca737693bea6a3086cd8">More...</a><br /></td></tr>
 <tr class="separator:a77cf326f93e9ca737693bea6a3086cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,15 +166,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 <tr class="memdesc:a5d7a563cff88d7c4d8f92bddf1f2a997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempt to reconnect to a BCI board. Will first disconnect the currently connected BCI board if one is connected.  <a href="class_car_b_c_i_reader2.html#a5d7a563cff88d7c4d8f92bddf1f2a997">More...</a><br /></td></tr>
 <tr class="separator:a5d7a563cff88d7c4d8f92bddf1f2a997"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_interface_open_b_c_i_reader_i"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_interface_open_b_c_i_reader_i')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></td></tr>
-<tr class="memitem:adb93bad23c8708ddb489137d85fbbc5c inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">ConnectionStatus&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#adb93bad23c8708ddb489137d85fbbc5c">GetConnectionStatus</a> ()</td></tr>
+<tr class="memitem:adb93bad23c8708ddb489137d85fbbc5c inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#adb93bad23c8708ddb489137d85fbbc5c">GetConnectionStatus</a> ()</td></tr>
 <tr class="memdesc:adb93bad23c8708ddb489137d85fbbc5c inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current status of the connection with the Open BCI board  <a href="interface_open_b_c_i_reader_i.html#adb93bad23c8708ddb489137d85fbbc5c">More...</a><br /></td></tr>
 <tr class="separator:adb93bad23c8708ddb489137d85fbbc5c inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63350e46e17b46cb8e67a0c0dcafd68e inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">GetNumChannels</a> ()</td></tr>
 <tr class="memdesc:a63350e46e17b46cb8e67a0c0dcafd68e inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of channels in the connected device, or null if no device is connected  <a href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">More...</a><br /></td></tr>
 <tr class="separator:a63350e46e17b46cb8e67a0c0dcafd68e inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaea720de7d17e5c5c8f46337615ce6b2 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">SetAllowWifi</a> ()</td></tr>
-<tr class="memdesc:aaea720de7d17e5c5c8f46337615ce6b2 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program should be allowed to use wifi to connect to the board.  <a href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">More...</a><br /></td></tr>
-<tr class="separator:aaea720de7d17e5c5c8f46337615ce6b2 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e44e5e711dfcc43b6695dfee8f1bf83 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">SetAllowWifi</a> (bool allowWifi)</td></tr>
+<tr class="memdesc:a7e44e5e711dfcc43b6695dfee8f1bf83 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program should be allowed to use wifi to connect to the board.  <a href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">More...</a><br /></td></tr>
+<tr class="separator:a7e44e5e711dfcc43b6695dfee8f1bf83 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa30db2666ec08a473c0323ca81b37c8 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#afa30db2666ec08a473c0323ca81b37c8">GetAllowWifi</a> ()</td></tr>
 <tr class="memdesc:afa30db2666ec08a473c0323ca81b37c8 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program should be allowed to use wifi to connect to the board.  <a href="interface_open_b_c_i_reader_i.html#afa30db2666ec08a473c0323ca81b37c8">More...</a><br /></td></tr>
 <tr class="separator:afa30db2666ec08a473c0323ca81b37c8 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,9 +190,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 <tr class="memitem:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#ad26f15d87223209d4c1531352b949007">GetDefaultSerialPort</a> ()</td></tr>
 <tr class="memdesc:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you're doing.  <a href="interface_open_b_c_i_reader_i.html#ad26f15d87223209d4c1531352b949007">More...</a><br /></td></tr>
 <tr class="separator:ad26f15d87223209d4c1531352b949007 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">SetVerbose</a> ()</td></tr>
-<tr class="memdesc:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">More...</a><br /></td></tr>
-<tr class="separator:adbb02ba7af9f42dcfd5982ec4d5b64ab inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f82e191d8e4b2873a408e6542d626b5 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5">SetVerbose</a> (bool verbose)</td></tr>
+<tr class="memdesc:a1f82e191d8e4b2873a408e6542d626b5 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5">More...</a><br /></td></tr>
+<tr class="separator:a1f82e191d8e4b2873a408e6542d626b5 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">GetVerbose</a> ()</td></tr>
 <tr class="memdesc:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70">More...</a><br /></td></tr>
 <tr class="separator:af3c5f4fc3b71e37e13ee8d8003554c70 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,12 +211,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 <tr class="memitem:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0">SetThresholdType</a> (<a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> thresholdType)</td></tr>
 <tr class="memdesc:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the way input is measured for all channels. Usually <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> or <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a>  <a href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0">More...</a><br /></td></tr>
 <tr class="separator:a803506710f73442aa0108a45a0f07af0 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">SetThresholdSensitivity</a> (int channel, double sensitivity)</td></tr>
-<tr class="memdesc:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">More...</a><br /></td></tr>
-<tr class="separator:a42afe4d355f8e6e3c598535e9cf98385 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de">SetThresholdSensitivity</a> (double sensitivity)</td></tr>
-<tr class="memdesc:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de">More...</a><br /></td></tr>
-<tr class="separator:a474ac15cd507b6276ae50604192d68de inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5936530fc261baca9c1f93017befb9f inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f">SetThresholdSensitivity</a> (int channel, int sensitivity)</td></tr>
+<tr class="memdesc:ae5936530fc261baca9c1f93017befb9f inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f">More...</a><br /></td></tr>
+<tr class="separator:ae5936530fc261baca9c1f93017befb9f inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09fd77f6d236043f03966859c259c5a1 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a09fd77f6d236043f03966859c259c5a1">SetThresholdSensitivity</a> (int sensitivity)</td></tr>
+<tr class="memdesc:a09fd77f6d236043f03966859c259c5a1 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted.  <a href="interface_open_b_c_i_reader_i.html#a09fd77f6d236043f03966859c259c5a1">More...</a><br /></td></tr>
+<tr class="separator:a09fd77f6d236043f03966859c259c5a1 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6343c3f599963535f6730f0dc7bed9c6 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#a6343c3f599963535f6730f0dc7bed9c6">GetInput</a> (int channel)</td></tr>
 <tr class="memdesc:a6343c3f599963535f6730f0dc7bed9c6 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the boolean input of whether or not the user is flexing this muscle.  <a href="interface_open_b_c_i_reader_i.html#a6343c3f599963535f6730f0dc7bed9c6">More...</a><br /></td></tr>
 <tr class="separator:a6343c3f599963535f6730f0dc7bed9c6 inherit pub_methods_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,14 +232,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetThresholdType</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a8577d4da12c5a2924b8cb3de72541295"><td class="memItemLeft" align="right" valign="top"><a id="a8577d4da12c5a2924b8cb3de72541295" name="a8577d4da12c5a2924b8cb3de72541295"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>verbose</b></td></tr>
+<tr class="memitem:a8577d4da12c5a2924b8cb3de72541295"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a8577d4da12c5a2924b8cb3de72541295">verbose</a></td></tr>
+<tr class="memdesc:a8577d4da12c5a2924b8cb3de72541295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected  <a href="class_car_b_c_i_reader2.html#a8577d4da12c5a2924b8cb3de72541295">More...</a><br /></td></tr>
 <tr class="separator:a8577d4da12c5a2924b8cb3de72541295"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3c23dbdba4ee10ab585f183af8a4b7e"><td class="memItemLeft" align="right" valign="top"><a id="ab3c23dbdba4ee10ab585f183af8a4b7e" name="ab3c23dbdba4ee10ab585f183af8a4b7e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>attemptConnectionOnStartup</b></td></tr>
+<tr class="memdesc:ab3c23dbdba4ee10ab585f183af8a4b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the class should try to connect to the board when it is instantiated In production, should be false Otherwise, set via Unity editor <br /></td></tr>
 <tr class="separator:ab3c23dbdba4ee10ab585f183af8a4b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a887a3c595aff6ab7b2ea68e304cdd664"><td class="memItemLeft" align="right" valign="top"><a id="a887a3c595aff6ab7b2ea68e304cdd664" name="a887a3c595aff6ab7b2ea68e304cdd664"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>allowWifi</b></td></tr>
+<tr class="memitem:a887a3c595aff6ab7b2ea68e304cdd664"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_car_b_c_i_reader2.html#a887a3c595aff6ab7b2ea68e304cdd664">allowWifi</a></td></tr>
+<tr class="memdesc:a887a3c595aff6ab7b2ea68e304cdd664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether or not the program should be allowed to use wifi to connect to the board.  <a href="class_car_b_c_i_reader2.html#a887a3c595aff6ab7b2ea68e304cdd664">More...</a><br /></td></tr>
 <tr class="separator:a887a3c595aff6ab7b2ea68e304cdd664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -250,10 +251,10 @@ Additional Inherited Members</h2></td></tr>
 , <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b">Last</a>
  }</td></tr>
 <tr class="separator:a886b9cdb5faf31bb4cc7429b2c4d81b9 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac34f2c8478cb9568d298eec382a36b31 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top"><a id="ac34f2c8478cb9568d298eec382a36b31" name="ac34f2c8478cb9568d298eec382a36b31"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>ConnectionStatus</b> { <b>Disconnected</b>
-, <b>Connecting</b>
-, <b>Connected</b>
-, <b>Reconnecting</b>
+<tr class="memitem:ac34f2c8478cb9568d298eec382a36b31 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a> { <a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31aef70e46fd3bbc21e3e1f0b6815e750c0">Disconnected</a>
+, <a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31ae321c53b354930ba96f0243e652df458">Connecting</a>
+, <a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31a2ec0d16e4ca169baedb9b2d50ec5c6d7">Connected</a>
+, <a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31a80154864ebe36b3db0acd51f9b10f568">Reconnecting</a>
  }</td></tr>
 <tr class="separator:ac34f2c8478cb9568d298eec382a36b31 inherit pub_types_interface_open_b_c_i_reader_i"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -279,7 +280,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
 <div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">AutoRestingThreshold</a>();</div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></div><div class="ttdef"><b>Definition:</b> OpenBCIReaderI.cs:2</div></div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a></div><div class="ttdoc">An interface representing the functionality of a class that can interact with BCI hardware as input a...</div><div class="ttdef"><b>Definition:</b> OpenBCIReaderI.cs:6</div></div>
 <div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a2d03b4d9f564bc41e7bb81b21dc1f891"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a2d03b4d9f564bc41e7bb81b21dc1f891">OpenBCIReaderI.AutoRestingThreshold</a></div><div class="ttdeci">void AutoRestingThreshold(int channel)</div><div class="ttdoc">Sets the threshold for the specified channel so that the current state is interpreted as resting.</div></div>
 </div><!-- fragment --> 
 <p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a4842c2fccb27fd33bc38e2a01b6413ec">OpenBCIReaderI</a>.</p>
@@ -388,7 +389,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">OpenBCIReaderI.ConnectionStatus CarBCIReader2.GetConnectionStatus </td>
+          <td class="memname"><a class="el" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">OpenBCIReaderI.ConnectionStatus</a> CarBCIReader2.GetConnectionStatus </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -401,26 +402,27 @@ Additional Inherited Members</h2></td></tr>
 <tr>
 <th>Value </th><th>Condition  </th></tr>
 <tr>
-<td><div class="fragment"><div class="line">ConnectionStatus.Disconnected</div>
+<td><div class="fragment"><div class="line"><a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Disconnected</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_ac34f2c8478cb9568d298eec382a36b31"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">OpenBCIReaderI.ConnectionStatus</a></div><div class="ttdeci">ConnectionStatus</div><div class="ttdef"><b>Definition:</b> OpenBCIReaderI.cs:25</div></div>
 </div><!-- fragment --> </td><td>There is no current connection.  </td></tr>
 <tr>
-<td><div class="fragment"><div class="line">ConnectionStatus.Connecting</div>
+<td><div class="fragment"><div class="line"><a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Connecting</div>
 </div><!-- fragment --> </td><td>The program is attempting to connect to the board. The process should not be aborted if in this state.  </td></tr>
 <tr>
-<td><div class="fragment"><div class="line">ConnectionStatus.Connected</div>
+<td><div class="fragment"><div class="line"><a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Connected</div>
 </div><!-- fragment --> </td><td>The program is connected to the board and receiving valid data.  </td></tr>
 </table>
 </dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">switch</span> (bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adb93bad23c8708ddb489137d85fbbc5c">GetConnectionStatus</a>()) {</div>
-<div class="line">    <span class="keywordflow">case</span> <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.ConnectionStatus.Disconnected:</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.<a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Disconnected:</div>
 <div class="line">        bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a50631276b93db10a9b3d26b02ccc741b">Reconnect</a>();</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">    <span class="keywordflow">case</span> <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.ConnectionStatus.Connecting:</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.<a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Connecting:</div>
 <div class="line">        Debug.Log(<span class="stringliteral">&quot;Please wait!&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">    <span class="keywordflow">case</span> <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.ConnectionStatus.Connected:</div>
+<div class="line">    <span class="keywordflow">case</span> <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.<a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Connected:</div>
 <div class="line">        <span class="keywordtype">bool</span> i = bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a6343c3f599963535f6730f0dc7bed9c6">GetInput</a>(2);</div>
 <div class="line">        ...</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
@@ -516,7 +518,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of channels in the connected device, or null if no device is connected</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span> (bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adb93bad23c8708ddb489137d85fbbc5c">GetConnectionStatus</a>() == <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.ConnectionStatus.Connected) {</div>
+<div class="line"><span class="keywordflow">if</span> (bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adb93bad23c8708ddb489137d85fbbc5c">GetConnectionStatus</a>() == <a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a>.<a class="code hl_enumeration" href="interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31">ConnectionStatus</a>.Connected) {</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> channel = 0; channel &lt; bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">GetNumChannels</a>(); channel++) {</div>
 <div class="line">        <span class="keywordtype">bool</span> i = bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a6343c3f599963535f6730f0dc7bed9c6">GetInput</a>(channel);</div>
 <div class="line">        ...</div>
@@ -645,8 +647,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9a468170bf37cf34b53290910a10e540" name="a9a468170bf37cf34b53290910a10e540"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a468170bf37cf34b53290910a10e540">&#9670;&nbsp;</a></span>SetAllowWifi()</h2>
+<a id="ae98bd937116b233d5c73fbe83ac1f678" name="ae98bd937116b233d5c73fbe83ac1f678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae98bd937116b233d5c73fbe83ac1f678">&#9670;&nbsp;</a></span>SetAllowWifi()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,7 +656,8 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void CarBCIReader2.SetAllowWifi </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowWifi</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -662,16 +665,22 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Set whether or not the program should be allowed to use wifi to connect to the board. </p>
 <p >Note: turning this on may add a significant amount of time to reconnection delay </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowWifi</td><td>Whether or not the program should be allowed to use wifi to connect to the board.</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">if</span> (usingWifiShield) {</div>
-<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">SetAllowWifi</a>(<span class="keyword">true</span>);</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">SetAllowWifi</a>(<span class="keyword">true</span>);</div>
 <div class="line">} <span class="keywordflow">else</span> {</div>
-<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">SetAllowWifi</a>(<span class="keyword">false</span>);</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">SetAllowWifi</a>(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_aaea720de7d17e5c5c8f46337615ce6b2"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">OpenBCIReaderI.SetAllowWifi</a></div><div class="ttdeci">void SetAllowWifi()</div><div class="ttdoc">Set whether or not the program should be allowed to use wifi to connect to the board.</div></div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a7e44e5e711dfcc43b6695dfee8f1bf83"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">OpenBCIReaderI.SetAllowWifi</a></div><div class="ttdeci">void SetAllowWifi(bool allowWifi)</div><div class="ttdoc">Set whether or not the program should be allowed to use wifi to connect to the board.</div></div>
 </div><!-- fragment --> 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">OpenBCIReaderI</a>.</p>
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
@@ -755,52 +764,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c600129921f05266eead612c07e9aaa" name="a3c600129921f05266eead612c07e9aaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c600129921f05266eead612c07e9aaa">&#9670;&nbsp;</a></span>SetThresholdSensitivity() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void CarBCIReader2.SetThresholdSensitivity </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>sensitivity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. </p>
-<p ><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> <a class="el" href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0" title="Sets the way input is measured for all channels. Usually ThresholdType.Average or ThresholdType....">SetThresholdType(OpenBCIReaderI.ThresholdType)</a></p>
-<table class="doxtable">
-<tr>
-<th>Value </th><th>Description  </th></tr>
-<tr>
-<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a></code> </td><td>Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  </td></tr>
-<tr>
-<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a></code> </td><td>Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>. Try this if <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> isn't working well. Sensitivity value is usually best in a bit lower range than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  </td></tr>
-<tr>
-<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b" title="Use the value of the last input sample. This is almost never the best option, and should be used pure...">ThresholdType.Last</a></code> </td><td>Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this ThresholdType.  </td></tr>
-</table>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sensitivity</td><td>The new sensitivity value</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
-<div class="line"><span class="keywordtype">int</span> newSensitivity = 300;</div>
-<div class="line"> </div>
-<div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">SetThresholdSensitivity</a>(newSensitivity);</div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a42afe4d355f8e6e3c598535e9cf98385"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">OpenBCIReaderI.SetThresholdSensitivity</a></div><div class="ttdeci">void SetThresholdSensitivity(int channel, double sensitivity)</div><div class="ttdoc">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive....</div></div>
-</div><!-- fragment --> 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de">OpenBCIReaderI</a>.</p>
-
-</div>
-</div>
-<a id="a0c9fe07c30806bcc9a2a343077e3e1c2" name="a0c9fe07c30806bcc9a2a343077e3e1c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c9fe07c30806bcc9a2a343077e3e1c2">&#9670;&nbsp;</a></span>SetThresholdSensitivity() <span class="overload">[2/2]</span></h2>
+<a id="a885525257ff4543c923e032c53305e0c" name="a885525257ff4543c923e032c53305e0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885525257ff4543c923e032c53305e0c">&#9670;&nbsp;</a></span>SetThresholdSensitivity() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -814,7 +779,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>sensitivity</em>&#160;</td>
         </tr>
         <tr>
@@ -851,15 +816,59 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="keywordtype">int</span> channelCount = bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a63350e46e17b46cb8e67a0c0dcafd68e">GetNumChannels</a>();</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">if</span> (testChannel &lt; channelCount) {</div>
-<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">SetThresholdSensitivity</a>(testChannel, newSensitivity);</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f">SetThresholdSensitivity</a>(testChannel, newSensitivity);</div>
 <div class="line">}</div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_ae5936530fc261baca9c1f93017befb9f"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f">OpenBCIReaderI.SetThresholdSensitivity</a></div><div class="ttdeci">void SetThresholdSensitivity(int channel, int sensitivity)</div><div class="ttdoc">Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive....</div></div>
 </div><!-- fragment --> 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385">OpenBCIReaderI</a>.</p>
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
-<a id="aa5f6856bfd9e42728fb1b23d882dc77b" name="aa5f6856bfd9e42728fb1b23d882dc77b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5f6856bfd9e42728fb1b23d882dc77b">&#9670;&nbsp;</a></span>SetVerbose()</h2>
+<a id="a98bb6303a4fc7b6453bf3a137ddc96a6" name="a98bb6303a4fc7b6453bf3a137ddc96a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98bb6303a4fc7b6453bf3a137ddc96a6">&#9670;&nbsp;</a></span>SetThresholdSensitivity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CarBCIReader2.SetThresholdSensitivity </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sensitivity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. </p>
+<p ><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9">ThresholdType</a> <a class="el" href="interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0" title="Sets the way input is measured for all channels. Usually ThresholdType.Average or ThresholdType....">SetThresholdType(OpenBCIReaderI.ThresholdType)</a></p>
+<table class="doxtable">
+<tr>
+<th>Value </th><th>Description  </th></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a></code> </td><td>Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  </td></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233" title="Use the absolute maximum value of a number of recent input samples. This is usually a decent option,...">ThresholdType.Max</a></code> </td><td>Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>. Try this if <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a> isn't working well. Sensitivity value is usually best in a bit lower range than <a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021" title="Use the mean value of a number of recent input samples. This is usually the best option....">ThresholdType.Average</a>, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  </td></tr>
+<tr>
+<td><code><a class="el" href="interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b" title="Use the value of the last input sample. This is almost never the best option, and should be used pure...">ThresholdType.Last</a></code> </td><td>Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this ThresholdType.  </td></tr>
+</table>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sensitivity</td><td>The new sensitivity value</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
+<div class="line"><span class="keywordtype">int</span> newSensitivity = 300;</div>
+<div class="line"> </div>
+<div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f">SetThresholdSensitivity</a>(newSensitivity);</div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a09fd77f6d236043f03966859c259c5a1">OpenBCIReaderI</a>.</p>
+
+</div>
+</div>
+<a id="a63cfdeb7f4546e4eb4ad38718e0a7582" name="a63cfdeb7f4546e4eb4ad38718e0a7582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63cfdeb7f4546e4eb4ad38718e0a7582">&#9670;&nbsp;</a></span>SetVerbose()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -867,28 +876,35 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void CarBCIReader2.SetVerbose </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>verbose</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">verbose</td><td>Whether or not the program prints every message with debug info or just important ones.</td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">if</span> (inDebugMode) {</div>
-<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">SetVerbose</a>(<span class="keyword">true</span>);</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5">SetVerbose</a>(<span class="keyword">true</span>);</div>
 <div class="line">} <span class="keywordflow">else</span> {</div>
-<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">SetVerbose</a>(<span class="keyword">false</span>);</div>
+<div class="line">    bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5">SetVerbose</a>(<span class="keyword">false</span>);</div>
 <div class="line">}</div>
-<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_adbb02ba7af9f42dcfd5982ec4d5b64ab"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">OpenBCIReaderI.SetVerbose</a></div><div class="ttdeci">void SetVerbose()</div><div class="ttdoc">Set whether or not the program prints every message with debug info or just important ones....</div></div>
+<div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a1f82e191d8e4b2873a408e6542d626b5"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5">OpenBCIReaderI.SetVerbose</a></div><div class="ttdeci">void SetVerbose(bool verbose)</div><div class="ttdoc">Set whether or not the program prints every message with debug info or just important ones....</div></div>
 </div><!-- fragment --> 
-<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab">OpenBCIReaderI</a>.</p>
+<p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5">OpenBCIReaderI</a>.</p>
 
 </div>
 </div>
-<a id="a5c59bed88d2505a7492257fae840fd2d" name="a5c59bed88d2505a7492257fae840fd2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c59bed88d2505a7492257fae840fd2d">&#9670;&nbsp;</a></span>SetWifiBoardName()</h2>
+<a id="ad523db8398191f78ed9f43086c434b6d" name="ad523db8398191f78ed9f43086c434b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad523db8398191f78ed9f43086c434b6d">&#9670;&nbsp;</a></span>SetWifiBoardName()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -912,12 +928,48 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <div class="fragment"><div class="line"><a class="code hl_interface" href="interface_open_b_c_i_reader_i.html">OpenBCIReaderI</a> bci = ...;</div>
 <div class="line"> </div>
-<div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2">SetAllowWifi</a>(<span class="keyword">true</span>);</div>
+<div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83">SetAllowWifi</a>(<span class="keyword">true</span>);</div>
 <div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a79ff7d57eaa1226fe8ef8d365d52bcba">SetWifiBoardName</a>(<span class="stringliteral">&quot;OpenBCI-XXXX&quot;</span>);</div>
 <div class="line">bci.<a class="code hl_function" href="interface_open_b_c_i_reader_i.html#a50631276b93db10a9b3d26b02ccc741b">Reconnect</a>();</div>
 <div class="ttc" id="ainterface_open_b_c_i_reader_i_html_a79ff7d57eaa1226fe8ef8d365d52bcba"><div class="ttname"><a href="interface_open_b_c_i_reader_i.html#a79ff7d57eaa1226fe8ef8d365d52bcba">OpenBCIReaderI.SetWifiBoardName</a></div><div class="ttdeci">void SetWifiBoardName(string name)</div><div class="ttdoc">Set the name of the wifi shield used with the board. Similar to a serial number, different for each b...</div></div>
 </div><!-- fragment --> 
 <p>Implements <a class="el" href="interface_open_b_c_i_reader_i.html#a79ff7d57eaa1226fe8ef8d365d52bcba">OpenBCIReaderI</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a887a3c595aff6ab7b2ea68e304cdd664" name="a887a3c595aff6ab7b2ea68e304cdd664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887a3c595aff6ab7b2ea68e304cdd664">&#9670;&nbsp;</a></span>allowWifi</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CarBCIReader2.allowWifi</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set whether or not the program should be allowed to use wifi to connect to the board. </p>
+<p >Note: turning this on may add a significant amount of time to reconnection delay </p>
+<p ><a class="el" href="class_car_b_c_i_reader2.html#ae98bd937116b233d5c73fbe83ac1f678" title="Set whether or not the program should be allowed to use wifi to connect to the board.">SetAllowWifi(bool)</a> <a class="el" href="class_car_b_c_i_reader2.html#a607218c547c15fdbf4762752292ed9e7" title="Get whether or not the program should be allowed to use wifi to connect to the board.">GetAllowWifi</a> </p>
+
+</div>
+</div>
+<a id="a8577d4da12c5a2924b8cb3de72541295" name="a8577d4da12c5a2924b8cb3de72541295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8577d4da12c5a2924b8cb3de72541295">&#9670;&nbsp;</a></span>verbose</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CarBCIReader2.verbose</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected </p>
+<p ><a class="el" href="class_car_b_c_i_reader2.html#a63cfdeb7f4546e4eb4ad38718e0a7582" title="Set whether or not the program prints every message with debug info or just important ones....">SetVerbose</a> <a class="el" href="class_car_b_c_i_reader2.html#a80c584e6fddabf436202140f4021ecf6" title="Get whether or not the program prints every message or just important ones. If true,...">GetVerbose</a> </p>
 
 </div>
 </div>

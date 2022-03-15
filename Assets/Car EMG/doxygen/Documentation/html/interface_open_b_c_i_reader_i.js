@@ -1,5 +1,11 @@
 var interface_open_b_c_i_reader_i =
 [
+    [ "ConnectionStatus", "interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31", [
+      [ "Disconnected", "interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31aef70e46fd3bbc21e3e1f0b6815e750c0", null ],
+      [ "Connecting", "interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31ae321c53b354930ba96f0243e652df458", null ],
+      [ "Connected", "interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31a2ec0d16e4ca169baedb9b2d50ec5c6d7", null ],
+      [ "Reconnecting", "interface_open_b_c_i_reader_i.html#ac34f2c8478cb9568d298eec382a36b31a80154864ebe36b3db0acd51f9b10f568", null ]
+    ] ],
     [ "ThresholdType", "interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9", [
       [ "Average", "interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021", null ],
       [ "Max", "interface_open_b_c_i_reader_i.html#a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233", null ],
@@ -17,13 +23,13 @@ var interface_open_b_c_i_reader_i =
     [ "GetVerbose", "interface_open_b_c_i_reader_i.html#af3c5f4fc3b71e37e13ee8d8003554c70", null ],
     [ "GetWifiBoardName", "interface_open_b_c_i_reader_i.html#aecb5b684fd0106c874a85984a5716a33", null ],
     [ "Reconnect", "interface_open_b_c_i_reader_i.html#a50631276b93db10a9b3d26b02ccc741b", null ],
-    [ "SetAllowWifi", "interface_open_b_c_i_reader_i.html#aaea720de7d17e5c5c8f46337615ce6b2", null ],
+    [ "SetAllowWifi", "interface_open_b_c_i_reader_i.html#a7e44e5e711dfcc43b6695dfee8f1bf83", null ],
     [ "SetDefaultSerialPort", "interface_open_b_c_i_reader_i.html#af5fda4fcd78735332c9f744cdc6f6755", null ],
     [ "SetThreshold", "interface_open_b_c_i_reader_i.html#aacbcb17819ccdeb1ac6fbabaa4526460", null ],
-    [ "SetThresholdSensitivity", "interface_open_b_c_i_reader_i.html#a474ac15cd507b6276ae50604192d68de", null ],
-    [ "SetThresholdSensitivity", "interface_open_b_c_i_reader_i.html#a42afe4d355f8e6e3c598535e9cf98385", null ],
+    [ "SetThresholdSensitivity", "interface_open_b_c_i_reader_i.html#ae5936530fc261baca9c1f93017befb9f", null ],
+    [ "SetThresholdSensitivity", "interface_open_b_c_i_reader_i.html#a09fd77f6d236043f03966859c259c5a1", null ],
     [ "SetThresholdType", "interface_open_b_c_i_reader_i.html#aa41fd4867a1e6100542ee9ea01240980", null ],
     [ "SetThresholdType", "interface_open_b_c_i_reader_i.html#a803506710f73442aa0108a45a0f07af0", null ],
-    [ "SetVerbose", "interface_open_b_c_i_reader_i.html#adbb02ba7af9f42dcfd5982ec4d5b64ab", null ],
+    [ "SetVerbose", "interface_open_b_c_i_reader_i.html#a1f82e191d8e4b2873a408e6542d626b5", null ],
     [ "SetWifiBoardName", "interface_open_b_c_i_reader_i.html#a79ff7d57eaa1226fe8ef8d365d52bcba", null ]
 ];

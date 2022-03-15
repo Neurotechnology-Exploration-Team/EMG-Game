@@ -9,15 +9,15 @@ Inheritance diagram for Car\+BCIReader2\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-Open\+BCIReader\+I.\+Connection\+Status \mbox{\hyperlink{class_car_b_c_i_reader2_af68303e03c51f85d8e3942f977fce7dc}{Get\+Connection\+Status}} ()
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{Open\+BCIReader\+I.\+Connection\+Status}} \mbox{\hyperlink{class_car_b_c_i_reader2_af68303e03c51f85d8e3942f977fce7dc}{Get\+Connection\+Status}} ()
 \begin{DoxyCompactList}\small\item\em Returns the current status of the connection with the Open BCI board \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_car_b_c_i_reader2_a4dd23526d98ac95860da38390eac38d7}{Get\+Num\+Channels}} ()
 \begin{DoxyCompactList}\small\item\em Returns the number of channels in the connected device, or null if no device is connected \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_car_b_c_i_reader2_a9a468170bf37cf34b53290910a10e540}{Set\+Allow\+Wifi}} ()
+void \mbox{\hyperlink{class_car_b_c_i_reader2_ae98bd937116b233d5c73fbe83ac1f678}{Set\+Allow\+Wifi}} (bool should\+Allow\+Wifi)
 \begin{DoxyCompactList}\small\item\em Set whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a607218c547c15fdbf4762752292ed9e7}{Get\+Allow\+Wifi}} ()
 \begin{DoxyCompactList}\small\item\em Get whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_car_b_c_i_reader2_a5c59bed88d2505a7492257fae840fd2d}{Set\+Wifi\+Board\+Name}} (string name)
+void \mbox{\hyperlink{class_car_b_c_i_reader2_ad523db8398191f78ed9f43086c434b6d}{Set\+Wifi\+Board\+Name}} (string new\+Wifi\+Board\+Name)
 \begin{DoxyCompactList}\small\item\em Set the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_car_b_c_i_reader2_a6effed5ddc51d4f168cfd9aca41e381a}{Get\+Wifi\+Board\+Name}} ()
 \begin{DoxyCompactList}\small\item\em Get the name of the wifi shield used with the board. Similar to a serial number, different for each board. Should be similar to \char`\"{}\+Open\+BCI-\/\+XXXX\char`\"{} \end{DoxyCompactList}\item 
@@ -25,7 +25,7 @@ void \mbox{\hyperlink{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}
 \begin{DoxyCompactList}\small\item\em Set the default Bluetooth dongle serial port for Cyton dongles. Not necessary to be able to use dongles, but may improve connection delays. Similar to \char`\"{}\+COMX\char`\"{}, where X is an integer from 1 to 9. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_car_b_c_i_reader2_a1d9d201ebd80f4a3890315f579c8ccd5}{Get\+Default\+Serial\+Port}} ()
 \begin{DoxyCompactList}\small\item\em Get the default Bluetooth dongle serial port for Cyton dongles. Returns null if no default has been explicitly set. If null, the program will scan all available ports when reconnection is requested. Only use this if you know what you\textquotesingle{}re doing. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}{Set\+Verbose}} ()
+void \mbox{\hyperlink{class_car_b_c_i_reader2_a63cfdeb7f4546e4eb4ad38718e0a7582}{Set\+Verbose}} (bool new\+Verbose)
 \begin{DoxyCompactList}\small\item\em Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}{Get\+Verbose}} ()
 \begin{DoxyCompactList}\small\item\em Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
@@ -41,9 +41,9 @@ void {\bfseries Set\+Threshold\+Type} (int channel, \mbox{\hyperlink{interface_o
 \mbox{\Hypertarget{class_car_b_c_i_reader2_a1ae4e13bf801d275b8bd8bc769224390}\label{class_car_b_c_i_reader2_a1ae4e13bf801d275b8bd8bc769224390}} 
 void {\bfseries Set\+Threshold\+Type} (\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Open\+BCIReader\+I.\+Threshold\+Type}} threshold\+Type)
 \item 
-void \mbox{\hyperlink{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}{Set\+Threshold\+Sensitivity}} (int channel, double sensitivity)
+void \mbox{\hyperlink{class_car_b_c_i_reader2_a885525257ff4543c923e032c53305e0c}{Set\+Threshold\+Sensitivity}} (int channel, int sensitivity)
 \begin{DoxyCompactList}\small\item\em Sets the sensitivity for a certain channel. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}{Set\+Threshold\+Sensitivity}} (double sensitivity)
+void \mbox{\hyperlink{class_car_b_c_i_reader2_a98bb6303a4fc7b6453bf3a137ddc96a6}{Set\+Threshold\+Sensitivity}} (int sensitivity)
 \begin{DoxyCompactList}\small\item\em Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_car_b_c_i_reader2_a77cf326f93e9ca737693bea6a3086cd8}{Get\+Input}} (int channel)
 \begin{DoxyCompactList}\small\item\em Returns the boolean input of whether or not the user is flexing this muscle. \end{DoxyCompactList}\item 
@@ -56,15 +56,13 @@ void \mbox{\hyperlink{class_car_b_c_i_reader2_a5d7a563cff88d7c4d8f92bddf1f2a997}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a8577d4da12c5a2924b8cb3de72541295}\label{class_car_b_c_i_reader2_a8577d4da12c5a2924b8cb3de72541295}} 
-bool {\bfseries verbose}
-\item 
+bool \mbox{\hyperlink{class_car_b_c_i_reader2_a8577d4da12c5a2924b8cb3de72541295}{verbose}}
+\begin{DoxyCompactList}\small\item\em Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_ab3c23dbdba4ee10ab585f183af8a4b7e}\label{class_car_b_c_i_reader2_ab3c23dbdba4ee10ab585f183af8a4b7e}} 
 bool {\bfseries attempt\+Connection\+On\+Startup}
-\item 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a887a3c595aff6ab7b2ea68e304cdd664}\label{class_car_b_c_i_reader2_a887a3c595aff6ab7b2ea68e304cdd664}} 
-bool {\bfseries allow\+Wifi}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Whether the class should try to connect to the board when it is instantiated In production, should be false Otherwise, set via Unity editor \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_car_b_c_i_reader2_a887a3c595aff6ab7b2ea68e304cdd664}{allow\+Wifi}}
+\begin{DoxyCompactList}\small\item\em Set whether or not the program should be allowed to use wifi to connect to the board. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -188,7 +186,7 @@ Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_afa30db2666ec08a473c03
 \index{CarBCIReader2@{CarBCIReader2}!GetConnectionStatus@{GetConnectionStatus}}
 \index{GetConnectionStatus@{GetConnectionStatus}!CarBCIReader2@{CarBCIReader2}}
 \doxysubsubsection{\texorpdfstring{GetConnectionStatus()}{GetConnectionStatus()}}
-{\footnotesize\ttfamily Open\+BCIReader\+I.\+Connection\+Status Car\+BCIReader2.\+Get\+Connection\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{Open\+BCIReader\+I.\+Connection\+Status}} Car\+BCIReader2.\+Get\+Connection\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -207,19 +205,19 @@ Returns the current status of the connection with the Open BCI board
 \endhead
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{ConnectionStatus.Disconnected}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Disconnected}
 
 \end{DoxyCode}
  &There is no current connection.  \\\cline{1-2}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{ConnectionStatus.Connecting}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Connecting}
 
 \end{DoxyCode}
  &The program is attempting to connect to the board. The process should not be aborted if in this state.  \\\cline{1-2}
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{ConnectionStatus.Connected}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Connected}
 
 \end{DoxyCode}
  &The program is connected to the board and receiving valid data.  \\\cline{1-2}
@@ -233,13 +231,13 @@ Returns the current status of the connection with the Open BCI board
 \DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordflow}{switch} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}()) \{}
-\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Disconnected:}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Disconnected:}
 \DoxyCodeLine{        bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
 \DoxyCodeLine{        \textcolor{keywordflow}{break};}
-\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connecting:}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Connecting:}
 \DoxyCodeLine{        Debug.Log(\textcolor{stringliteral}{"{}Please wait!"{}});}
 \DoxyCodeLine{        \textcolor{keywordflow}{break};}
-\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected:}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Connected:}
 \DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(2);}
 \DoxyCodeLine{        ...}
 \DoxyCodeLine{        \textcolor{keywordflow}{break};}
@@ -332,7 +330,7 @@ The number of channels in the connected device, or null if no device is connecte
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
 \DoxyCodeLine{}
-\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}() == \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.ConnectionStatus.Connected) \{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adb93bad23c8708ddb489137d85fbbc5c}{GetConnectionStatus}}() == \mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}}.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ac34f2c8478cb9568d298eec382a36b31}{ConnectionStatus}}.Connected) \{}
 \DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} channel = 0; channel < bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}(); channel++) \{}
 \DoxyCodeLine{        \textcolor{keywordtype}{bool} i = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a6343c3f599963535f6730f0dc7bed9c6}{GetInput}}(channel);}
 \DoxyCodeLine{        ...}
@@ -457,11 +455,11 @@ Attempt to reconnect to a BCI board. Will first disconnect the currently connect
 
 Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Open\+BCIReaderI}}.
 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a9a468170bf37cf34b53290910a10e540}\label{class_car_b_c_i_reader2_a9a468170bf37cf34b53290910a10e540}} 
+\mbox{\Hypertarget{class_car_b_c_i_reader2_ae98bd937116b233d5c73fbe83ac1f678}\label{class_car_b_c_i_reader2_ae98bd937116b233d5c73fbe83ac1f678}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetAllowWifi@{SetAllowWifi}}
 \index{SetAllowWifi@{SetAllowWifi}!CarBCIReader2@{CarBCIReader2}}
 \doxysubsubsection{\texorpdfstring{SetAllowWifi()}{SetAllowWifi()}}
-{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Allow\+Wifi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Allow\+Wifi (\begin{DoxyParamCaption}\item[{bool}]{allow\+Wifi }\end{DoxyParamCaption})}
 
 
 
@@ -470,19 +468,26 @@ Set whether or not the program should be allowed to use wifi to connect to the b
 Note\+: turning this on may add a significant amount of time to reconnection delay 
 
 
+\begin{DoxyParams}{Parameters}
+{\em allow\+Wifi} & Whether or not the program should be allowed to use wifi to connect to the board.\\
+\hline
+\end{DoxyParams}
+
+
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordflow}{if} (usingWifiShield) \{}
-\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a7e44e5e711dfcc43b6695dfee8f1bf83}{SetAllowWifi}}(\textcolor{keyword}{true});}
 \DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a7e44e5e711dfcc43b6695dfee8f1bf83}{SetAllowWifi}}(\textcolor{keyword}{false});}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{Open\+BCIReaderI}}.
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a7e44e5e711dfcc43b6695dfee8f1bf83}{Open\+BCIReaderI}}.
 
 \mbox{\Hypertarget{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}\label{class_car_b_c_i_reader2_ada7dde08a91fabf347f6195149df904a}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetDefaultSerialPort@{SetDefaultSerialPort}}
@@ -548,58 +553,11 @@ Set the numerical threshold for a certain channel, in nanovolts. Only use this i
 
 Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_aacbcb17819ccdeb1ac6fbabaa4526460}{Open\+BCIReaderI}}.
 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}\label{class_car_b_c_i_reader2_a3c600129921f05266eead612c07e9aaa}} 
+\mbox{\Hypertarget{class_car_b_c_i_reader2_a885525257ff4543c923e032c53305e0c}\label{class_car_b_c_i_reader2_a885525257ff4543c923e032c53305e0c}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetThresholdSensitivity@{SetThresholdSensitivity}}
 \index{SetThresholdSensitivity@{SetThresholdSensitivity}!CarBCIReader2@{CarBCIReader2}}
 \doxysubsubsection{\texorpdfstring{SetThresholdSensitivity()}{SetThresholdSensitivity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Threshold\+Sensitivity (\begin{DoxyParamCaption}\item[{double}]{sensitivity }\end{DoxyParamCaption})}
-
-
-
-Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. 
-
-\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}{Set\+Threshold\+Type(\+Open\+BCIReader\+I.\+Threshold\+Type)}}
-
-\tabulinesep=1mm
-\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
-\endhead
-{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
-{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
-{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
-\end{longtabu}
-
-
-
-\begin{DoxyParams}{Parameters}
-{\em sensitivity} & The new sensitivity value\\
-\hline
-\end{DoxyParams}
-
-
-
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
-\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
-\DoxyCodeLine{}
-\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(newSensitivity);}
-
-\end{DoxyCode}
- 
-
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a474ac15cd507b6276ae50604192d68de}{Open\+BCIReaderI}}.
-
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}\label{class_car_b_c_i_reader2_a0c9fe07c30806bcc9a2a343077e3e1c2}} 
-\index{CarBCIReader2@{CarBCIReader2}!SetThresholdSensitivity@{SetThresholdSensitivity}}
-\index{SetThresholdSensitivity@{SetThresholdSensitivity}!CarBCIReader2@{CarBCIReader2}}
-\doxysubsubsection{\texorpdfstring{SetThresholdSensitivity()}{SetThresholdSensitivity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Threshold\+Sensitivity (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{double}]{sensitivity }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Threshold\+Sensitivity (\begin{DoxyParamCaption}\item[{int}]{channel,  }\item[{int}]{sensitivity }\end{DoxyParamCaption})}
 
 
 
@@ -641,40 +599,94 @@ Sets the sensitivity for a certain channel. Usually, lower sensitivity values ar
 \DoxyCodeLine{\textcolor{keywordtype}{int} channelCount = bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a63350e46e17b46cb8e67a0c0dcafd68e}{GetNumChannels}}();}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordflow}{if} (testChannel < channelCount) \{}
-\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{SetThresholdSensitivity}}(testChannel, newSensitivity);}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ae5936530fc261baca9c1f93017befb9f}{SetThresholdSensitivity}}(testChannel, newSensitivity);}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a42afe4d355f8e6e3c598535e9cf98385}{Open\+BCIReaderI}}.
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_ae5936530fc261baca9c1f93017befb9f}{Open\+BCIReaderI}}.
 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}\label{class_car_b_c_i_reader2_aa5f6856bfd9e42728fb1b23d882dc77b}} 
+\mbox{\Hypertarget{class_car_b_c_i_reader2_a98bb6303a4fc7b6453bf3a137ddc96a6}\label{class_car_b_c_i_reader2_a98bb6303a4fc7b6453bf3a137ddc96a6}} 
+\index{CarBCIReader2@{CarBCIReader2}!SetThresholdSensitivity@{SetThresholdSensitivity}}
+\index{SetThresholdSensitivity@{SetThresholdSensitivity}!CarBCIReader2@{CarBCIReader2}}
+\doxysubsubsection{\texorpdfstring{SetThresholdSensitivity()}{SetThresholdSensitivity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Threshold\+Sensitivity (\begin{DoxyParamCaption}\item[{int}]{sensitivity }\end{DoxyParamCaption})}
+
+
+
+Sets the sensitivity for all channels. Usually, lower sensitivity values are MORE sensitive. See table for more information on what values are appropriate. Due to the way samples are collected, floating point values have no significance, so only integers are accepted. 
+
+\mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9}{Threshold\+Type}} \mbox{\hyperlink{interface_open_b_c_i_reader_i_a803506710f73442aa0108a45a0f07af0}{Set\+Threshold\+Type(\+Open\+BCIReader\+I.\+Threshold\+Type)}}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ Value }&\cellcolor{\tableheadbgcolor}\textbf{ Description  }\\\cline{1-2}
+\endhead
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}} &Use the mean value of a number of recent input samples. This is usually the best option. Sensitivity is usually best around 200-\/500; increase sensitivity value for more stable results, decrease sensitivity value for better latency.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9a6a061313d22e51e0f25b7cd4dc065233}{Threshold\+Type.\+Max}}} &Use the absolute maximum value of a number of recent input samples. This is usually a decent option, though may have higher input latency than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}. Try this if \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}} isn\textquotesingle{}t working well. Sensitivity value is usually best in a bit lower range than \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ab1897515d548a960afe49ecf66a29021}{Threshold\+Type.\+Average}}, most of the time between 50 and 200. Increase sensitivity value for more stable results but significantly higher latency, decrease sensitivity value for better latency but more fluctuation.  \\\cline{1-2}
+{\ttfamily \mbox{\hyperlink{interface_open_b_c_i_reader_i_a886b9cdb5faf31bb4cc7429b2c4d81b9ad55b30607c2a9a2616347d6edb789f6b}{Threshold\+Type.\+Last}}} &Use the value of the last input sample. This is almost never the best option, and should be used purely for numerical testing to measure time between change in input and ensure that the connection is working. The sensitivity value has no effect on this Threshold\+Type.  \\\cline{1-2}
+\end{longtabu}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em sensitivity} & The new sensitivity value\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
+\DoxyCodeLine{\textcolor{keywordtype}{int} newSensitivity = 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_ae5936530fc261baca9c1f93017befb9f}{SetThresholdSensitivity}}(newSensitivity);}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a09fd77f6d236043f03966859c259c5a1}{Open\+BCIReaderI}}.
+
+\mbox{\Hypertarget{class_car_b_c_i_reader2_a63cfdeb7f4546e4eb4ad38718e0a7582}\label{class_car_b_c_i_reader2_a63cfdeb7f4546e4eb4ad38718e0a7582}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetVerbose@{SetVerbose}}
 \index{SetVerbose@{SetVerbose}!CarBCIReader2@{CarBCIReader2}}
 \doxysubsubsection{\texorpdfstring{SetVerbose()}{SetVerbose()}}
-{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Verbose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Car\+BCIReader2.\+Set\+Verbose (\begin{DoxyParamCaption}\item[{bool}]{verbose }\end{DoxyParamCaption})}
 
 
 
 Set whether or not the program prints every message with debug info or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected 
 
 
+\begin{DoxyParams}{Parameters}
+{\em verbose} & Whether or not the program prints every message with debug info or just important ones.\\
+\hline
+\end{DoxyParams}
+
+
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
 \DoxyCodeLine{}
 \DoxyCodeLine{\textcolor{keywordflow}{if} (inDebugMode) \{}
-\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{SetVerbose}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a1f82e191d8e4b2873a408e6542d626b5}{SetVerbose}}(\textcolor{keyword}{true});}
 \DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
-\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{SetVerbose}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{    bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a1f82e191d8e4b2873a408e6542d626b5}{SetVerbose}}(\textcolor{keyword}{false});}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
  
 
-Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_adbb02ba7af9f42dcfd5982ec4d5b64ab}{Open\+BCIReaderI}}.
+Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a1f82e191d8e4b2873a408e6542d626b5}{Open\+BCIReaderI}}.
 
-\mbox{\Hypertarget{class_car_b_c_i_reader2_a5c59bed88d2505a7492257fae840fd2d}\label{class_car_b_c_i_reader2_a5c59bed88d2505a7492257fae840fd2d}} 
+\mbox{\Hypertarget{class_car_b_c_i_reader2_ad523db8398191f78ed9f43086c434b6d}\label{class_car_b_c_i_reader2_ad523db8398191f78ed9f43086c434b6d}} 
 \index{CarBCIReader2@{CarBCIReader2}!SetWifiBoardName@{SetWifiBoardName}}
 \index{SetWifiBoardName@{SetWifiBoardName}!CarBCIReader2@{CarBCIReader2}}
 \doxysubsubsection{\texorpdfstring{SetWifiBoardName()}{SetWifiBoardName()}}
@@ -695,7 +707,7 @@ Set the name of the wifi shield used with the board. Similar to a serial number,
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{interface_open_b_c_i_reader_i}{OpenBCIReaderI}} bci = ...;}
 \DoxyCodeLine{}
-\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_aaea720de7d17e5c5c8f46337615ce6b2}{SetAllowWifi}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a7e44e5e711dfcc43b6695dfee8f1bf83}{SetAllowWifi}}(\textcolor{keyword}{true});}
 \DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{SetWifiBoardName}}(\textcolor{stringliteral}{"{}OpenBCI-\/XXXX"{}});}
 \DoxyCodeLine{bci.\mbox{\hyperlink{interface_open_b_c_i_reader_i_a50631276b93db10a9b3d26b02ccc741b}{Reconnect}}();}
 
@@ -705,6 +717,31 @@ Set the name of the wifi shield used with the board. Similar to a serial number,
 Implements \mbox{\hyperlink{interface_open_b_c_i_reader_i_a79ff7d57eaa1226fe8ef8d365d52bcba}{Open\+BCIReaderI}}.
 
 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_car_b_c_i_reader2_a887a3c595aff6ab7b2ea68e304cdd664}\label{class_car_b_c_i_reader2_a887a3c595aff6ab7b2ea68e304cdd664}} 
+\index{CarBCIReader2@{CarBCIReader2}!allowWifi@{allowWifi}}
+\index{allowWifi@{allowWifi}!CarBCIReader2@{CarBCIReader2}}
+\doxysubsubsection{\texorpdfstring{allowWifi}{allowWifi}}
+{\footnotesize\ttfamily bool Car\+BCIReader2.\+allow\+Wifi}
+
+
+
+Set whether or not the program should be allowed to use wifi to connect to the board. 
+
+Note\+: turning this on may add a significant amount of time to reconnection delay 
+
+\mbox{\hyperlink{class_car_b_c_i_reader2_ae98bd937116b233d5c73fbe83ac1f678}{Set\+Allow\+Wifi(bool)}} \mbox{\hyperlink{class_car_b_c_i_reader2_a607218c547c15fdbf4762752292ed9e7}{Get\+Allow\+Wifi}} \mbox{\Hypertarget{class_car_b_c_i_reader2_a8577d4da12c5a2924b8cb3de72541295}\label{class_car_b_c_i_reader2_a8577d4da12c5a2924b8cb3de72541295}} 
+\index{CarBCIReader2@{CarBCIReader2}!verbose@{verbose}}
+\index{verbose@{verbose}!CarBCIReader2@{CarBCIReader2}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily bool Car\+BCIReader2.\+verbose}
+
+
+
+Get whether or not the program prints every message or just important ones. If true, program will print a lot of debug information If false, program will print only critical info such as whether or not the board has connected 
+
+\mbox{\hyperlink{class_car_b_c_i_reader2_a63cfdeb7f4546e4eb4ad38718e0a7582}{Set\+Verbose}} \mbox{\hyperlink{class_car_b_c_i_reader2_a80c584e6fddabf436202140f4021ecf6}{Get\+Verbose}} 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

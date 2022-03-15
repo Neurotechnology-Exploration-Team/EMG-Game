@@ -1,3 +1,7 @@
+/// <summary>
+/// An interface representing the functionality of a class that can interact with BCI hardware as input and provide
+/// standard game input values as its output. Only ONE instance of this interface should exist at any one time.
+/// </summary>
 public interface OpenBCIReaderI
 {
     public enum ThresholdType
@@ -19,9 +23,21 @@ public interface OpenBCIReaderI
     }
     public enum ConnectionStatus
     {
+        /// <summary>
+        /// There is no current connection.
+        /// </summary>
         Disconnected,
+        /// <summary>
+        /// The program is attempting to connect to the board. The process should not be aborted if in this state.
+        /// </summary>
         Connecting,
+        /// <summary>
+        /// The program is connected to the board and receiving valid data.
+        /// </summary>
         Connected,
+        /// <summary>
+        /// The program is attempting to disconnect and reconnect to the board. The process should not be aborted if in this state.
+        /// </summary>
         Reconnecting
     }
     /// <summary>
