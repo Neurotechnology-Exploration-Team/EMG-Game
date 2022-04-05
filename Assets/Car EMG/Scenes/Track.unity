@@ -109865,6 +109865,7 @@ MonoBehaviour:
   zeroDebugOne: {fileID: 1045385859}
   zeroDebugTwo: {fileID: 511844786}
   zeroDebugThree: {fileID: 1729946449}
+  zeroParameter: {fileID: 1483200005}
 --- !u!1 &1141487505
 GameObject:
   m_ObjectHideFlags: 0
@@ -111320,13 +111321,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 706556245}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1119724927}
+        m_TargetAssemblyTypeName: BCIMenu, Assembly-CSharp
+        m_MethodName: SetThresholdParameter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

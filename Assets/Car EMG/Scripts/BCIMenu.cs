@@ -40,6 +40,7 @@ public class BCIMenu : MonoBehaviour
     public TextMeshProUGUI zeroDebugOne;
     public TextMeshProUGUI zeroDebugTwo;
     public TextMeshProUGUI zeroDebugThree;
+    public GameObject zeroParameter;
 
     // Start is called before the first frame update
     private void Start()
@@ -101,6 +102,11 @@ public class BCIMenu : MonoBehaviour
     public void SetThresholdBar(int slider)
     {
         bciReader.SetThreshold(slider, zeroSlider.value);
+    }
+    
+    public void SetThresholdParameter(int slider)
+    {
+        bciReader.SetThresholdSensitivity(slider, Int32.Parse(zeroParameter.GetComponent<TMP_InputField>().text));
     }
 
     public void Resume()
