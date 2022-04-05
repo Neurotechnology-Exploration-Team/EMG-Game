@@ -131,16 +131,11 @@ public class BCIMenu : MonoBehaviour
 
     public void Disconnect_Board()
     {
-        // Code Here
+        bciReader.Disconnect();
     }
 
     public void Reconnect_Board()
     {
-        // Code Here
-    }
-
-    public void Terminate_Program()
-    {
-        // Code Here
+        bciReader.Reconnect();
     }
 }
