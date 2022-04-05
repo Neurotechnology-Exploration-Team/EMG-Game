@@ -136,6 +136,7 @@ public class BCIMenu : MonoBehaviour
 
     public void Board_Type()
     {
+        bciReader.SetAllowWifi(boardType.value == 1);
         if (boardType.value == 1)
         {
             boardName.SetActive(true);
@@ -144,6 +145,11 @@ public class BCIMenu : MonoBehaviour
         {
             boardName.SetActive(false);
         }
+    }
+
+    public void WifiBoardName()
+    {
+        bciReader.SetWifiBoardName(boardName.GetComponent<TMP_InputField>().text);
     }
 
     public void Disconnect_Board()
