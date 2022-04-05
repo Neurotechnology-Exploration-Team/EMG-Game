@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,9 @@ using TMPro;
 public class BCIMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+
+    public GameObject bciReaderObject;
+    private OpenBCIReaderI bciReader;
 
     public GameObject pauseMenuUI;
     public Toggle advanceToggle;
@@ -36,7 +40,11 @@ public class BCIMenu : MonoBehaviour
     public TextMeshProUGUI zeroDebugTwo;
     public TextMeshProUGUI zeroDebugThree;
 
-
+    // Start is called before the first frame update
+    private void Start()
+    {
+        bciReader = bciReaderObject.GetComponent<OpenBCIReaderI>();
+    }
 
     // Update is called once per frame
     void Update()

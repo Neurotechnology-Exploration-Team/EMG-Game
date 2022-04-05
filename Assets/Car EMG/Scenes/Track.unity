@@ -2285,7 +2285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af2d9f1c19bb8d41878dda64196b95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verbose: 1
+  verbose: 0
   attemptConnectionOnStartup: 1
   allowWifi: 0
   flexedChannels: 0000000000000000
@@ -109849,6 +109849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12a496e1f5b03b44583b91ddbd07fb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bciReaderObject: {fileID: 494504226}
   pauseMenuUI: {fileID: 706556245}
   advanceToggle: {fileID: 1665066979}
   networkConnection: {fileID: 759001427}
