@@ -19,7 +19,7 @@ public class BCIMenu : MonoBehaviour
     public Image cytonConnection;
 
     public bool networkConnected;
-    public bool cytonConnected;
+    public OpenBCIReaderI.ConnectionStatus cytonConnected;
 
     public Dropdown boardType;
 
@@ -61,13 +61,20 @@ public class BCIMenu : MonoBehaviour
             }
         }
 
-        if (cytonConnected)
+        if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Connected)
         {
             cytonConnection.color = new Color(0, 1, 0, 1);
         }
-        else
+        else if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Connecting)
+        {
+            cytonConnection.color = new Color(1, 1, 0, 1);
+        }
+        else if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Disconnected)
         {
             cytonConnection.color = new Color(1, 0, 0, 1);
+        } else if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Reconnecting)
+        {
+            cytonConnection.color = new Color(1, 1, 0, 1);
         }
 
         if (networkConnected)
