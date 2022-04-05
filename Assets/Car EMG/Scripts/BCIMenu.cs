@@ -101,7 +101,7 @@ public class BCIMenu : MonoBehaviour
 
     public void SetThresholdBar(int slider)
     {
-        if (slider >= 0 && slider <= 1)
+        if (zeroSlider.value >= 0 && zeroSlider.value <= 1)
         {
             bciReader.SetThreshold(slider, zeroSlider.value);
         }
@@ -112,11 +112,13 @@ public class BCIMenu : MonoBehaviour
     
     public void SetThresholdParameter(int slider)
     {
-        if (Int32.TryParse(zeroParameter.GetComponent<TMP_InputField>().text, out int value)){
+        if (Int32.TryParse(zeroParameter.GetComponent<TMP_InputField>().text, out int value))
+        {
             if (value >= 1 && value <= 1000)
             {
                 bciReader.SetThresholdSensitivity(slider, value);
-            }else if (bciReader.GetVerbose())
+            }
+            else if (bciReader.GetVerbose())
             {
                 Debug.Log("Threshold Parameter outside of range");
             }
