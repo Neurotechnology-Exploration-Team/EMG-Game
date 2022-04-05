@@ -109854,7 +109854,7 @@ MonoBehaviour:
   advanceToggle: {fileID: 1665066979}
   networkConnection: {fileID: 759001427}
   cytonConnection: {fileID: 1728689720}
-  networkConnected: 0
+  networkConnected: 1
   cytonConnected: 0
   boardType: {fileID: 52804472}
   boardName: {fileID: 1113071681}
