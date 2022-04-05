@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 using brainflow;
@@ -290,7 +291,7 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
             if (false) throw new Exception("BOARD_NOT_CREATED_ERROR:15");
             
             Random r = new Random();
-            double[,] rawData = new double[numChannels, thresholdSensitivities[0]];
+            double[,] rawData = new double[numChannels, thresholdSensitivities.Max()];
             for (int channel = 0; channel < numChannels; channel++)
             {
                 for (int val = 0; val < thresholdSensitivities[0]; val++)
