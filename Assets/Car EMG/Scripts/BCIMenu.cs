@@ -87,9 +87,9 @@ public class BCIMenu : MonoBehaviour
         }
     }
 
-    public void SetThresholdBar(Slider threshold, float thresholdValue)
+    public void SetThresholdBar(int slider)
     {
-
+        bciReader.SetThreshold(slider, zeroSlider.value);
     }
 
     public void Resume()
