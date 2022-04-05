@@ -347,6 +347,7 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
 
     public void SetAllowWifi(bool allowWifi)
     {
+        if (verbose) Debug.Log("Setting allowWifi to " + allowWifi);
         this.allowWifi = allowWifi;
     }
 
@@ -357,6 +358,7 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
 
     public void SetWifiBoardName(string name)
     {
+        if (verbose) Debug.Log("Setting wifiBoardName to " + name);
         wifiBoardName = name;
     }
 
@@ -367,6 +369,7 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
 
     public void SetDefaultSerialPort(string port)
     {
+        if (verbose) Debug.Log("Setting defaultSerialPort to " + port);
         serialPort = port;
     }
 
@@ -377,6 +380,7 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
 
     public void SetVerbose(bool verbose)
     {
+        if (verbose) Debug.Log("Setting verbose to " + verbose);
         this.verbose = verbose;
     }
 
@@ -387,37 +391,44 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
 
     public void SetThreshold(int channel, double threshold)
     {
+        if (verbose) Debug.Log("Setting threshold for channel " + channel + " to " + threshold);
         thresholds[channel] = threshold;
     }
 
     public void AutoRestingThreshold(int channel)
     {
+        if (verbose) Debug.Log("Auto-setting resting threshold for channel " + channel);
         thresholds[channel] = nanovoltAverages[channel] * .9;
     }
 
     public void AutoRestingThreshold()
     {
+        if (verbose) Debug.Log("Auto-setting resting threshold for all channels");
         for (int channel = 0; channel < thresholds.Length; channel++)
             thresholds[channel] = nanovoltAverages[channel] * .9;
     }
 
     public void SetThresholdType(int channel, OpenBCIReaderI.ThresholdType thresholdType)
     {
+        if (verbose) Debug.Log("Setting threshold type for channel " + channel + " to " + thresholdType);
         thresholdTypes[channel] = thresholdType;
     }
 
     public void SetThresholdType(OpenBCIReaderI.ThresholdType thresholdType)
     {
+        if (verbose) Debug.Log("Setting threshold type for all channels to " + thresholdType);
         for (int channel = 0; channel < thresholdTypes.Length; channel++) thresholdTypes[channel] = thresholdType;
     }
 
     public void SetThresholdSensitivity(int channel, int sensitivity)
     {
+        if (verbose) Debug.Log("Setting threshold sensitivity for channel " + channel + " to " + sensitivity);
         thresholdSensitivities[channel] = sensitivity;
     }
 
     public void SetThresholdSensitivity(int sensitivity)
     {
+        if (verbose) Debug.Log("Setting threshold sensitivity for all channels to " + sensitivity);
         for (int channel = 0; channel < thresholdSensitivities.Length; channel++) 
             thresholdSensitivities[channel] = sensitivity;
     }
@@ -434,11 +445,13 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
 
     public void Disconnect()
     {
+        if (verbose) Debug.Log("Disconnecting");
         connectionStatus = OpenBCIReaderI.ConnectionStatus.Disconnected;
     }
 
     public void Reconnect()
     {
+        if (verbose) Debug.Log("Reconnecting");
         Disconnect();
 
         AttemptConnect();
