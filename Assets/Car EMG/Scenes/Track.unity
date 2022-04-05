@@ -109860,6 +109860,7 @@ MonoBehaviour:
   boardName: {fileID: 1113071681}
   zeroSlider: {fileID: 441840092}
   zeroBar: {fileID: 993337275}
+  zeroBarMax: 2
   zeroAdvance: {fileID: 440194451}
   zeroDebugOne: {fileID: 1045385859}
   zeroDebugTwo: {fileID: 511844786}

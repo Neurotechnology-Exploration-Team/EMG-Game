@@ -35,6 +35,7 @@ public class BCIMenu : MonoBehaviour
     // 0
     public Slider zeroSlider;
     public Slider zeroBar;
+    public float zeroBarMax;
     public GameObject zeroAdvance;
     public TextMeshProUGUI zeroDebugOne;
     public TextMeshProUGUI zeroDebugTwo;
@@ -60,6 +61,8 @@ public class BCIMenu : MonoBehaviour
                 Pause();
             }
         }
+        
+        cytonConnected = bciReader.GetConnectionStatus();
 
         if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Connected)
         {
@@ -85,6 +88,14 @@ public class BCIMenu : MonoBehaviour
         {
             networkConnection.color = new Color(1, 0, 0, 1);
         }
+        
+        // update threshold bar
+        zeroBar.value = (float) bciReader.GetNumericInput(0) / zeroBarMax;
+        
+        // update debug values
+        zeroDebugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(0)*1000000)/1000000);
+        zeroDebugTwo.SetText("T: " + Math.Round(zeroSlider.value*zeroBarMax*1000000)/1000000);
+        zeroDebugThree.SetText("Limit: " + zeroBarMax);
     }
 
     public void SetThresholdBar(int slider)
