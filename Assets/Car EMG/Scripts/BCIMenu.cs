@@ -101,12 +101,30 @@ public class BCIMenu : MonoBehaviour
 
     public void SetThresholdBar(int slider)
     {
-        bciReader.SetThreshold(slider, zeroSlider.value);
+        if (slider >= 0 && slider <= 1)
+        {
+            bciReader.SetThreshold(slider, zeroSlider.value);
+        }
+        else if(bciReader.GetVerbose()){
+            Debug.Log("Threshold outside of range");
+        }
     }
     
     public void SetThresholdParameter(int slider)
     {
-        bciReader.SetThresholdSensitivity(slider, Int32.Parse(zeroParameter.GetComponent<TMP_InputField>().text));
+        if (Int32.TryParse(zeroParameter.GetComponent<TMP_InputField>().text, out int value)){
+            if (value >= 1 && value <= 1000)
+            {
+                bciReader.SetThresholdSensitivity(slider, value);
+            }else if (bciReader.GetVerbose())
+            {
+                Debug.Log("Threshold Parameter outside of range");
+            }
+        }
+        else if (bciReader.GetVerbose())
+        {
+            Debug.Log("Invalid Threshold Parameter, unable to parse");
+        }
     }
 
     public void Resume()
@@ -136,20 +154,46 @@ public class BCIMenu : MonoBehaviour
 
     public void Board_Type()
     {
-        bciReader.SetAllowWifi(boardType.value == 1);
-        if (boardType.value == 1)
+        if (boardType.value == 1 || boardType.value == 0)
         {
-            boardName.SetActive(true);
-        }
-        else
-        {
-            boardName.SetActive(false);
+            bciReader.SetAllowWifi(boardType.value == 1);
+            if (boardType.value == 1)
+            {
+                boardName.SetActive(true);
+            }
+            else
+            {
+                boardName.SetActive(false);
+            }
         }
     }
 
     public void WifiBoardName()
     {
-        bciReader.SetWifiBoardName(boardName.GetComponent<TMP_InputField>().text);
+        name = boardName.GetComponent<TMP_InputField>().text;
+        if (name.Length == 12 && name.Substring(0, 8).Equals("OpenBCI-")) 
+        {
+            bool valid = true;
+            foreach(char c in name.Substring(8))
+            {
+                if (!Char.IsLetterOrDigit(c))
+                {
+                    valid = false;
+                }
+            }
+            if (valid)
+            {
+                bciReader.SetWifiBoardName(name);
+            }
+            else if (bciReader.GetVerbose())
+            {
+                Debug.Log("Board code contains non alphanumeric character");
+            }
+        }
+        else if (bciReader.GetVerbose())
+        {
+            Debug.Log("Invalid board name, board name should follow \"OpenBCI-XXXX\" format");
+        }
     }
 
     public void Disconnect_Board()
