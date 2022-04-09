@@ -1770,7 +1770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440194452}
   m_Layer: 5
-  m_Name: Advance
+  m_Name: Advanced
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2553,8 +2553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -0.5}
-  m_SizeDelta: {x: -28, y: -3}
+  m_AnchoredPosition: {x: 11.5, y: -0.5}
+  m_SizeDelta: {x: -23, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &589570136
 MonoBehaviour:
@@ -2589,7 +2589,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Advance
+  m_Text: Advanced
 --- !u!222 &589570137
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -109863,7 +109863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bciReaderObject: {fileID: 494504226}
   pauseMenuUI: {fileID: 706556245}
-  advanceToggle: {fileID: 1665066979}
+  advancedToggle: {fileID: 1665066979}
   networkConnection: {fileID: 759001427}
   cytonConnection: {fileID: 1728689720}
   networkConnected: 1
@@ -109873,7 +109873,7 @@ MonoBehaviour:
   zeroSlider: {fileID: 441840092}
   zeroBar: {fileID: 993337275}
   zeroBarMax: 2
-  zeroAdvance: {fileID: 440194451}
+  zeroAdvanced: {fileID: 440194451}
   zeroDebugOne: {fileID: 1045385859}
   zeroDebugTwo: {fileID: 511844786}
   zeroDebugThree: {fileID: 1729946449}
@@ -111804,7 +111804,7 @@ GameObject:
   - component: {fileID: 1665066978}
   - component: {fileID: 1665066979}
   m_Layer: 5
-  m_Name: Advance Mode
+  m_Name: Advanced Mode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111880,7 +111880,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119724927}
         m_TargetAssemblyTypeName: BCIMenu, Assembly-CSharp
-        m_MethodName: Advance
+        m_MethodName: Advanced
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
