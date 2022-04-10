@@ -167,6 +167,7 @@ public class BCIMenu : MonoBehaviour
             {
                 boardName.SetActive(false);
             }
+            bciReader.Reconnect();
         }
     }
 
