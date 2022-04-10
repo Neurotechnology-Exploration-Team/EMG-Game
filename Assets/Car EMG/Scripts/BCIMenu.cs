@@ -13,7 +13,7 @@ public class BCIMenu : MonoBehaviour
     private OpenBCIReaderI bciReader;
 
     public GameObject pauseMenuUI;
-    public Toggle advanceToggle;
+    public Toggle advancedToggle;
 
     public Image networkConnection;
     public Image cytonConnection;
@@ -36,7 +36,7 @@ public class BCIMenu : MonoBehaviour
     public Slider zeroSlider;
     public Slider zeroBar;
     public float zeroBarMax;
-    public GameObject zeroAdvance;
+    public GameObject zeroAdvanced;
     public TextMeshProUGUI zeroDebugOne;
     public TextMeshProUGUI zeroDebugTwo;
     public TextMeshProUGUI zeroDebugThree;
@@ -122,15 +122,15 @@ public class BCIMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void Advance()
+    public void Advanced()
     {
-        if (advanceToggle.isOn)
+        if (advancedToggle.isOn)
         {
-            zeroAdvance.SetActive(true);
+            zeroAdvanced.SetActive(true);
         }
         else
         {
-            zeroAdvance.SetActive(false);
+            zeroAdvanced.SetActive(false);
         }
     }
 
