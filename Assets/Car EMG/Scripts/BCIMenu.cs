@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class BCIMenu : MonoBehaviour
+public class BCIMenu : MonoBehaviour, BCIMenuI
 {
     public static bool GameIsPaused = false;
 
@@ -25,6 +25,11 @@ public class BCIMenu : MonoBehaviour
 
     public GameObject boardName;
 
+    public List<string> keybindNames = new List<string>();
+    public Dictionary<int, string> channelKeybinds = new Dictionary<int, string>();
+    private Dictionary<string, bool> keybindInputValues = new Dictionary<string, bool>();
+    private Dictionary<string, double> keybindRawInputValues = new Dictionary<string, double>();
+    
     // BCI Menu Components
 
     // Buttons
@@ -40,6 +45,20 @@ public class BCIMenu : MonoBehaviour
     private void Start()
     {
         bciReader = bciReaderObject.GetComponent<OpenBCIReaderI>();
+
+        for (int i = 0; i < channels.Length; i++)
+        {
+            channelKeybinds[i] = "";
+        }
+
+        foreach (string keybindName in keybindNames)
+        {
+            keybindInputValues[keybindName] = false;
+            keybindRawInputValues[keybindName] = 0;
+        }
+        
+        MakeKeybindDropdowns();
+        SetAllKeybinds();
     }
 
     // Update is called once per frame
@@ -78,6 +97,12 @@ public class BCIMenu : MonoBehaviour
         networkConnection.color = networkConnected ? 
             new Color(0, 1, 0, 1) : 
             new Color(1, 0, 0, 1);
+
+        foreach (string keybindName in keybindNames)
+        {
+            keybindInputValues[keybindName] = false;
+            keybindRawInputValues[keybindName] = 0;
+        }
         
         foreach (BCIMenuChannel channel in channels)
         {
@@ -85,6 +110,12 @@ public class BCIMenu : MonoBehaviour
             
             // update threshold bar
             channel.bar.value = (float) bciReader.GetNumericInput(channelIndex) / channel.barMax;
+
+            if (!channelKeybinds[channelIndex].Equals(""))
+            {
+                keybindInputValues[channelKeybinds[channelIndex]] = bciReader.GetInput(channelIndex);
+                keybindRawInputValues[channelKeybinds[channelIndex]] = bciReader.GetNumericInput(channelIndex);
+            }
         
             // update debug values
             channel.debugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(channelIndex)*1000000)/1000000);
@@ -135,6 +166,44 @@ public class BCIMenu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
+
+    public List<string> GetKeybindNames()
+    {
+        return keybindNames;
+    }
+
+    public void SetKeybindNames(List<string> keybinds)
+    {
+        keybindNames = keybinds;
+
+        MakeKeybindDropdowns();
+    }
+
+    public void MakeKeybindDropdowns()
+    {
+        channelKeybinds = new Dictionary<int, string>();
+        for (int i = 0; i < channels.Length; i++)
+        {
+            channelKeybinds[i] = "";
+            channels[i].keybind.options = new List<Dropdown.OptionData>();
+            channels[i].keybind.options.Add(new Dropdown.OptionData(""));
+            foreach (string keybind in keybindNames)
+            {
+                channels[i].keybind.options.Add(new Dropdown.OptionData(keybind));
+            }
+        }
+    }
+
+    public bool GetInputForKeybind(string keybind)
+    {
+        return keybindInputValues[keybind];
+    }
+
+    public double GetRawInputForKeybind(string keybind)
+    {
+        return keybindRawInputValues[keybind];
+    }
+
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -213,5 +282,20 @@ public class BCIMenu : MonoBehaviour
     public void Reconnect_Board()
     {
         bciReader.Reconnect();
+    }
+
+    public void SetAllKeybinds()
+    {
+        for (int i = 0; i < channels.Length; i++)
+        {
+            if (channels[i].keybind.value > 0)
+            {
+                channelKeybinds[i] = keybindNames[channels[i].keybind.value - 1];
+            }
+            else
+            {
+                channelKeybinds[i] = "";
+            }
+        }
     }
 }

@@ -11,7 +11,9 @@ public class CarInputHandler : MonoBehaviour
     TopDownCarController topDownCarController;
     // CarBCIReader carBCIReader;
     public MonoBehaviour bciReaderIObject;
+    public MonoBehaviour bciMenuIObject;
     private OpenBCIReaderI bciReaderI;
+    private BCIMenuI bciMenuI;
 
     // Awake is called when the script instance is being loaded.
     void Awake()
@@ -20,6 +22,7 @@ public class CarInputHandler : MonoBehaviour
         // carBCIReader = GetComponent<CarBCIReader>();
 
         bciReaderI = bciReaderIObject.GetComponent<OpenBCIReaderI>();
+        bciMenuI = bciMenuIObject.GetComponent<BCIMenuI>();
         bciReaderI.Reconnect();
         bciReaderI.SetThreshold(0, 1);
     }
@@ -30,7 +33,12 @@ public class CarInputHandler : MonoBehaviour
 
         if (useBCIInput)
         {
-            inputVector.x = bciReaderI.GetInput(0) ? 1 : 0;
+            inputVector.x = 0;
+            inputVector.x -= bciMenuI.GetInputForKeybind("Left") ? 1 : 0;
+            inputVector.x += bciMenuI.GetInputForKeybind("Right") ? 1 : 0;
+
+            inputVector.y = 1;
+            // inputVector.x = bciReaderI.GetInput(0) ? 1 : 0;
             // inputVector.y = carBCIReader.GetAxis("Vertical");
         }
         else

@@ -1394,6 +1394,7 @@ MonoBehaviour:
   debugTwo: {fileID: 1181406830031345833}
   debugThree: {fileID: 1181406830960826954}
   parameter: {fileID: 1181406831014637342}
+  keybind: {fileID: 1181406831159044054}
 --- !u!1 &1181406830421927778
 GameObject:
   m_ObjectHideFlags: 0

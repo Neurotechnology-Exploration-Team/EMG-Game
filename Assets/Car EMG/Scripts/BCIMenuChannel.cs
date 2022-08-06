@@ -14,4 +14,5 @@ public class BCIMenuChannel : MonoBehaviour
     public TextMeshProUGUI debugTwo;
     public TextMeshProUGUI debugThree;
     public GameObject parameter;
+    public Dropdown keybind;
 }
