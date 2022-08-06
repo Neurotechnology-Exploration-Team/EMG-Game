@@ -59,38 +59,35 @@ public class BCIMenu : MonoBehaviour
         
         cytonConnected = bciReader.GetConnectionStatus();
 
-        if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Connected)
+        switch (cytonConnected)
         {
-            cytonConnection.color = new Color(0, 1, 0, 1);
+            case OpenBCIReaderI.ConnectionStatus.Connected:
+                cytonConnection.color = new Color(0, 1, 0, 1);
+                break;
+            case OpenBCIReaderI.ConnectionStatus.Connecting:
+                cytonConnection.color = new Color(1, 1, 0, 1);
+                break;
+            case OpenBCIReaderI.ConnectionStatus.Disconnected:
+                cytonConnection.color = new Color(1, 0, 0, 1);
+                break;
+            case OpenBCIReaderI.ConnectionStatus.Reconnecting:
+                cytonConnection.color = new Color(1, 1, 0, 1);
+                break;
         }
-        else if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Connecting)
-        {
-            cytonConnection.color = new Color(1, 1, 0, 1);
-        }
-        else if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Disconnected)
-        {
-            cytonConnection.color = new Color(1, 0, 0, 1);
-        } else if (cytonConnected == OpenBCIReaderI.ConnectionStatus.Reconnecting)
-        {
-            cytonConnection.color = new Color(1, 1, 0, 1);
-        }
-
-        if (networkConnected)
-        {
-            networkConnection.color = new Color(0, 1, 0, 1);
-        }
-        else
-        {
-            networkConnection.color = new Color(1, 0, 0, 1);
-        }
-
+        
+        networkConnection.color = networkConnected ? 
+            new Color(0, 1, 0, 1) : 
+            new Color(1, 0, 0, 1);
+        
         foreach (BCIMenuChannel channel in channels)
         {
+            int channelIndex = Array.IndexOf(channels, channel);
+            
             // update threshold bar
-            channel.bar.value = (float) bciReader.GetNumericInput(0) / channel.barMax;
+            channel.bar.value = (float) bciReader.GetNumericInput(channelIndex) / channel.barMax;
         
             // update debug values
-            channel.debugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(0)*1000000)/1000000);
+            channel.debugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(channelIndex)*1000000)/1000000);
             channel.debugTwo.SetText("T: " + Math.Round(channel.slider.value*channel.barMax*1000000)/1000000);
             channel.debugThree.SetText("Limit: " + channel.barMax);
         }
