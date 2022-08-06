@@ -33,14 +33,8 @@ public class BCIMenu : MonoBehaviour
     [Header("Threshold UI Settings")]
 
     // 0
-    public Slider zeroSlider;
-    public Slider zeroBar;
-    public float zeroBarMax;
-    public GameObject zeroAdvanced;
-    public TextMeshProUGUI zeroDebugOne;
-    public TextMeshProUGUI zeroDebugTwo;
-    public TextMeshProUGUI zeroDebugThree;
-    public GameObject zeroParameter;
+    public BCIMenuChannel[] channels;
+    // public BCIMenuChannel zero;
 
     // Start is called before the first frame update
     private void Start()
@@ -89,43 +83,52 @@ public class BCIMenu : MonoBehaviour
         {
             networkConnection.color = new Color(1, 0, 0, 1);
         }
+
+        foreach (BCIMenuChannel channel in channels)
+        {
+            // update threshold bar
+            channel.bar.value = (float) bciReader.GetNumericInput(0) / channel.barMax;
         
-        // update threshold bar
-        zeroBar.value = (float) bciReader.GetNumericInput(0) / zeroBarMax;
-        
-        // update debug values
-        zeroDebugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(0)*1000000)/1000000);
-        zeroDebugTwo.SetText("T: " + Math.Round(zeroSlider.value*zeroBarMax*1000000)/1000000);
-        zeroDebugThree.SetText("Limit: " + zeroBarMax);
+            // update debug values
+            channel.debugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(0)*1000000)/1000000);
+            channel.debugTwo.SetText("T: " + Math.Round(channel.slider.value*channel.barMax*1000000)/1000000);
+            channel.debugThree.SetText("Limit: " + channel.barMax);
+        }
     }
 
     public void SetThresholdBar(int slider)
     {
-        if (zeroSlider.value >= 0 && zeroSlider.value <= 1)
+        foreach (BCIMenuChannel channel in channels)
         {
-            bciReader.SetThreshold(slider, zeroSlider.value);
-        }
-        else if(bciReader.GetVerbose()){
-            Debug.Log("Threshold outside of range");
+            if (channel.slider.value >= 0 && channel.slider.value <= 1)
+            {
+                bciReader.SetThreshold(slider, channel.slider.value);
+            }
+            else if(bciReader.GetVerbose()){
+                Debug.Log("Threshold outside of range");
+            }
         }
     }
     
     public void SetThresholdParameter(int slider)
     {
-        if (Int32.TryParse(zeroParameter.GetComponent<TMP_InputField>().text, out int value))
+        if (slider < channels.Length)
         {
-            if (value >= 1 && value <= 1000)
+            if (Int32.TryParse(channels[slider].parameter.GetComponent<TMP_InputField>().text, out int value))
             {
-                bciReader.SetThresholdSensitivity(slider, value);
+                if (value >= 1 && value <= 1000)
+                {
+                    bciReader.SetThresholdSensitivity(slider, value);
+                }
+                else if (bciReader.GetVerbose())
+                {
+                    Debug.Log("Threshold Parameter outside of range");
+                }
             }
             else if (bciReader.GetVerbose())
             {
-                Debug.Log("Threshold Parameter outside of range");
+                Debug.Log("Invalid Threshold Parameter, unable to parse");
             }
-        }
-        else if (bciReader.GetVerbose())
-        {
-            Debug.Log("Invalid Threshold Parameter, unable to parse");
         }
     }
 
@@ -146,11 +149,17 @@ public class BCIMenu : MonoBehaviour
     {
         if (advancedToggle.isOn)
         {
-            zeroAdvanced.SetActive(true);
+            foreach (BCIMenuChannel channel in channels)
+            {
+                channel.advanced.SetActive(true);
+            }
         }
         else
         {
-            zeroAdvanced.SetActive(false);
+            foreach (BCIMenuChannel channel in channels)
+            {
+                channel.advanced.SetActive(false);
+            }
         }
     }
 
