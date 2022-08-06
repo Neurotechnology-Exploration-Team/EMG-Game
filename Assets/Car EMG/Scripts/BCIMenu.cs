@@ -126,15 +126,13 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
 
     public void SetThresholdBar(int slider)
     {
-        foreach (BCIMenuChannel channel in channels)
+        BCIMenuChannel channel = channels[slider];
+        if (channel.slider.value >= 0 && channel.slider.value <= 1)
         {
-            if (channel.slider.value >= 0 && channel.slider.value <= 1)
-            {
-                bciReader.SetThreshold(slider, channel.slider.value);
-            }
-            else if(bciReader.GetVerbose()){
-                Debug.Log("Threshold outside of range");
-            }
+            bciReader.SetThreshold(slider, channel.slider.value);
+        }
+        else if(bciReader.GetVerbose()){
+            Debug.Log("Threshold outside of range");
         }
     }
     
@@ -296,6 +294,14 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
             {
                 channelKeybinds[i] = "";
             }
+        }
+    }
+
+    public void ResetThresholdSliders()
+    {
+        for (int channel = 0; channel < channels.Length; channel++)
+        {
+            SetThresholdBar(channel);
         }
     }
 }

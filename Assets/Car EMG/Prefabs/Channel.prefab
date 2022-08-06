@@ -749,10 +749,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BCIMenu, Assembly-CSharp
-        m_MethodName: SetThresholdBar
-        m_Mode: 3
+      - m_Target: {fileID: 1181406830267637496}
+        m_TargetAssemblyTypeName: BCIMenuChannel, Assembly-CSharp
+        m_MethodName: ResetAllSliders
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1386,6 +1386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f92673b6b2f54424198030177472abb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bciMenuCanvas: {fileID: 0}
   slider: {fileID: 1181406829975619783}
   bar: {fileID: 1181406829415638688}
   barMax: 2

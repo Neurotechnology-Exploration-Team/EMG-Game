@@ -12,4 +12,6 @@ public interface BCIMenuI
 
     public bool GetInputForKeybind(string keybind);
     public double GetRawInputForKeybind(string keybind);
+
+    public void ResetThresholdSliders();
 }
