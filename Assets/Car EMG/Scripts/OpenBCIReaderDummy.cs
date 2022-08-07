@@ -398,14 +398,17 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
     public void AutoRestingThreshold(int channel)
     {
         if (verbose) Debug.Log("Auto-setting resting threshold for channel " + channel);
-        thresholds[channel] = nanovoltAverages[channel] * .9;
+        thresholds[channel] = nanovoltAverages[channel] * 1.2;
     }
 
     public void AutoRestingThreshold()
     {
         if (verbose) Debug.Log("Auto-setting resting threshold for all channels");
         for (int channel = 0; channel < thresholds.Length; channel++)
-            thresholds[channel] = nanovoltAverages[channel] * .9;
+        {
+            thresholds[channel] = nanovoltAverages[channel] * 1.2;
+            if (verbose) Debug.Log("Auto channel " + channel + " = " + thresholds[channel]);
+        }
     }
 
     public double GetThreshold(int channel)
