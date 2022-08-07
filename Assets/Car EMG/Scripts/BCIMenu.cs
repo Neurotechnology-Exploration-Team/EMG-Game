@@ -60,6 +60,8 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
         MakeKeybindDropdowns();
         SetAllKeybinds();
         ResetThresholdSliders();
+        
+        Pause();
     }
 
     // Update is called once per frame
@@ -104,13 +106,17 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
             keybindInputValues[keybindName] = false;
             keybindRawInputValues[keybindName] = 0;
         }
+
+        float[] sliderValues = new float[channels.Length];
+        for (int i = 0; i < channels.Length; i++) sliderValues[i] = (float)bciReader.GetThreshold(i);
         
         foreach (BCIMenuChannel channel in channels)
         {
             int channelIndex = Array.IndexOf(channels, channel);
             
             // update threshold bar
-            channel.bar.value = (float) bciReader.GetNumericInput(channelIndex) / channel.barMax;
+            channel.bar.value = (float) (bciReader.GetNumericInput(channelIndex) / channel.barMax);
+            channel.slider.value = (float)(sliderValues[channelIndex] / channel.barMax);
 
             if (!channelKeybinds[channelIndex].Equals(""))
             {
@@ -121,7 +127,7 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
             // update debug values
             channel.debugOne.SetText("Value: " + Math.Round(bciReader.GetNumericInput(channelIndex)*1000000)/1000000);
             channel.debugTwo.SetText("T: " + Math.Round(channel.slider.value*channel.barMax*1000000)/1000000);
-            channel.debugThree.SetText("Limit: " + channel.barMax);
+            channel.debugThree.SetText("Limit: " + Math.Round(channel.barMax*1000000)/1000000);
         }
     }
 
@@ -311,6 +317,15 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
         for (int channel = 0; channel < channels.Length; channel++)
         {
             SetThresholdBar(channel);
+        }
+    }
+
+    public void Auto()
+    {
+        bciReader.AutoRestingThreshold();
+        for (int i = 0; i < channels.Length; i++)
+        {
+            channels[i].barMax = bciReader.GetThreshold(i) * 3;
         }
     }
 }

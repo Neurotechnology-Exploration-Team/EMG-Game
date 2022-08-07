@@ -12,7 +12,7 @@ public class BCIMenuChannel : MonoBehaviour
     
     public Slider slider;
     public Slider bar;
-    public float barMax;
+    public double barMax;
     public GameObject advanced;
     public TextMeshProUGUI debugOne;
     public TextMeshProUGUI debugTwo;

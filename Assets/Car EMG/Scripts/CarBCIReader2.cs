@@ -354,6 +354,11 @@ public class CarBCIReader2 : MonoBehaviour, OpenBCIReaderI
         throw new NotImplementedException();
     }
 
+    public double GetThreshold(int channel)
+    {
+        throw new NotImplementedException();
+    }
+
     public void SetThresholdType(int channel, OpenBCIReaderI.ThresholdType thresholdType)
     {
         throw new NotImplementedException();
