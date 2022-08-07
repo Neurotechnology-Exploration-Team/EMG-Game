@@ -302,6 +302,18 @@ public interface OpenBCIReaderI
     /// </code>
     /// </example>
     public void AutoRestingThreshold();
+    /// <summary>
+    /// Get the current threshold for the specified channel.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// OpenBCIReaderI bci = ...;
+    ///
+    /// double x = bci.GetThreshold(0);
+    /// </code>
+    /// </example>
+    /// <returns></returns>
+    public double GetThreshold(int channel);
 
     /// <summary>
     /// Sets the way input is measured for a specific channel. Usually ThresholdType.Average or ThresholdType.Max

@@ -408,6 +408,11 @@ public class OpenBCIReaderDummy : MonoBehaviour, OpenBCIReaderI
             thresholds[channel] = nanovoltAverages[channel] * .9;
     }
 
+    public double GetThreshold(int channel)
+    {
+        return thresholds[channel];
+    }
+
     public void SetThresholdType(int channel, OpenBCIReaderI.ThresholdType thresholdType)
     {
         if (verbose) Debug.Log("Setting threshold type for channel " + channel + " to " + thresholdType);
