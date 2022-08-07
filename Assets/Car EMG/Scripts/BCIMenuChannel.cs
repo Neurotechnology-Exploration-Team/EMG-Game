@@ -29,4 +29,14 @@ public class BCIMenuChannel : MonoBehaviour
     {
         bciMenuI.ResetThresholdSliders();
     }
+
+    public void SetAllKeybinds()
+    {
+        bciMenuI.SetAllKeybinds();
+    }
+
+    public void SetAllThresholdParameters()
+    {
+        bciMenuI.SetAllThresholdParamters();
+    }
 }

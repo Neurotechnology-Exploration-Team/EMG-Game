@@ -1100,8 +1100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fdd5eb56e01f74d8b369bb74b60e9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useBCIInput: 0
+  useBCIInput: 1
   bciReaderIObject: {fileID: 494504227}
+  bciMenuIObject: {fileID: 1119724924}
 --- !u!50 &281134573
 Rigidbody2D:
   serializedVersion: 4
@@ -2671,6 +2672,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 706556246}
     m_Modifications:
+    - target: {fileID: 1181406830267637496, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: bciMenuCanvas
+      value: 
+      objectReference: {fileID: 1119724922}
     - target: {fileID: 1181406830267637497, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2775,17 +2780,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetThresholdParameter
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.192
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 4
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 1181406831314847840, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -108748,6 +108753,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 706556246}
     m_Modifications:
+    - target: {fileID: 1181406830267637496, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: bciMenuCanvas
+      value: 
+      objectReference: {fileID: 1119724922}
     - target: {fileID: 1181406830267637497, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -108852,17 +108861,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetThresholdParameter
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.192
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 1181406831314847840, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -109697,6 +109706,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 706556246}
     m_Modifications:
+    - target: {fileID: 1181406830267637496, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: bciMenuCanvas
+      value: 
+      objectReference: {fileID: 1119724922}
     - target: {fileID: 1181406830267637497, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -109801,17 +109814,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetThresholdParameter
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.192
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 1181406831314847840, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -110221,6 +110234,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 706556246}
     m_Modifications:
+    - target: {fileID: 1181406830267637496, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: bciMenuCanvas
+      value: 
+      objectReference: {fileID: 1119724922}
     - target: {fileID: 1181406830267637497, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -110325,69 +110342,17 @@ PrefabInstance:
       propertyPath: m_text
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetThresholdParameter
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: BCIMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetAllKeybinds
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BCIMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 1181406831314847840, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -112106,10 +112071,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 706556246}
     m_Modifications:
-    - target: {fileID: 1181406829975619783, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 1181406830267637496, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: bciMenuCanvas
       value: 
-      objectReference: {fileID: 1119724927}
+      objectReference: {fileID: 1119724922}
     - target: {fileID: 1181406830267637497, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -112210,37 +112175,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831014637340, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1119724927}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetAllKeybinds
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BCIMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181406831159044054, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+    - target: {fileID: 1181406830811354419, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.192
       objectReference: {fileID: 0}
     - target: {fileID: 1181406831314847840, guid: 7049b42e9e01d5e4cbc9b8119e359db5, type: 3}
       propertyPath: m_AnchorMax.y

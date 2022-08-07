@@ -59,6 +59,7 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
         
         MakeKeybindDropdowns();
         SetAllKeybinds();
+        ResetThresholdSliders();
     }
 
     // Update is called once per frame
@@ -129,7 +130,7 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
         BCIMenuChannel channel = channels[slider];
         if (channel.slider.value >= 0 && channel.slider.value <= 1)
         {
-            bciReader.SetThreshold(slider, channel.slider.value);
+            bciReader.SetThreshold(slider, channel.slider.value * channel.barMax);
         }
         else if(bciReader.GetVerbose()){
             Debug.Log("Threshold outside of range");
@@ -294,6 +295,14 @@ public class BCIMenu : MonoBehaviour, BCIMenuI
             {
                 channelKeybinds[i] = "";
             }
+        }
+    }
+
+    public void SetAllThresholdParamters()
+    {
+        for (int i = 0; i < channels.Length; i++)
+        {
+            SetThresholdParameter(i);
         }
     }
 
