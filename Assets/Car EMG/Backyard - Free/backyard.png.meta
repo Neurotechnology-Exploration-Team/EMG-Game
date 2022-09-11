@@ -297,6 +297,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -2272,6 +2273,98 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      backyard_8: 21300016
+      backyard_54: 21300108
+      backyard_71: 21300142
+      backyard_60: 21300120
+      backyard_89: 21300178
+      backyard_79: 21300158
+      backyard_4: 21300008
+      backyard_84: 21300168
+      backyard_43: 21300086
+      backyard_70: 21300140
+      backyard_20: 21300040
+      backyard_61: 21300122
+      backyard_26: 21300052
+      backyard_86: 21300172
+      backyard_39: 21300078
+      backyard_45: 21300090
+      backyard_65: 21300130
+      backyard_22: 21300044
+      backyard_10: 21300020
+      backyard_35: 21300070
+      backyard_55: 21300110
+      backyard_50: 21300100
+      backyard_11: 21300022
+      backyard_48: 21300096
+      backyard_88: 21300176
+      backyard_14: 21300028
+      backyard_56: 21300112
+      backyard_38: 21300076
+      backyard_5: 21300010
+      backyard_24: 21300048
+      backyard_53: 21300106
+      backyard_9: 21300018
+      backyard_69: 21300138
+      backyard_81: 21300162
+      backyard_76: 21300152
+      backyard_64: 21300128
+      backyard_27: 21300054
+      backyard_58: 21300116
+      backyard_0: 21300000
+      backyard_7: 21300014
+      backyard_1: 21300002
+      keaw_logo: 21300180
+      backyard_66: 21300132
+      backyard_28: 21300056
+      backyard_49: 21300098
+      backyard_12: 21300024
+      backyard_31: 21300062
+      backyard_17: 21300034
+      backyard_51: 21300102
+      backyard_33: 21300066
+      backyard_36: 21300072
+      backyard_52: 21300104
+      backyard_3: 21300006
+      backyard_15: 21300030
+      backyard_63: 21300126
+      backyard_18: 21300036
+      backyard_82: 21300164
+      backyard_74: 21300148
+      backyard_46: 21300092
+      backyard_16: 21300032
+      backyard_85: 21300170
+      backyard_6: 21300012
+      backyard_59: 21300118
+      backyard_2: 21300004
+      backyard_87: 21300174
+      backyard_44: 21300088
+      backyard_25: 21300050
+      backyard_57: 21300114
+      backyard_40: 21300080
+      backyard_80: 21300160
+      backyard_29: 21300058
+      backyard_78: 21300156
+      backyard_19: 21300038
+      backyard_13: 21300026
+      backyard_21: 21300042
+      backyard_30: 21300060
+      backyard_72: 21300144
+      backyard_23: 21300046
+      backyard_42: 21300084
+      backyard_32: 21300064
+      backyard_34: 21300068
+      backyard_47: 21300094
+      backyard_77: 21300154
+      backyard_68: 21300136
+      backyard_62: 21300124
+      backyard_75: 21300150
+      backyard_37: 21300074
+      backyard_67: 21300134
+      backyard_73: 21300146
+      backyard_83: 21300166
+      backyard_41: 21300082
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
