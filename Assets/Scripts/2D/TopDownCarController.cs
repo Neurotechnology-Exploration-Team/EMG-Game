@@ -12,12 +12,14 @@ public class TopDownCarController : MonoBehaviour
     public bool autoAccelerate = false;
 
     // Local Variables
-    float accelerationInput = 0;
-    float steeringInput = 0;
+    private float accelerationInput = 0;
+    private float steeringInput = 0;
 
-    float rotationAngle = 0;
+    private float rotationAngle = 0;
 
-    float velocityVsUp = 0;
+    private float velocityVsUp = 0;
+
+    private Vector2 screenSize;
     
     //Componets
     Rigidbody2D carRigidbody2D;
@@ -31,12 +33,22 @@ public class TopDownCarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        screenSize.x = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0f, 0f)), Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0f))) * 0.5f;
+        screenSize.y = Vector2.Distance(Camera.main.ScreenToWorldPoint(new Vector2(0f, 0f)), Camera.main.ScreenToWorldPoint(new Vector2(Screen.height, 0f))) * 0.5f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
+        if ()
+        {
+
+        }else if ()
+        {
+
+        }
+        */
     }
 
     // Frame-Rate Independent for Physics Calculations
