@@ -40,15 +40,25 @@ public class TopDownCarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if ()
-        {
+        float buffer = 2f;
 
-        }else if ()
+        if (Mathf.Abs(this.transform.position.x) > screenSize.x)
         {
+            if (this.transform.position.x < 0)
+            {
+                buffer *= -1;
+            }
 
+            this.transform.position = new Vector3(-this.transform.position.x + buffer, this.transform.position.y, this.transform.position.z);
+        }else if (Mathf.Abs(this.transform.position.y) > screenSize.y)
+        {
+            if (this.transform.position.y < 0)
+            {
+                buffer *= -1;
+            }
+
+            this.transform.position = new Vector3(this.transform.position.x, -this.transform.position.y + buffer, this.transform.position.z);
         }
-        */
     }
 
     // Frame-Rate Independent for Physics Calculations
