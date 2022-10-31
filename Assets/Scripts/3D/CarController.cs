@@ -8,6 +8,11 @@ public class CarController : MonoBehaviour
     public float breakForce;
     public float maxSteerAngle;
 
+    //fr = Front Right
+    //fl = Front Left
+    //br = Back Right
+    //bl = Back Left
+
     public Transform fr_Transform;
     public Transform fl_Transform;
     public Transform br_Transform;
@@ -23,6 +28,11 @@ public class CarController : MonoBehaviour
     private float curBreakForce;
     private float curSteerAngle;
     private bool isBreaking;
+
+    //Gather Input
+    //Apply motor force
+    //Account for steering
+    //Update wheel transform
 
     private void FixedUpdate() 
     {
